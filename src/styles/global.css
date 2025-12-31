@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+
+body {
+    background-color: #F3FAFF;
+    background-image: url("/bglines.svg");
+    background-repeat: repeat;
+    color: #473B47;
+}

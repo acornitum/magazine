@@ -1,5 +1,5 @@
 ---
-
+import "../styles/global.css";
 ---
 
 <html lang="en">
@@ -11,6 +11,97 @@
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+
+		<img src="/topbar.svg" class="w-full"/>
+
+		<div class="min-h-screen flex flex-col items-center justify-center">
+
+			<div class="relative flex justify-center items-center w-full md:w-auto max-w-3xl">
+				<img src="/titleback.png" class="max-w-3xl h-auto overflow-hidden"/>
+				<img src="/title.png" class="absolute w-[90%] max-w-xl h-auto"/>
+				<p class="absolute -top-12 md:-top-10 left-2 md:-left-8 bg-[#FFCA80] p-3 px-8 text-3xl text-[#473B47] font-bold rounded-md -rotate-3 overflow-hidden">PROJECT:</p>
+				<p class="absolute -bottom-10 right-2 md:-right-8 bg-[#FFCA80] p-3 px-8 text-xl text-[#473B47] font-bold rounded-md rotate-3 overflow-hidden">by hack club</p>
+			</div>
+
+			<div class="flex flex-col justify-center items-center text-center text-xl font-semibold mt-20">
+				<p>make a magazine page for your project</p>
+				<p>get it printed!!</p>
+			</div>
+
+
+		</div>
+
+		<div class="flex flex-col justify-center items-center mx-5 mb-12">
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 relative">
+
+				<div class="bg-white max-w-3xl shadow-md p-12 lg:pr-24">
+					<img src="/bookpage1.png" class="max-w-xl w-full"/>
+				</div>
+
+				<div class="bg-white max-w-3xl shadow-md p-5">
+					<p>fjdsklfs</p>
+				</div>
+
+				<img src="/bookrings.svg" class="absolute left-1/2 top-1/2
+      -translate-x-1/2 -translate-y-1/2
+      hidden lg:block
+      pointer-events-none"/>
+
+				
+
+			</div>
+
+
+
+		</div>
+
+
+
+
+		<div class="bg-linear-to-b from-[#C3E6F3]/80 to-[#ABC8F4]/80 p-5 py-24 flex flex-col justify-center">
+
+			<div class="flex flex-col justify-center items-center mb-12">
+				<div class="border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded">
+					<p class="text-3xl font-bold">how to join</p>
+				</div>
+			</div>
+
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-y-24 relative mx-auto lg:pb-24">
+
+				<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3">
+					<img src="/postcard1.svg" class="w-full h-auto"/>
+					<p class="absolute top-8 px-6 text-xl text-center font-bold">submit your project!</p>
+					<p class="absolute top-30 px-6 text-center">put your project description, repo, demo link, and screenshots in [#channel]!</p>
+				</div>
+
+				<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-3 lg:translate-y-24">
+					<img src="/postcard2.svg" class="w-full h-auto"/>
+					<p class="absolute top-8 px-6 text-xl text-center font-bold">submit your project!</p>
+					<p class="absolute top-30 px-6 text-center">put your project description, repo, demo link, and screenshots in [#channel]!</p>
+				</div>
+
+				<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-1 lg:-translate-y-12">
+					<img src="/postcard3.svg" class="w-full h-auto"/>
+					<p class="absolute top-8 px-6 text-xl text-center font-bold">submit your project!</p>
+					<p class="absolute top-30 px-6 text-center">put your project description, repo, demo link, and screenshots in [#channel]!</p>
+				</div>
+
+				<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-2 lg:translate-y-16">
+					<img src="/postcard4.svg" class="w-full h-auto"/>
+					<p class="absolute top-8 px-6 text-xl text-center font-bold">submit your project!</p>
+					<p class="absolute top-30 px-6 text-center">put your project description, repo, demo link, and screenshots in [#channel]!</p>
+				</div>
+
+			</div>
+
+		</div>
+
+
+		<div class="flex flex-col justify-center items-center py-24">
+			<p class="text-3xl font-bold">examples of previous magazines</p>
+		</div>
+
+		<img src="/topbar.svg" class="w-full"/>
+
 	</body>
 </html>
