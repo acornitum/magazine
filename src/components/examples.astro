@@ -1,0 +1,56 @@
+---
+const imageNames = [
+  "1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png",
+  "10.png","11.png","12.png","13.png","14.png","15.png","16.png","17.png","18.png",
+];
+const images = imageNames.map(name => `/examples/${name}`);
+---
+<div id="carousel" class="overflow-hidden rotate-2 my-8 w-full">
+  <div id="track" class="inline-flex flex-nowrap">
+    {Array(3).fill(0).map(() => images.map((src, i) => <img src={src} alt="" class="carousel-img md:ml-4" style={i === images.length-1 ? 'margin-right:0;' : ''}/>))}
+  </div>
+</div>
+
+<script>
+
+const container = document.getElementById('carousel');
+const track = document.getElementById('track');
+const firstSetWidth = track.scrollWidth / 3;
+let scroll = firstSetWidth;
+const speed = 0.5;
+let requestId;
+
+function loop() {
+  scroll -= speed;
+  if (scroll <= 0) scroll = firstSetWidth;
+  container.scrollLeft = scroll;
+  requestId = requestAnimationFrame(loop);
+}
+loop();
+
+container.addEventListener('mouseenter', () => cancelAnimationFrame(requestId));
+container.addEventListener('mouseleave', () => loop());
+
+</script>
+
+<style>
+#carousel {
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.carousel-img {
+  flex-shrink: 0;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  opacity: 0.8;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-width: 100%;
+}
+.carousel-img:hover {
+  opacity: 1;
+}
+</style>
