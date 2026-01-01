@@ -7,3 +7,11 @@ body {
     background-repeat: repeat;
     color: #473B47;
 }
+
+.pop {
+  transition: transform 140ms ease;
+}
+
+.pop:hover {
+  transform: scale(1.02);
+}
