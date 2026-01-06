@@ -35,7 +35,7 @@ import Examples2 from "../components/examples2.astro";
 
 			<div class="flex flex-col justify-center items-center text-center text-lg md:text-xl font-bold mt-20">
 				<img src="/titledesc.png" class="max-w-lg w-full absolute -z-10 opacity-70"/>
-				<p>this jan: make a page for your project,</p>
+				<p>this january: make a page for your project,</p>
 				<p>get it in the hack club 2025 magazine!</p>
 			</div>
 
@@ -104,13 +104,42 @@ import Examples2 from "../components/examples2.astro";
 		</div>
 
 
-		<div class="flex flex-col justify-center items-center py-12 mt-12">
-			<p class="text-3xl font-bold">examples of previous magazines</p>
+		<div class="flex flex-col justify-center items-center py-12 mt-12 mx-5">
+			<p class="text-3xl font-bold">previous hack club magazines</p>
 
-			<div class="bg-amber-200 h-44 w-36 mt-8 p-8"><p>INSERT REAL IMAGE!!!</p></div>
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+
+
+				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
+					<div class="grid grid-cols-2 gap-6">
+						<img src="/mag1.png"/>
+						<div class="grid gap-6">
+							<p>Highway Magazine</p>
+							<img src="/mag2.png" class="mt-auto"/>
+						</div>
+					</div>
+				</div>
+
+				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
+					<div class="grid grid-cols-2 gap-6">
+						<img src="/mag1.png"/>
+						<div class="grid gap-6">
+							<p>Highway Magazine</p>
+							<img src="/mag2.png" class="mt-auto"/>
+						</div>
+					</div>
+				</div>
+
+
+
+
+
+			</div>
+
+			
 		</div>
 
-		<div class="flex flex-col justify-center items-center py-12">
+		<div class="flex flex-col justify-center items-center py-12 mx-5">
 			<p class="text-3xl font-bold">frequently asked questions</p>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-9">
@@ -140,7 +169,10 @@ import Examples2 from "../components/examples2.astro";
 
 
 
-		<div class="flex flex-col justify-center items-center my-8 mt-16 font-semibold space-y-1">
+		<div class="flex flex-col justify-center items-center my-8 mt-16 font-semibold">
+			<div>
+				<p>made with :3 by acon (<a href="https://github.com/acornitum/magazine" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">repo</a>)</p>
+			</div>
 			<div class="flex flex-wrap space-x-2">
 				<a href="https://hackclub.com/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hack club</a>
 				<p>//</p>
@@ -149,9 +181,6 @@ import Examples2 from "../components/examples2.astro";
 				<a href="https://hackclub.com/clubs/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">clubs</a>
 				<p>//</p>
 				<a href="https://hackclub.com/hackathons/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hackathons</a>
-			</div>
-			<div>
-				<p>made with :3 by acon (<a href="https://github.com/acornitum/magazine" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">repo</a>)</p>
 			</div>
 		</div>
 
