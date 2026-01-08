@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
+@theme {
+  --drop-shadow-sticker: 0 3px 2px rgba(0, 0, 0, 0.25);
+}
 
 body {
-    background-color: #F3FAFF;
-    background-image: url("/bglines.svg");
-    background-repeat: repeat;
-    color: #473B47;
+  background-color: #f3faff;
+  background-image: url("/bglines.svg");
+  background-repeat: repeat;
+  color: #473b47;
 }
 
 .pop {
