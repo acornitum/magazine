@@ -12,11 +12,11 @@ interface Props {
 const { src, alt, width, shadow, class: className } = Astro.props;
 ---
 
-<div class="touch-none" data-sticker>
+<div class="group touch-none cursor-grab active:cursor-grabbing" data-sticker>
 	<Image src={src} alt={alt} width={width} class:list={[
     className,
     shadow && "drop-shadow-sticker",
-    "transition-[scale,opacity] hover:scale-110 active:scale-100 active:opacity-75"
+    "transition-[scale,opacity] group-hover:scale-110 group-active:scale-100 group-active:opacity-75"
   ]} draggable={false} />
 </div>
 
@@ -34,7 +34,7 @@ const { src, alt, width, shadow, class: className } = Astro.props;
     document.addEventListener("mouseup", () => {
       delete sticker.dataset.dragging;
     });
-    sticker.addEventListener("mousemove", (event) => {
+    document.addEventListener("mousemove", (event) => {
       if (sticker.dataset.dragging === "true") {
         if(sticker.dataset.x === undefined || sticker.dataset.y === undefined) {
           sticker.dataset.x = "0";
@@ -47,7 +47,10 @@ const { src, alt, width, shadow, class: className } = Astro.props;
         sticker.style.transform = `translate(${x}px, ${y}px)`;
         sticker.dataset.x = x.toString();
         sticker.dataset.y = y.toString();
-      } else {
+      }
+    });
+    sticker.addEventListener("mousemove", (event) => {
+      if (sticker.dataset.dragging !== "true") {
         const {left, top} = sticker.getBoundingClientRect();
         const centerX = left + sticker.offsetWidth / 2;
         const centerY = top + sticker.offsetHeight / 2;
