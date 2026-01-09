@@ -22,6 +22,7 @@ import undercity7Sticker from "../assets/stickers/bunnyguy-undercity-7.png";
 import undercity8Sticker from "../assets/stickers/bunnyguy-undercity-8.png";
 import undercity9Sticker from "../assets/stickers/bunnyguy-undercity-9.png";
 import undercityFlagSticker from "../assets/stickers/bunnyguy-undercity-flag.png";
+import undercityCarSticker from "../assets/stickers/undercity-racecar.png";
 import Sticker from "../components/sticker.astro";
 ---
 
@@ -103,9 +104,12 @@ import Sticker from "../components/sticker.astro";
 
 
 		<div class="bg-linear-to-b from-[#C3E6F3]/80 to-[#ABC8F4]/80 p-5 py-24 flex flex-col justify-center">
-
 			<div class="flex flex-col justify-center items-center mb-12">
-				<div class="border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded">
+				<div class="relative border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded">
+					<div class="absolute -top-12 -left-8 rotate-12">
+						<Sticker src={undercity7Sticker} alt="" width={96} shadow />
+					</div>
+
 					<p class="text-3xl font-bold">how to join</p>
 				</div>
 			</div>
@@ -113,24 +117,40 @@ import Sticker from "../components/sticker.astro";
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-y-24 relative mx-auto lg:pb-24">
 
 				<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3 pop">
+					<div class="absolute top-2 -left-8 rotate-4">
+						<Sticker src={skateboardingSticker} alt="" width={96} shadow />
+					</div>
+
 					<img src="/postcard1.svg" class="w-full h-auto"/>
 					<p class="absolute top-8 px-6 text-xl text-center font-bold">1. submit your project!</p>
 					<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in [#channel]!</p>
 				</div>
 
 				<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-3 lg:translate-y-24 pop">
+					<div class="absolute -top-6 -right-8 rotate-4">
+						<Sticker src={moonpheusSticker} alt="" width={96} shadow />
+					</div>
+
 					<img src="/postcard2.svg" class="w-full h-auto"/>
 					<p class="absolute top-8 px-6 text-xl text-center font-bold">2. get reviewed!</p>
 					<p class="absolute top-30 px-8 text-center">@acon will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
 				</div>
 
 				<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-1 lg:-translate-y-12 pop">
+					<div class="absolute -top-2 -right-12 rotate-4">
+						<Sticker src={undercity6Sticker} alt="" width={96} shadow />
+					</div>
+
 					<img src="/postcard3.svg" class="w-full h-auto"/>
 					<p class="absolute top-8 px-6 text-xl text-center font-bold">3. design your page!</p>
 					<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
 				</div>
 
 				<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-2 lg:translate-y-16 pop">
+					<div class="absolute -bottom-6 left-24 rotate-2">
+						<Sticker src={raccoonSticker} alt="" width={96} shadow />
+					</div>
+
 					<img src="/postcard4.svg" class="w-full h-auto"/>
 					<p class="absolute top-8 px-6 text-xl text-center font-bold">4. receive feedback!</p>
 					<p class="absolute top-30 px-8 text-center">@acon and [reviewers] will comment in figma with feedback - update your page until it is approved for printing!</p>
@@ -141,7 +161,11 @@ import Sticker from "../components/sticker.astro";
 		</div>
 
 
-		<div class="flex flex-col justify-center items-center py-12 mt-12 mx-5">
+		<div class="flex flex-col justify-center relative items-center py-12 mt-12 mx-5">
+			<div class="absolute -top-24 left-1/2 -rotate-4 -translate-x-1/2">
+				<Sticker src={undercityCarSticker} alt="" width={196} shadow />
+			</div>
+
 			<p class="text-3xl font-bold">previous hack club magazines</p>
 
 			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
@@ -179,7 +203,7 @@ import Sticker from "../components/sticker.astro";
 		<div class="flex flex-col justify-center items-center py-12 mx-5">
 			<p class="text-3xl font-bold">frequently asked questions</p>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-9">
+			<div class="grid grid-cols-1 relative md:grid-cols-2 gap-8 mt-9">
 
 				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
 					<p class="text-xl font-bold">how can i get a copy of the magazine?</p>
@@ -200,13 +224,18 @@ import Sticker from "../components/sticker.astro";
 					<p class="text-xl font-bold">where can i ask more questions?</p>
 					<p class="mt-2">an online pdf will be put out for free! [you might also be able to purchase it on the flavourtown shop.] you could also get it by submitting a project that hasn't been double dipped to this ysws!</p>
 				</div>
+
+				
+				<div class="absolute -right-4 md:right-1/2 -mr-8 -bottom-8 rotate-6">
+					<Sticker src={undercity2Sticker} alt="" width={96} shadow />
+				</div>
 				
 			</div>
 		</div>
 
 
 
-		<div class="flex flex-col justify-center items-center my-8 mt-16 font-semibold">
+		<div class="flex flex-col relative justify-center items-center my-8 mt-16 font-semibold">
 			<div>
 				<p>made with :3 by acon (<a href="https://github.com/acornitum/magazine" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">repo</a>)</p>
 			</div>
@@ -218,6 +247,10 @@ import Sticker from "../components/sticker.astro";
 				<a href="https://hackclub.com/clubs/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">clubs</a>
 				<p>//</p>
 				<a href="https://hackclub.com/hackathons/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hackathons</a>
+			</div>
+
+			<div class="absolute -bottom-12 right-12 rotate-4">
+				<Sticker src={yippeeSticker} alt="" width={96} shadow />
 			</div>
 		</div>
 
