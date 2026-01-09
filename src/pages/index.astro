@@ -11,7 +11,7 @@ import pumpkinSticker from "../assets/stickers/ren-fuse-pumpkin.png";
 import zombieSticker from "../assets/stickers/ren-fuse-zombie.png";
 import moonpheusSticker from "../assets/stickers/ren-moonshot-moonpheus.png";
 import astronautSticker from "../assets/stickers/ren-moonshot-orph.png";
-import raccoonSticker from "../assets/stickers/ren-haxmas-raccoon.png";
+import haxmasSticker from "../assets/stickers/ren-haxmas-raccoon.png";
 import undercity1Sticker from "../assets/stickers/bunnyguy-undercity-1.png";
 import undercity2Sticker from "../assets/stickers/bunnyguy-undercity-2.png";
 import undercity3Sticker from "../assets/stickers/bunnyguy-undercity-3.png";
@@ -40,7 +40,7 @@ import Sticker from "../components/sticker.astro";
 
 		<a href="https://hackclub.com/"><img style="position: absolute; left: 0px; border: 0; z-index: 999;" class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>
 
-		<div class="min-h-screen flex flex-col items-center justify-center">
+		<div class="min-h-screen overflow-x-clip flex flex-col items-center justify-center">
 
 			<div class="relative flex justify-center items-center w-full md:w-auto max-w-3xl mt-12">
 				<img src="/titleback.png" class="max-w-3xl h-auto overflow-hidden"/>
@@ -54,7 +54,7 @@ import Sticker from "../components/sticker.astro";
 					<img src="/titlebottom.png" class="-rotate-6 max-w-30 md:max-w-36"/>
 				</div>
 
-				<div class="absolute -top-8 -right-20 z-10">
+				<div class="absolute -top-12 right-0 z-10">
 					<Sticker src={bobaSticker} alt="" width={96} class="rotate-2" />
 				</div>
 			</div>
@@ -74,8 +74,11 @@ import Sticker from "../components/sticker.astro";
 
 			<div class="relative w-full">
 				<div class="translate-y-24 w-full overflow-x-clip"><Examples /></div>
-				<div class="absolute z-10 top-6 left-1/2 -translate-x-full">
+				<div class="absolute z-10 -top-12 left-1/3 translate-y-24 -translate-x-full">
 					<Sticker src={astronautSticker} alt="" width={128} shadow />
+				</div>
+				<div class="absolute z-10 -bottom-4 right-1/3 translate-y-24 translate-x-full">
+					<Sticker src={undercityFlagSticker} alt="" width={144} shadow class="-rotate-1" />
 				</div>
 			</div>
 
@@ -135,7 +138,7 @@ import Sticker from "../components/sticker.astro";
 						<p class="absolute top-30 px-8 text-center">@acon will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
 					</div>
 
-					<div class="absolute -top-6 -right-8 z-10">
+					<div class="absolute -top-6 -right-4 lg:-right-8 z-10">
 						<Sticker src={moonpheusSticker} alt="" width={96} shadow class="rotate-4" />
 					</div>
 				</div>
@@ -147,7 +150,7 @@ import Sticker from "../components/sticker.astro";
 						<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
 					</div>
 					
-					<div class="absolute -top-2 -right-12 z-10">
+					<div class="absolute -top-2 -right-4 lg:-right-12 z-10">
 						<Sticker src={undercity6Sticker} alt="" width={96} shadow class="-rotate-1" />
 					</div>
 				</div>
@@ -159,8 +162,8 @@ import Sticker from "../components/sticker.astro";
 						<p class="absolute top-30 px-8 text-center">@acon and [reviewers] will comment in figma with feedback - update your page until it is approved for printing!</p>
 					</div>
 
-					<div class="absolute -bottom-6 left-24 z-10">
-						<Sticker src={raccoonSticker} alt="" width={96} shadow class="rotate-4" />
+					<div class="absolute max-sm:hidden -bottom-6 left-24 z-10">
+						<Sticker src={haxmasSticker} alt="" width={96} shadow class="rotate-4" />
 					</div>
 				</div>
 
@@ -234,7 +237,7 @@ import Sticker from "../components/sticker.astro";
 				</div>
 
 				
-				<div class="absolute -right-4 md:right-1/2 -mr-8 -bottom-8 z-10">
+				<div class="absolute max-md:hidden right-1/2 -mr-8 -bottom-8 z-10">
 					<Sticker src={undercity2Sticker} alt="" width={96} shadow class="rotate-2" />
 				</div>
 				
@@ -244,6 +247,10 @@ import Sticker from "../components/sticker.astro";
 
 
 		<div class="flex flex-col relative justify-center items-center my-8 mt-16 font-semibold">
+			<div class="mb-4">
+				<Sticker src={yippeeSticker} alt="" width={96} shadow class="rotate-4" />
+			</div>
+
 			<div>
 				<p>made with :3 by acon (<a href="https://github.com/acornitum/magazine" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">repo</a>)</p>
 			</div>
@@ -255,10 +262,6 @@ import Sticker from "../components/sticker.astro";
 				<a href="https://hackclub.com/clubs/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">clubs</a>
 				<p>//</p>
 				<a href="https://hackclub.com/hackathons/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hackathons</a>
-			</div>
-
-			<div class="absolute -bottom-12 right-12 z-10">
-				<Sticker src={yippeeSticker} alt="" width={96} shadow class="rotate-4" />
 			</div>
 		</div>
 
