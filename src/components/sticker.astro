@@ -7,10 +7,45 @@ interface Props {
   alt: string;
   width: number;
   shadow?: boolean;
+  class?: string;
 }
-const { src, alt, width, shadow } = Astro.props;
+const { src, alt, width, shadow, class: className } = Astro.props;
 ---
 
-<div>
-	<Image src={src} alt={alt} width={width} class={`${shadow && "drop-shadow-sticker"}`} />
+<div class="touch-none" data-sticker>
+	<Image src={src} alt={alt} width={width} class:list={[
+    className,
+    shadow && "drop-shadow-sticker",
+    "transition hover:scale-110 active:scale-100 active:opacity-75"
+  ]} draggable={false} />
 </div>
+
+<script>
+  const stickers = document.querySelectorAll<HTMLDivElement>('[data-sticker]');
+
+  for (const sticker of stickers) {
+    sticker.addEventListener("mousedown", (event) => {
+      event.preventDefault();
+      sticker.dataset.dragging = "true";
+    });
+    document.addEventListener("mouseup", () => {
+      delete sticker.dataset.dragging;
+    });
+    document.addEventListener("mousemove", (event) => {
+      if (sticker.dataset.dragging === "true") {
+        if(sticker.dataset.x === undefined || sticker.dataset.y === undefined) {
+          sticker.dataset.x = "0";
+          sticker.dataset.y = "0";
+        } else {
+          const dx = event.movementX;
+          const dy = event.movementY;
+          const x = parseFloat(sticker.dataset.x) + dx;
+          const y = parseFloat(sticker.dataset.y) + dy;
+          sticker.style.transform = `translate(${x}px, ${y}px)`;
+          sticker.dataset.x = x.toString();
+          sticker.dataset.y = y.toString();
+        }
+      }
+    });
+  }
+</script>

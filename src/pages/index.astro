@@ -54,8 +54,8 @@ import Sticker from "../components/sticker.astro";
 					<img src="/titlebottom.png" class="-rotate-6 max-w-30 md:max-w-36"/>
 				</div>
 
-				<div class="absolute -top-8 -right-20 rotate-2">
-					<Sticker src={bobaSticker} alt="" width={96} />
+				<div class="absolute -top-8 -right-20 z-10">
+					<Sticker src={bobaSticker} alt="" width={96} class="rotate-2" />
 				</div>
 			</div>
 
@@ -64,17 +64,17 @@ import Sticker from "../components/sticker.astro";
 				<p>this january: make a page for your project,</p>
 				<p>get it in the hack club 2025 magazine!</p>
 
-				<div class="absolute -top-14 -left-10 -rotate-6">
-					<Sticker src={undercity8Sticker} alt="" width={128} shadow />
+				<div class="absolute z-10 -top-14 -left-10">
+					<Sticker src={undercity8Sticker} alt="" width={128} shadow class="-rotate-6" />
 				</div>
-				<div class="absolute -bottom-16 -right-12 rotate-4">
-					<Sticker src={pumpkinSticker} alt="" width={96} shadow />
+				<div class="absolute z-10 -bottom-16 -right-12">
+					<Sticker src={pumpkinSticker} alt="" width={96} shadow class="rotate-4" />
 				</div>
 			</div>
 
 			<div class="relative w-full">
 				<div class="translate-y-24 w-full overflow-x-clip"><Examples /></div>
-				<div class="absolute top-6 left-1/2 -translate-x-full">
+				<div class="absolute z-10 top-6 left-1/2 -translate-x-full">
 					<Sticker src={astronautSticker} alt="" width={128} shadow />
 				</div>
 			</div>
@@ -106,8 +106,8 @@ import Sticker from "../components/sticker.astro";
 		<div class="bg-linear-to-b from-[#C3E6F3]/80 to-[#ABC8F4]/80 p-5 py-24 flex flex-col justify-center">
 			<div class="flex flex-col justify-center items-center mb-12">
 				<div class="relative border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded">
-					<div class="absolute -top-12 -left-8 rotate-12">
-						<Sticker src={undercity7Sticker} alt="" width={96} shadow />
+					<div class="absolute -top-12 -left-8 z-10">
+						<Sticker src={undercity7Sticker} alt="" width={96} shadow class="rotate-12" />
 					</div>
 
 					<p class="text-3xl font-bold">how to join</p>
@@ -116,44 +116,52 @@ import Sticker from "../components/sticker.astro";
 
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-y-24 relative mx-auto lg:pb-24">
 
-				<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3 pop">
-					<div class="absolute top-2 -left-8 rotate-4">
-						<Sticker src={skateboardingSticker} alt="" width={96} shadow />
+				<div class="relative w-full max-w-md">
+					<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3 pop">
+						<img src="/postcard1.svg" class="w-full h-auto"/>
+						<p class="absolute top-8 px-6 text-xl text-center font-bold">1. submit your project!</p>
+						<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in [#channel]!</p>
 					</div>
 
-					<img src="/postcard1.svg" class="w-full h-auto"/>
-					<p class="absolute top-8 px-6 text-xl text-center font-bold">1. submit your project!</p>
-					<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in [#channel]!</p>
+					<div class="absolute top-2 -left-8 z-10">
+						<Sticker src={skateboardingSticker} alt="" width={96} shadow class="rotate-4" />
+					</div>
 				</div>
 
-				<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-3 lg:translate-y-24 pop">
-					<div class="absolute -top-6 -right-8 rotate-4">
-						<Sticker src={moonpheusSticker} alt="" width={96} shadow />
+				<div class="relative w-full max-w-md lg:translate-y-24">
+					<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-3  pop">
+						<img src="/postcard2.svg" class="w-full h-auto"/>
+						<p class="absolute top-8 px-6 text-xl text-center font-bold">2. get reviewed!</p>
+						<p class="absolute top-30 px-8 text-center">@acon will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
 					</div>
 
-					<img src="/postcard2.svg" class="w-full h-auto"/>
-					<p class="absolute top-8 px-6 text-xl text-center font-bold">2. get reviewed!</p>
-					<p class="absolute top-30 px-8 text-center">@acon will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
+					<div class="absolute -top-6 -right-8 z-10">
+						<Sticker src={moonpheusSticker} alt="" width={96} shadow class="rotate-4" />
+					</div>
 				</div>
 
-				<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-1 lg:-translate-y-12 pop">
-					<div class="absolute -top-2 -right-12 rotate-4">
-						<Sticker src={undercity6Sticker} alt="" width={96} shadow />
+				<div class="relative w-full max-w-md lg:-translate-y-12">
+					<div class="relative flex justify-center shadow-xs -rotate-1  pop">
+						<img src="/postcard3.svg" class="w-full h-auto"/>
+						<p class="absolute top-8 px-6 text-xl text-center font-bold">3. design your page!</p>
+						<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
 					</div>
-
-					<img src="/postcard3.svg" class="w-full h-auto"/>
-					<p class="absolute top-8 px-6 text-xl text-center font-bold">3. design your page!</p>
-					<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
+					
+					<div class="absolute -top-2 -right-12 z-10">
+						<Sticker src={undercity6Sticker} alt="" width={96} shadow class="-rotate-1" />
+					</div>
 				</div>
 
-				<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-2 lg:translate-y-16 pop">
-					<div class="absolute -bottom-6 left-24 rotate-2">
-						<Sticker src={raccoonSticker} alt="" width={96} shadow />
+				<div class="relative w-full max-w-md lg:translate-y-16">
+					<div class="relative flex justify-center shadow-xs rotate-2  pop">
+						<img src="/postcard4.svg" class="w-full h-auto"/>
+						<p class="absolute top-8 px-6 text-xl text-center font-bold">4. receive feedback!</p>
+						<p class="absolute top-30 px-8 text-center">@acon and [reviewers] will comment in figma with feedback - update your page until it is approved for printing!</p>
 					</div>
 
-					<img src="/postcard4.svg" class="w-full h-auto"/>
-					<p class="absolute top-8 px-6 text-xl text-center font-bold">4. receive feedback!</p>
-					<p class="absolute top-30 px-8 text-center">@acon and [reviewers] will comment in figma with feedback - update your page until it is approved for printing!</p>
+					<div class="absolute -bottom-6 left-24 z-10">
+						<Sticker src={raccoonSticker} alt="" width={96} shadow class="rotate-4" />
+					</div>
 				</div>
 
 			</div>
@@ -162,8 +170,8 @@ import Sticker from "../components/sticker.astro";
 
 
 		<div class="flex flex-col justify-center relative items-center py-12 mt-12 mx-5">
-			<div class="absolute -top-24 left-1/2 -rotate-4 -translate-x-1/2">
-				<Sticker src={undercityCarSticker} alt="" width={196} shadow />
+			<div class="absolute -top-24 left-1/2 -translate-x-1/2 z-10">
+				<Sticker src={undercityCarSticker} alt="" width={196} shadow class="-rotate-4" />
 			</div>
 
 			<p class="text-3xl font-bold">previous hack club magazines</p>
@@ -226,8 +234,8 @@ import Sticker from "../components/sticker.astro";
 				</div>
 
 				
-				<div class="absolute -right-4 md:right-1/2 -mr-8 -bottom-8 rotate-6">
-					<Sticker src={undercity2Sticker} alt="" width={96} shadow />
+				<div class="absolute -right-4 md:right-1/2 -mr-8 -bottom-8 z-10">
+					<Sticker src={undercity2Sticker} alt="" width={96} shadow class="rotate-2" />
 				</div>
 				
 			</div>
@@ -249,8 +257,8 @@ import Sticker from "../components/sticker.astro";
 				<a href="https://hackclub.com/hackathons/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hackathons</a>
 			</div>
 
-			<div class="absolute -bottom-12 right-12 rotate-4">
-				<Sticker src={yippeeSticker} alt="" width={96} shadow />
+			<div class="absolute -bottom-12 right-12 z-10">
+				<Sticker src={yippeeSticker} alt="" width={96} shadow class="rotate-4" />
 			</div>
 		</div>
 
