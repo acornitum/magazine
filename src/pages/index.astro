@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Examples from "../components/examples.astro";
+import Pastmagazines from "../components/pastmagazines.astro";
 
 import { Image } from "astro:assets";
 import titleRaccoon from "../assets/title-raccoon.png";
@@ -173,41 +174,14 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 		</div>
 
 
-		<div class="flex flex-col justify-center relative items-center py-12 mt-12 mx-5">
-			<div class="absolute -top-24 left-1/2 -translate-x-1/2 z-10">
-				<Sticker src={undercityCarSticker} alt="" width={196} shadow class="-rotate-4" />
+		<div class="flex flex-col py-12 mt-12">
+			<div class="flex flex-col justify-center items-center">
+				<p class="text-3xl font-bold ">previous hack club magazines</p>
+				<p class="max-w-xl mt-2 text-center">featuring: highway magazine (by acon + everyone who designed their own page) and juice magazine (by kai ling + tongyu + juicers)</p>
 			</div>
 
-			<p class="text-3xl font-bold">previous hack club magazines</p>
-
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-
-
-				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-					<div class="grid grid-cols-2 gap-6">
-						<img src="/mag1.png"/>
-						<div class="grid gap-6">
-							<p>Highway Magazine</p>
-							<img src="/mag2.png" class="mt-auto"/>
-						</div>
-					</div>
-				</div>
-
-				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-					<div class="grid grid-cols-2 gap-6">
-						<img src="/mag1.png"/>
-						<div class="grid gap-6">
-							<p>Highway Magazine</p>
-							<img src="/mag2.png" class="mt-auto"/>
-						</div>
-					</div>
-				</div>
-
-
-
-
-
-			</div>
+			<div class="w-full overflow-x-clip"><Pastmagazines /></div>
+			
 
 			
 		</div>

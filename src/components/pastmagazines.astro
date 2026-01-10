@@ -1,12 +1,12 @@
 ---
 const imageNames = [
   "1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png",
-  "10.png","11.png","12.png","13.png","14.png","15.png","16.png","17.png","18.png",
+  "10.png","11.png",
 ];
-const images = imageNames.map(name => `/examples/${name}`);
+const images = imageNames.map(name => `/pastmagazines/mag${name}`);
 ---
-<div id="carousel-hero" class="carousel rotate-2 my-8 w-full">
-  <div class="carousel-inner group flex justify-end">
+<div id="carousel-magazines" class="my-8 w-full carousel">
+  <div class="carousel-inner group flex justify-start">
     {Array.from({ length: 3 }).map(() => (
       <div class="track flex flex-none">
         {images.map((src, i) => <img src={src} alt="" class="carousel-img ml-4 transition duration-300 group-has-hover:not-hover:opacity-75 hover:scale-105"/>)}
@@ -17,18 +17,18 @@ const images = imageNames.map(name => `/examples/${name}`);
 
 <script>
 
-const container = document.getElementById('carousel-hero')!;
+const container = document.getElementById('carousel-magazines')!;
 const inner = container.querySelector<HTMLElement>('.carousel-inner')!;
 const firstTrack = inner.querySelector<HTMLElement>('.track')!;
 
-const speed = 0.5;
+const speed = -0.5;
 
 let scroll = 0;
 let requestId: number;
 
 function loop() {
   scroll += speed;
-  if (scroll >= firstTrack.scrollWidth) scroll = 0;
+  if (Math.abs(scroll) >= firstTrack.scrollWidth) scroll = 0;
   inner.style.translate = `${scroll}px 0`;
 
   requestId = requestAnimationFrame(loop);
@@ -47,8 +47,7 @@ container.addEventListener('mouseleave', () => loop());
 .carousel-img {
   pointer-events: auto;
   flex-shrink: 0;
-  height: 200px;
-  aspect-ratio: 210 / 297; /* A4 */
+  height: 400px;
   object-fit: cover;
   border-radius: 0.1rem;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
