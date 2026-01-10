@@ -1,7 +1,7 @@
 ---
 import "../styles/global.css";
 import Examples from "../components/examples.astro";
-import Examples2 from "../components/examples2.astro";
+import Pastmagazines from "../components/pastmagazines.astro";
 ---
 
 <html lang="en">
@@ -104,37 +104,14 @@ import Examples2 from "../components/examples2.astro";
 		</div>
 
 
-		<div class="flex flex-col justify-center items-center py-12 mt-12 mx-5">
-			<p class="text-3xl font-bold">previous hack club magazines</p>
-
-			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
-
-
-				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-					<div class="grid grid-cols-2 gap-6">
-						<img src="/mag1.png"/>
-						<div class="grid gap-6">
-							<p>Highway Magazine</p>
-							<img src="/mag2.png" class="mt-auto"/>
-						</div>
-					</div>
-				</div>
-
-				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-					<div class="grid grid-cols-2 gap-6">
-						<img src="/mag1.png"/>
-						<div class="grid gap-6">
-							<p>Highway Magazine</p>
-							<img src="/mag2.png" class="mt-auto"/>
-						</div>
-					</div>
-				</div>
-
-
-
-
-
+		<div class="flex flex-col py-12 mt-12">
+			<div class="flex flex-col justify-center items-center">
+				<p class="text-3xl font-bold ">previous hack club magazines</p>
+				<p class="max-w-xl mt-2 text-center">featuring: highway magazine (by acon + everyone who designed their own page) and juice magazine (by kai ling + tongyu + juicers)</p>
 			</div>
+
+			<div class="w-full overflow-x-clip"><Pastmagazines /></div>
+			
 
 			
 		</div>

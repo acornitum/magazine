@@ -1,0 +1,55 @@
+---
+const imageNames = [
+  "1.png","2.png","3.png","4.png","5.png","6.png","7.png","8.png","9.png",
+  "10.png","11.png",
+];
+const images = imageNames.map(name => `/pastmagazines/mag${name}`);
+---
+<div id="carousel" class="my-8 w-full">
+  <div id="carousel-inner" class="group flex justify-end">
+    {Array.from({ length: 3 }).map(() => (
+      <div class="track flex flex-none">
+        {images.map((src, i) => <img src={src} alt="" class="carousel-img ml-4 transition duration-300 group-has-hover:not-hover:opacity-75 hover:scale-105"/>)}
+      </div>
+    ))}
+  </div>
+</div>
+
+<script>
+
+const container = document.getElementById('carousel')!;
+const inner = document.getElementById('carousel-inner')!;
+const firstTrack = inner.querySelector('#carousel .track')!;
+
+const speed = 0.5;
+
+let scroll = 0;
+let requestId: number;
+
+function loop() {
+  scroll += speed;
+  if (scroll >= firstTrack.scrollWidth) scroll = 0;
+  inner.style.translate = `${scroll}px 0`;
+
+  requestId = requestAnimationFrame(loop);
+}
+loop();
+
+container.addEventListener('mouseenter', () => cancelAnimationFrame(requestId));
+container.addEventListener('mouseleave', () => loop());
+
+</script>
+
+<style>
+#carousel {
+  pointer-events: none;
+}
+.carousel-img {
+  pointer-events: auto;
+  flex-shrink: 0;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0.1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+</style>
