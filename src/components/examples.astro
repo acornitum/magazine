@@ -5,8 +5,8 @@ const imageNames = [
 ];
 const images = imageNames.map(name => `/examples/${name}`);
 ---
-<div id="carousel" class="rotate-2 my-8 w-full">
-  <div id="carousel-inner" class="group flex justify-end">
+<div id="carousel-hero" class="carousel rotate-2 my-8 w-full">
+  <div class="carousel-inner group flex justify-end">
     {Array.from({ length: 3 }).map(() => (
       <div class="track flex flex-none">
         {images.map((src, i) => <img src={src} alt="" class="carousel-img ml-4 transition duration-300 group-has-hover:not-hover:opacity-75 hover:scale-105"/>)}
@@ -17,9 +17,9 @@ const images = imageNames.map(name => `/examples/${name}`);
 
 <script>
 
-const container = document.getElementById('carousel')!;
-const inner = document.getElementById('carousel-inner')!;
-const firstTrack = inner.querySelector('#carousel .track')!;
+const container = document.getElementById('carousel-hero')!;
+const inner = container.querySelector<HTMLElement>('.carousel-inner')!;
+const firstTrack = inner.querySelector<HTMLElement>('.track')!;
 
 const speed = 0.5;
 
@@ -41,7 +41,7 @@ container.addEventListener('mouseleave', () => loop());
 </script>
 
 <style>
-#carousel {
+.carousel {
   pointer-events: none;
 }
 .carousel-img {
