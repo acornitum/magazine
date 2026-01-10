@@ -2,28 +2,30 @@
 import "../styles/global.css";
 import Examples from "../components/examples.astro";
 
-import { Image } from "astro:assets"
-import bobaSticker from "../assets/stickers/orpheus-having-boba.png";
-import skateboardingSticker from "../assets/stickers/orpheus-skateboarding-pcb.png";
-import yippeeSticker from "../assets/stickers/orphmoji-yippee.png";
-import carabinerSticker from "../assets/stickers/ren-fuse-carabiner.png";
-import pumpkinSticker from "../assets/stickers/ren-fuse-pumpkin.png";
-import zombieSticker from "../assets/stickers/ren-fuse-zombie.png";
-import moonpheusSticker from "../assets/stickers/ren-moonshot-moonpheus.png";
-import astronautSticker from "../assets/stickers/ren-moonshot-orph.png";
-import haxmasSticker from "../assets/stickers/ren-haxmas-raccoon.png";
-import undercity1Sticker from "../assets/stickers/bunnyguy-undercity-1.png";
-import undercity2Sticker from "../assets/stickers/bunnyguy-undercity-2.png";
-import undercity3Sticker from "../assets/stickers/bunnyguy-undercity-3.png";
-import undercity4Sticker from "../assets/stickers/bunnyguy-undercity-4.png";
-import undercity5Sticker from "../assets/stickers/bunnyguy-undercity-5.png";
-import undercity6Sticker from "../assets/stickers/bunnyguy-undercity-6.png";
-import undercity7Sticker from "../assets/stickers/bunnyguy-undercity-7.png";
-import undercity8Sticker from "../assets/stickers/bunnyguy-undercity-8.png";
-import undercity9Sticker from "../assets/stickers/bunnyguy-undercity-9.png";
-import undercityFlagSticker from "../assets/stickers/bunnyguy-undercity-flag.png";
-import undercityCarSticker from "../assets/stickers/undercity-racecar.png";
+import { Image } from "astro:assets";
+import titleRaccoon from "../assets/title-raccoon.png";
+
 import Sticker from "../components/sticker.astro";
+import bobaSticker from "../assets/stickers/classic/orpheus-boba.png";
+import skateboardingSticker from "../assets/stickers/classic/orpheus-skateboarding.png";
+import yippeeSticker from "../assets/stickers/classic/orphmoji-yippee.png";
+import carabinerSticker from "../assets/stickers/ren/fuse-carabiner.png";
+import pumpkinSticker from "../assets/stickers/ren/fuse-pumpkin.png";
+import zombieSticker from "../assets/stickers/ren/fuse-zombie.png";
+import moonpheusSticker from "../assets/stickers/ren/moonshot-moonpheus.png";
+import astronautSticker from "../assets/stickers/ren/moonshot-orph.png";
+import haxmasSticker from "../assets/stickers/ren/haxmas-raccoon.png";
+import undercity1Sticker from "../assets/stickers/undercity/undercity-1.png";
+import undercity2Sticker from "../assets/stickers/undercity/undercity-2.png";
+import undercity3Sticker from "../assets/stickers/undercity/undercity-3.png";
+import undercity4Sticker from "../assets/stickers/undercity/undercity-4.png";
+import undercity5Sticker from "../assets/stickers/undercity/undercity-5.png";
+import undercity6Sticker from "../assets/stickers/undercity/undercity-6.png";
+import undercity7Sticker from "../assets/stickers/undercity/undercity-7.png";
+import undercity8Sticker from "../assets/stickers/undercity/undercity-8.png";
+import undercity9Sticker from "../assets/stickers/undercity/undercity-9.png";
+import undercityFlagSticker from "../assets/stickers/undercity/undercity-flag.png";
+import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.png";
 ---
 
 <html lang="en">
@@ -61,12 +63,11 @@ import Sticker from "../components/sticker.astro";
 
 			<div class="flex flex-col justify-center relative  w-full max-w-lg items-center text-center text-lg md:text-xl font-bold mt-20">
 				<img src="/titledesc.png" class="inset-x-0 absolute -z-10 opacity-70"/>
+				<Image src={titleRaccoon} alt="" width={128} class="absolute left-1/2 -translate-x-1/2 -top-17 max-sm:hidden" />
+
 				<p>this january: make a page for your project,</p>
 				<p>get it in the hack club 2025 magazine!</p>
 
-				<div class="absolute z-10 -top-14 -left-10">
-					<Sticker src={undercity8Sticker} alt="" width={128} shadow class="-rotate-6" />
-				</div>
 				<div class="absolute z-10 -bottom-16 -right-12">
 					<Sticker src={pumpkinSticker} alt="" width={96} shadow class="rotate-4" />
 				</div>
