@@ -73,12 +73,19 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 
 		<img src="/topbar.svg" class="w-full"/>
 
-		<a href="https://hackclub.com/"><img style="position: absolute; left: 0px; border: 0; z-index: 999;" class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>
+		<a href="https://hackclub.com/">
+			<img
+				src="https://assets.hackclub.com/flag-orpheus-left.svg"
+				alt="Hack Club"
+				style="position: absolute; left: 0px; border: 0; z-index: 999;"
+				class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition"
+			/>
+		</a>
 
-		<div class="absolute right-4 top-6 md:right-12 md:top-16">
-			<a href="/start"><div class="bg-[#84F7E8] px-6 py-2 rounded hover:scale-105 transition">
+		<div class="absolute z-10 right-4 top-6 md:right-12 md:top-16">
+			<a href="/start" class="block bg-[#84F7E8] px-6 py-2 rounded hover:scale-105 transition">
 				<p class="font-semibold text-xl opacity-90">get started</p>
-			</div></a>
+			</a>
 		</div>
 
 		<div class="min-h-screen relative overflow-x-clip flex flex-col items-center justify-center">
@@ -114,14 +121,11 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 				</div>
 			</div>
 
-			<div class="absolute top-12 -right-4 z-10">
+			<div class="absolute top-24 -right-4 z-10">
 				<Sticker src={progressSticker} alt="" width={128} shadow class="-rotate-6 max-md:w-24!" />
 			</div>
-			<div class="absolute max-md:hidden top-34 -right-2 z-10">
-				<Sticker src={enjoySticker} alt="" width={196} shadow class="rotate-2" />
-			</div>
-			<div class="absolute max-md:hidden top-52 -right-2 z-10">
-				<Sticker src={bobaSticker} alt="" width={96} shadow class="-rotate-12" />
+			<div class="absolute max-md:hidden top-48 -right-2 z-10">
+				<Sticker src={enjoySticker} alt="" width={144} shadow class="rotate-2" />
 			</div>
 
 			<div class="absolute max-md:hidden top-112 -right-4 z-10">
@@ -136,6 +140,9 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 			</div>
 			<div class="absolute max-md:hidden top-108 -left-2 z-10">
 				<Sticker src={burstSticker} alt="" width={144} shadow />
+			</div>
+			<div class="absolute max-md:hidden top-60 left-2 z-10">
+				<Sticker src={bobaSticker} alt="" width={96} shadow class="rotate-6" />
 			</div>
 		</div>
 
