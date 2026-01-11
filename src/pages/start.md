@@ -2,7 +2,7 @@
 
 welcome! heres the guide :D
 
-feel free to ask in #magazine at any point if you have questions!
+feel free to ask in [#magazine](https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR) at any point if you have questions!
 
 ### step 0: project requirements
 
@@ -29,7 +29,7 @@ additionally:
 
 try to do this as soon as possible!
 
-make a post in #magazine with:
+make a post in [#magazine](https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR) with:
 
 - project name
 - project description
@@ -37,15 +37,16 @@ make a post in #magazine with:
 - demo link
 - screenshots (if software) / irl pictures (if hardware)
 - what program/hackathon it was originally made for (if applicable)
+- approx how long you spent on it!
 
-you are free to request a number of pages; however it will be highly dependent on project quality / design. generally:
+you are free to request a number of pages; however it will be highly dependent on project quality / design / polish. generally:
 
-- simple projects (ie: solder pcb) - 1/4th page (typically 5-10h projects)
-- mid projects (ie: hackpad) - 1/2th page (typically ~20h projects)
-- complex projects (ie: ) - 1 page (typically 25h+ projects)
-- advanced projects (ie: icepi sbc) - 2 pages (very technical projects, but project design is also considered)
+- simple projects (ie: hackpad) - 1/4th page (typically 5-10h)
+- mid sized projects (ie: keyboard, rp2040 devboard) - 1/2th page (typically ~20h)
+- large projects (ie: polished game that took 50+ hours) - 1 page (typically 30h+)
+- advanced projects (ie: [icepi sbc](https://github.com/cheyao/icepi-sbc), cnc mill) - 2 pages (very technical projects, but project design is also considered)
 
-on average, most projects will probably be assigned the mid projects tier.
+on average, most projects will probably be assigned the mid projects tier. projects will be given more or less space depending on their polish, and the author's ability to design a magazine page.
 
 if you have multiple projects, please ship them all in the same post - you will be able to give you a multiple attached pages for you to design with if so!
 
