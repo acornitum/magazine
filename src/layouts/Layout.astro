@@ -1,4 +1,6 @@
 ---
+import { Font } from 'astro:assets';
+
 interface Props {
   title?: string;
 }
@@ -12,6 +14,8 @@ const { title } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}</title>
+
+    <Font cssVariable="--font-jua" />
 	</head>
 	<body>
     <slot />

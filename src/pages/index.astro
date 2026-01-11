@@ -52,7 +52,7 @@ import Layout from "../layouts/Layout.astro";
 
    <a href="https://hackclub.com/"><img style="position: absolute; left: 0px; border: 0; z-index: 999;" class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>
 
-	<a href="/start" class="absolute z-10 right-4 top-6 md:right-12 md:top-16 h-10 px-4 flex items-center bg-stripes text-white text-lg font-bold transition hover:scale-105 active:scale-100">
+	<a href="/start" class="absolute z-10 right-4 top-6 md:right-12 md:top-16 h-10 px-4 flex items-center bg-stripes text-white text-lg font-jua transition hover:scale-105 active:scale-100">
 		get started!
 	</a>
 
@@ -71,7 +71,7 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 		</div>
 
-		<div class="flex flex-col justify-center relative  w-full max-w-lg items-center text-center text-lg md:text-xl font-bold mt-20">
+		<div class="flex flex-col justify-center relative  w-full max-w-lg items-center text-center font-jua text-lg md:text-xl mt-20">
 			<img src="/titledesc.png" class="inset-x-0 absolute -z-10 opacity-70"/>
 			<Image src={titleRaccoon} alt="" width={128} class="absolute left-1/2 -translate-x-1/2 -top-17 max-sm:hidden" />
 
@@ -133,7 +133,7 @@ import Layout from "../layouts/Layout.astro";
 	<div class="relative overflow-x-clip bg-linear-to-b from-[#C3E6F3]/80 to-[#ABC8F4]/80 p-5 py-24 flex flex-col justify-center">
 		<div class="flex flex-col justify-center items-center mb-12">
 			<div class="border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded relative">
-				<p class="text-3xl font-bold">how this works:</p>
+				<p class="text-3xl font-jua">how this works:</p>
 				<img src="/magazinestar.svg" class="absolute -top-8 -right-8 w-24 opacity-90"/>
 			</div>
 		</div>
@@ -141,14 +141,14 @@ import Layout from "../layouts/Layout.astro";
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-y-24 relative mx-auto lg:pb-24">
 			<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3 pop">
 				<img src="/postcard1.svg" class="w-full h-auto"/>
-				<p class="absolute top-8 px-6 text-xl text-center font-bold">1. submit your project!</p>
+				<p class="absolute top-8 px-6 text-xl text-center font-jua">1. submit your project!</p>
 				<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in <a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="underline hover:decoration-wavy">#magazine</a> on the hack club slack!</p>
 			</div>
 
 			<div class="relative w-full max-w-md lg:translate-y-24">
 				<div class="relative flex justify-center shadow-xs rotate-3 pop">
 					<img src="/postcard2.svg" class="w-full h-auto"/>
-					<p class="absolute top-8 px-6 text-xl text-center font-bold">2. get reviewed!</p>
+					<p class="absolute top-8 px-6 text-xl text-center font-jua">2. get reviewed!</p>
 					<p class="absolute top-30 px-8 text-center">an organizer will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
 				</div>
 				<div class="absolute -rotate-3 -bottom-4 -right-2 z-10">
@@ -159,9 +159,9 @@ import Layout from "../layouts/Layout.astro";
 			<div class="relative w-full max-w-md lg:-translate-y-12">
 				<div class="relative flex justify-center shadow-xs -rotate-1 pop">
 					<img src="/postcard3.svg" class="w-full h-auto"/>
-					<p class="absolute top-8 px-6 text-xl text-center font-bold">3. design your page!</p>
+					<p class="absolute top-8 px-6 text-xl text-center font-jua">3. design your page!</p>
 					<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
-					<p class="absolute bottom-4 right-6 text-[#C2D426] text-2xl font-bold"><i>first draft due jan 19</i></p>
+					<p class="absolute bottom-4 right-6 text-[#C2D426] text-2xl font-jua"><i>first draft due jan 19</i></p>
 				</div>
 				<div class="absolute -rotate-3 -bottom-6 -left-3 z-10">
 					<Sticker src={haxmasSticker} alt="" width={128} shadow class="rotate-4" />
@@ -170,14 +170,15 @@ import Layout from "../layouts/Layout.astro";
 
 			<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-2 lg:translate-y-16 pop">
 				<img src="/postcard4.svg" class="w-full h-auto"/>
-				<p class="absolute top-8 px-6 text-xl text-center font-bold">4. receive feedback!</p>
+				<p class="absolute top-8 px-6 text-xl text-center font-jua">4. receive feedback!</p>
 				<p class="absolute top-30 px-8 text-center">organizers will comment in figma with feedback - continuously update your page until it is approved for printing!</p>
-				<p class="absolute bottom-4 right-6 text-[#38CEB9] text-2xl font-bold"><i>final page due jan 26</i></p>
+				<p class="absolute bottom-4 right-6 text-[#38CEB9] text-2xl font-jua"><i>final page due jan 26</i></p>
 			</div>
 		</div>
 
 		<div class="flex flex-col justify-center items-center mt-8 md:mt-4">
-			<a href="/start" class="h-14 px-6 flex items-center bg-stripes text-white text-xl font-bold transition hover:scale-105 active:scale-100">
+			<a href="/start" class="h-14 px-6 flex items-center bg-stripes text-white text-2xl font-jua transition hover:scale-105 active:scale-100">
+				<span class="size-5 mr-2 grid place-items-center bg-white text-[#5e6fe5] rounded-full text-sm">A</span>
 				get started!
 			</a>
 		</div>
@@ -220,7 +221,7 @@ import Layout from "../layouts/Layout.astro";
 
 	<div class="flex flex-col py-12 mt-12">
 		<div class="flex flex-col justify-center items-center">
-			<p class="text-3xl font-bold ">previous hack club magazines</p>
+			<p class="text-3xl font-jua">previous hack club magazines</p>
 			<p class="max-w-xl mt-2 text-center">featuring: highway magazine (by acon + everyone who designed their own page) and juice magazine (by kai ling + tongyu + juicers)</p>
 		</div>
 
@@ -237,26 +238,26 @@ import Layout from "../layouts/Layout.astro";
 	</div>
 
 	<div class="flex flex-col justify-center items-center py-12 mx-5">
-		<p class="text-3xl font-bold">frequently asked questions</p>
+		<p class="text-3xl font-jua">frequently asked questions</p>
 
 		<div class="grid grid-cols-1 relative md:grid-cols-2 gap-8 mt-9">
 			<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-				<p class="text-xl font-bold">how can i get a copy of the magazine?</p>
+				<p class="text-xl font-jua">how can i get a copy of the magazine?</p>
 				<p class="mt-2">an online pdf will be put out for free! you'll also be able to purchase a physical copy from the <a href="https://flavortown.hackclub.com/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">flavortown</a> shop! depending on leftover budget, some will also get shipped to those with super cool page designs :D</p>
 			</div>
 
 			<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-				<p class="text-xl font-bold">will michael reeves actually see it?</p>
+				<p class="text-xl font-jua">will michael reeves actually see it?</p>
 				<p class="mt-2">yes! we're going to give him a copy at <a href="https://flagship.campfire.hackclub.com/" class="underline hover:decoration-wavy">campfire flagship</a> - he has seen the highway magazine before at opensauce. we'll hopefully also give out a bunch more to other creators and tech executives!</p>
 			</div>
 
 			<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-				<p class="text-xl font-bold">project requirements?</p>
+				<p class="text-xl font-jua">project requirements?</p>
 				<p class="mt-2">the quick tldr: must be a cool shipped and working project, but go read the <a href="/start" class="underline hover:decoration-wavy">getting started</a> page for more requirements!</p>
 			</div>
 
 			<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
-				<p class="text-xl font-bold">where can i ask more questions?</p>
+				<p class="text-xl font-jua">where can i ask more questions?</p>
 				<p class="mt-2">feel free to put it in <a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="underline hover:decoration-wavy">#magazine</a>! it's also a great place to get design feedback and talk about projects :D</p>
 			</div>
 		</div>

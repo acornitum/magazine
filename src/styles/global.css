@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 @theme {
+  --font-jua: var(--font-jua), cursive;
   --drop-shadow-sticker: 0 3px 2px rgba(0, 0, 0, 0.25);
 }
 @custom-variant dragging ([data-dragging="true"]);
+
 @utility bg-stripes {
   @apply relative isolate;
 
@@ -57,45 +59,51 @@ body {
 
 article h1 {
   font-size: 2.25rem;
-  font-weight: 700;
+  /* font-weight: 700; */
   margin-top: 2rem;
   margin-bottom: 1rem;
   line-height: 1.25;
+  font-family: var(--font-jua);
 }
 
 article h2 {
   font-size: 1.875rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-top: 1.75rem;
   margin-bottom: 1rem;
+  font-family: var(--font-jua);
 }
 
 article h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-top: 1.5rem;
   margin-bottom: 0.75rem;
+  font-family: var(--font-jua);
 }
 
 article h4 {
   font-size: 1.25rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-top: 1.25rem;
   margin-bottom: 0.5rem;
+  font-family: var(--font-jua);
 }
 
 article h5 {
   font-size: 1.125rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  font-family: var(--font-jua);
 }
 
 article h6 {
   font-size: 1rem;
-  font-weight: 600;
+  /* font-weight: 600; */
   margin-top: 1rem;
   margin-bottom: 0.5rem;
+  font-family: var(--font-jua);
 }
 
 article p {
