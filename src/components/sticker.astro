@@ -12,7 +12,7 @@ interface Props {
 const { src, alt, width, shadow, class: className } = Astro.props;
 ---
 
-<div class="group touch-none cursor-grab active:cursor-grabbing" data-sticker>
+<div class="group pointer-events-auto touch-none cursor-grab active:cursor-grabbing" data-sticker>
 	<Image src={src} alt={alt} width={width * 2} class:list={[
     className,
     shadow && "drop-shadow-sticker",
@@ -63,3 +63,9 @@ const { src, alt, width, shadow, class: className } = Astro.props;
     });
   }
 </script>
+
+<style is:global>
+  div:has(> [data-sticker]) {
+    pointer-events: none;
+  }
+</style>
