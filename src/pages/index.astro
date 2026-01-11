@@ -10,141 +10,109 @@ import titleRaccoon from "../assets/title-raccoon.png";
 import Sticker from "../components/sticker.astro";
 
 import bobaSticker from "../assets/stickers/classic/orpheus-boba.png";
-import skateboardingSticker from "../assets/stickers/classic/orpheus-skateboarding.png";
-import yippeeSticker from "../assets/stickers/classic/orphmoji-yippee.png";
 import peefestSticker from "../assets/stickers/classic/orphmoji-peefest.png";
 import progressSticker from "../assets/stickers/classic/progress.png";
 import assembleSticker from "../assets/stickers/classic/assemble.png";
-import adobeSticker from "../assets/stickers/classic/adobe.svg";
-import airlinesSticker from "../assets/stickers/classic/airlines.png";
 import burstSticker from "../assets/stickers/classic/burst.png";
 import designAwardsSticker from "../assets/stickers/classic/design-awards.png";
 import enjoySticker from "../assets/stickers/classic/enjoy.png";
 import epochSticker from "../assets/stickers/classic/epoch.png";
 import gameLabSticker from "../assets/stickers/classic/game-lab.png";
-import hackCampSticker from "../assets/stickers/classic/hack-camp.png";
 import hackStrikesBackSticker from "../assets/stickers/classic/hack-strikes-back.png";
-import hackToTheFutureSticker from "../assets/stickers/classic/hack-to=the-future.png";
 import hackersAssembleSticker from "../assets/stickers/classic/hackers-assemble.png";
-import hcbSticker from "../assets/stickers/classic/hcb.png";
-import horizonSticker from "../assets/stickers/classic/horizon-computer.png";
 import hqSticker from "../assets/stickers/classic/hq.png";
 import insideSticker from "../assets/stickers/classic/inside.png";
 import jetlagSticker from "../assets/stickers/classic/jetlag.png";
 import juiceSticker from "../assets/stickers/classic/juice.png";
 import macintoshSticker from "../assets/stickers/classic/macintosh.png";
-import mashSticker from "../assets/stickers/classic/mash.png";
-import raycastSticker from "../assets/stickers/classic/raycast.png";
 import shipSticker from "../assets/stickers/classic/ship.png";
-import sleddingSticker from "../assets/stickers/classic/sledding.png";
-import stormTheHackSticker from "../assets/stickers/classic/storm-the-hack.png";
 import undertaleSticker from "../assets/stickers/classic/undertale.png";
 import valorantSticker from "../assets/stickers/classic/valorant.png";
 
-import carabinerSticker from "../assets/stickers/ren/fuse-carabiner.png";
-import pumpkinSticker from "../assets/stickers/ren/fuse-pumpkin.png";
-import zombieSticker from "../assets/stickers/ren/fuse-zombie.png";
-import moonpheusSticker from "../assets/stickers/ren/moonshot-moonpheus.png";
 import astronautSticker from "../assets/stickers/ren/moonshot-orph.png";
 import haxmasSticker from "../assets/stickers/ren/haxmas-raccoon.png";
 
-import undercity1Sticker from "../assets/stickers/undercity/undercity-1.png";
-import undercity2Sticker from "../assets/stickers/undercity/undercity-2.png";
-import undercity3Sticker from "../assets/stickers/undercity/undercity-3.png";
-import undercity4Sticker from "../assets/stickers/undercity/undercity-4.png";
-import undercity5Sticker from "../assets/stickers/undercity/undercity-5.png";
-import undercity6Sticker from "../assets/stickers/undercity/undercity-6.png";
-import undercity7Sticker from "../assets/stickers/undercity/undercity-7.png";
-import undercity8Sticker from "../assets/stickers/undercity/undercity-8.png";
-import undercity9Sticker from "../assets/stickers/undercity/undercity-9.png";
 import undercityFlagSticker from "../assets/stickers/undercity/undercity-flag.png";
 import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.png";
+
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Hack Club Magazine</title>
-	</head>
-	<body>
+<Layout>
+	<img src="/topbar.svg" class="w-full"/>
 
-		<img src="/topbar.svg" class="w-full"/>
+	<a href="https://hackclub.com/">
+		<img
+			src="https://assets.hackclub.com/flag-orpheus-left.svg"
+			alt="Hack Club"
+			style="position: absolute; left: 0px; border: 0; z-index: 999;"
+			class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition"
+		/>
+	</a>
 
-		<a href="https://hackclub.com/">
-			<img
-				src="https://assets.hackclub.com/flag-orpheus-left.svg"
-				alt="Hack Club"
-				style="position: absolute; left: 0px; border: 0; z-index: 999;"
-				class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition"
-			/>
-		</a>
+   <a href="https://hackclub.com/"><img style="position: absolute; left: 0px; border: 0; z-index: 999;" class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>
 
-    <a href="https://hackclub.com/"><img style="position: absolute; left: 0px; border: 0; z-index: 999;" class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>
+	<a href="/start" class="absolute z-10 right-4 top-6 md:right-12 md:top-16 h-10 px-4 flex items-center bg-stripes text-white text-lg font-bold transition hover:scale-105 active:scale-100">
+		get started!
+	</a>
 
-		<a href="/start" class="absolute right-4 top-6 md:right-12 md:top-16 h-10 px-4 flex items-center bg-stripes text-white text-lg font-bold transition hover:scale-105 active:scale-100">
-			get started!
-		</a>
+	<div class="min-h-screen relative overflow-x-clip flex flex-col items-center justify-center">
 
-		<div class="min-h-screen relative overflow-x-clip flex flex-col items-center justify-center">
-
-			<div class="relative flex justify-center items-center w-full md:w-auto max-w-3xl mt-12">
-				<img src="/titleback.png" class="max-w-3xl h-auto overflow-hidden"/>
-				<img src="/title.png" class="absolute w-[90%] max-w-xl h-auto"/>
-				<div class="absolute -top-12 md:-top-10 left-2 md:-left-8 p-3 px-8 text-3xl rounded-sm -rotate-3 overflow-hidden">
-					<img src="/titleback2.png" class="absolute top-0 right-0"/>
-					<img src="/titletop.png" class="rotate-1 max-w-36 md:max-w-44"/>
-				</div>
-				<div class="absolute -bottom-10 right-2 md:-right-8 pt-2.5 pb-3.5 px-8 text-xl rounded-sm rotate-3 overflow-hidden">
-					<img src="/titleback2.png" class="absolute top-0 right-0"/>
-					<img src="/titlebottom.png" class="-rotate-6 max-w-30 md:max-w-36"/>
-				</div>
+		<div class="relative flex justify-center items-center w-full md:w-auto max-w-3xl mt-12">
+			<img src="/titleback.png" class="max-w-3xl h-auto overflow-hidden"/>
+			<img src="/title.png" class="absolute w-[90%] max-w-xl h-auto"/>
+			<div class="absolute -top-12 md:-top-10 left-2 md:-left-8 p-3 px-8 text-3xl rounded-sm -rotate-3 overflow-hidden">
+				<img src="/titleback2.png" class="absolute top-0 right-0"/>
+				<img src="/titletop.png" class="rotate-1 max-w-36 md:max-w-44"/>
 			</div>
-
-			<div class="flex flex-col justify-center relative  w-full max-w-lg items-center text-center text-lg md:text-xl font-bold mt-20">
-				<img src="/titledesc.png" class="inset-x-0 absolute -z-10 opacity-70"/>
-				<Image src={titleRaccoon} alt="" width={128} class="absolute left-1/2 -translate-x-1/2 -top-17 max-sm:hidden" />
-
-				<p>this january: make a page for your project,</p>
-				<p>get it in the hack club 2025 magazine!</p>
-			</div>
-
-			<div class="relative w-full">
-				<div class="translate-y-24 w-full overflow-x-clip"><Examples /></div>
-				<div class="absolute z-10 top-12 right-8 lg:right-24">
-					<Sticker src={astronautSticker} alt="" width={144} shadow />
-				</div>
-				<div class="absolute z-10 -bottom-20 left-8 lg:left-24">
-					<Sticker src={undercityFlagSticker} alt="" width={196} shadow class="-rotate-1" />
-				</div>
-			</div>
-
-			<div class="absolute top-24 -right-4 z-10">
-				<Sticker src={progressSticker} alt="" width={128} shadow class="-rotate-6 max-md:w-24!" />
-			</div>
-			<div class="absolute max-md:hidden top-48 -right-2 z-10">
-				<Sticker src={enjoySticker} alt="" width={144} shadow class="rotate-2" />
-			</div>
-
-			<div class="absolute max-md:hidden top-112 -right-4 z-10">
-				<Sticker src={valorantSticker} alt="" width={196} shadow class="-rotate-6" />
-			</div>
-			<div class="absolute max-md:hidden top-128 right-2 z-10">
-				<Sticker src={jetlagSticker} alt="" width={196} shadow class="rotate-12" />
-			</div>
-
-			<div class="absolute top-80 -left-4 z-10">
-				<Sticker src={assembleSticker} alt="" width={128} shadow class="rotate-4 max-md:w-24!" />
-			</div>
-			<div class="absolute max-md:hidden top-108 -left-2 z-10">
-				<Sticker src={burstSticker} alt="" width={144} shadow />
-			</div>
-			<div class="absolute max-md:hidden top-60 left-2 z-10">
-				<Sticker src={bobaSticker} alt="" width={96} shadow class="rotate-6" />
+			<div class="absolute -bottom-10 right-2 md:-right-8 pt-2.5 pb-3.5 px-8 text-xl rounded-sm rotate-3 overflow-hidden">
+				<img src="/titleback2.png" class="absolute top-0 right-0"/>
+				<img src="/titlebottom.png" class="-rotate-6 max-w-30 md:max-w-36"/>
 			</div>
 		</div>
+
+		<div class="flex flex-col justify-center relative  w-full max-w-lg items-center text-center text-lg md:text-xl font-bold mt-20">
+			<img src="/titledesc.png" class="inset-x-0 absolute -z-10 opacity-70"/>
+			<Image src={titleRaccoon} alt="" width={128} class="absolute left-1/2 -translate-x-1/2 -top-17 max-sm:hidden" />
+
+			<p>this january: make a page for your project,</p>
+			<p>get it in the hack club 2025 magazine!</p>
+		</div>
+
+		<div class="relative w-full">
+			<div class="translate-y-24 w-full overflow-x-clip"><Examples /></div>
+			<div class="absolute z-10 top-12 right-8 lg:right-24">
+				<Sticker src={astronautSticker} alt="" width={144} shadow />
+			</div>
+			<div class="absolute z-10 -bottom-20 left-8 lg:left-24">
+				<Sticker src={undercityFlagSticker} alt="" width={196} shadow class="-rotate-1" />
+			</div>
+		</div>
+
+		<div class="absolute top-24 -right-4 z-10">
+			<Sticker src={progressSticker} alt="" width={128} shadow class="-rotate-6 max-md:w-24!" />
+		</div>
+		<div class="absolute max-md:hidden top-48 -right-2 z-10">
+			<Sticker src={enjoySticker} alt="" width={144} shadow class="rotate-2" />
+		</div>
+
+		<div class="absolute max-md:hidden top-112 -right-4 z-10">
+			<Sticker src={valorantSticker} alt="" width={196} shadow class="-rotate-6" />
+		</div>
+		<div class="absolute max-md:hidden top-128 right-2 z-10">
+			<Sticker src={jetlagSticker} alt="" width={196} shadow class="rotate-12" />
+		</div>
+
+		<div class="absolute top-80 -left-4 z-10">
+			<Sticker src={assembleSticker} alt="" width={128} shadow class="rotate-4 max-md:w-24!" />
+		</div>
+		<div class="absolute max-md:hidden top-108 -left-2 z-10">
+			<Sticker src={burstSticker} alt="" width={144} shadow />
+		</div>
+		<div class="absolute max-md:hidden top-60 left-2 z-10">
+			<Sticker src={bobaSticker} alt="" width={96} shadow class="rotate-6" />
+		</div>
+	</div>
 
 	<div class="flex flex-col justify-center items-center mx-5 mb-12 md:mb-20">
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-8 relative">
@@ -158,53 +126,46 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 			</div>
 
 			<img src="/bookrings.svg" class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden lg:block pointer-events-none xl:w-28"/>
-
-				
-
 		</div>
 	</div>
 
 
-
-
-		<div class="relative overflow-x-clip bg-linear-to-b from-[#C3E6F3]/80 to-[#ABC8F4]/80 p-5 py-24 flex flex-col justify-center">
-			<div class="flex flex-col justify-center items-center mb-12">
-				<div class="border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded">
-					<p class="text-3xl font-bold">how this works:</p>
-				</div>
+	<div class="relative overflow-x-clip bg-linear-to-b from-[#C3E6F3]/80 to-[#ABC8F4]/80 p-5 py-24 flex flex-col justify-center">
+		<div class="flex flex-col justify-center items-center mb-12">
+			<div class="border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded">
+				<p class="text-3xl font-bold">how this works:</p>
 			</div>
+		</div>
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-y-24 relative mx-auto lg:pb-24">
-
 			<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3 pop">
 				<img src="/postcard1.svg" class="w-full h-auto"/>
 				<p class="absolute top-8 px-6 text-xl text-center font-bold">1. submit your project!</p>
 				<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in <a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="underline hover:decoration-wavy">#magazine</a> on the hack club slack!</p>
 			</div>
 
-				<div class="relative w-full max-w-md lg:translate-y-24">
-					<div class="relative flex justify-center shadow-xs rotate-3 pop">
-						<img src="/postcard2.svg" class="w-full h-auto"/>
-						<p class="absolute top-8 px-6 text-xl text-center font-bold">2. get reviewed!</p>
-						<p class="absolute top-30 px-8 text-center">an organizer will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
-					</div>
-
-					<div class="absolute -rotate-3 -bottom-4 -right-2 z-10">
-						<Sticker src={peefestSticker} alt="" width={96} shadow class="-rotate-2" />
-					</div>
+			<div class="relative w-full max-w-md lg:translate-y-24">
+				<div class="relative flex justify-center shadow-xs rotate-3 pop">
+					<img src="/postcard2.svg" class="w-full h-auto"/>
+					<p class="absolute top-8 px-6 text-xl text-center font-bold">2. get reviewed!</p>
+					<p class="absolute top-30 px-8 text-center">an organizer will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
 				</div>
-
-				<div class="relative w-full max-w-md lg:-translate-y-12">
-					<div class="relative flex justify-center shadow-xs -rotate-1 pop">
-						<img src="/postcard3.svg" class="w-full h-auto"/>
-						<p class="absolute top-8 px-6 text-xl text-center font-bold">3. design your page!</p>
-						<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
-						<p class="absolute bottom-4 right-6 text-[#C2D426] text-2xl font-bold"><i>first draft due jan 19</i></p>
-					</div>
-					<div class="absolute -rotate-3 -bottom-6 -left-3 z-10">
-						<Sticker src={haxmasSticker} alt="" width={128} shadow class="rotate-4" />
-					</div>
+				<div class="absolute -rotate-3 -bottom-4 -right-2 z-10">
+					<Sticker src={peefestSticker} alt="" width={96} shadow class="-rotate-2" />
 				</div>
+			</div>
+
+			<div class="relative w-full max-w-md lg:-translate-y-12">
+				<div class="relative flex justify-center shadow-xs -rotate-1 pop">
+					<img src="/postcard3.svg" class="w-full h-auto"/>
+					<p class="absolute top-8 px-6 text-xl text-center font-bold">3. design your page!</p>
+					<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
+					<p class="absolute bottom-4 right-6 text-[#C2D426] text-2xl font-bold"><i>first draft due jan 19</i></p>
+				</div>
+				<div class="absolute -rotate-3 -bottom-6 -left-3 z-10">
+					<Sticker src={haxmasSticker} alt="" width={128} shadow class="rotate-4" />
+				</div>
+			</div>
 
 			<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-2 lg:translate-y-16 pop">
 				<img src="/postcard4.svg" class="w-full h-auto"/>
@@ -220,40 +181,40 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 			</a>
 		</div>
 
-			<div class="absolute -top-4 -left-2 z-10">
-				<Sticker src={hackersAssembleSticker} alt="" width={128} class="-rotate-6" />
-			</div>
-			<div class="absolute max-sm:hidden top-18 left-16 z-10">
-				<Sticker src={shipSticker} alt="" width={128} class="-rotate-6" />
-			</div>
-			<div class="absolute max-sm:hidden top-30 -left-4 z-10">
-				<Sticker src={hqSticker} alt="" width={128} shadow class="rotate-2" />
-			</div>
-
-			<div class="absolute -top-6 -right-2 z-10">
-				<Sticker src={designAwardsSticker} alt="" width={96} shadow class="rotate-2" />
-			</div>
-			<div class="absolute max-sm:hidden top-8 right-12 z-10">
-				<Sticker src={hackStrikesBackSticker} alt="" width={196} shadow class="-rotate-4" />
-			</div>
-			<div class="absolute max-sm:hidden top-24 right-2 z-10">
-				<Sticker src={insideSticker} alt="" width={144} shadow class="rotate-1" />
-			</div>
-
-			<div class="absolute -bottom-6 -left-6 z-10">
-				<Sticker src={macintoshSticker} alt="" width={128} shadow class="-rotate-3" />
-			</div>
-			<div class="absolute max-sm:hidden bottom-20 left-8 z-10">
-				<Sticker src={epochSticker} alt="" width={96} shadow class="rotate-3" />
-			</div>
-			
-			<div class="absolute -bottom-8 -right-4 z-10">
-				<Sticker src={undertaleSticker} alt="" width={194} shadow class="rotate-6" />
-			</div>
-			<div class="absolute max-sm:hidden bottom-12 right-8 z-10">
-				<Sticker src={gameLabSticker} alt="" width={96} shadow class="-rotate-3" />
-			</div>
+		<div class="absolute -top-4 -left-2 z-10">
+			<Sticker src={hackersAssembleSticker} alt="" width={128} class="-rotate-6" />
 		</div>
+		<div class="absolute max-sm:hidden top-18 left-16 z-10">
+			<Sticker src={shipSticker} alt="" width={128} class="-rotate-6" />
+		</div>
+		<div class="absolute max-sm:hidden top-30 -left-4 z-10">
+			<Sticker src={hqSticker} alt="" width={128} shadow class="rotate-2" />
+		</div>
+
+		<div class="absolute -top-6 -right-2 z-10">
+			<Sticker src={designAwardsSticker} alt="" width={96} shadow class="rotate-2" />
+		</div>
+		<div class="absolute max-sm:hidden top-8 right-12 z-10">
+			<Sticker src={hackStrikesBackSticker} alt="" width={196} shadow class="-rotate-4" />
+		</div>
+		<div class="absolute max-sm:hidden top-24 right-2 z-10">
+			<Sticker src={insideSticker} alt="" width={144} shadow class="rotate-1" />
+		</div>
+
+		<div class="absolute -bottom-6 -left-6 z-10">
+			<Sticker src={macintoshSticker} alt="" width={128} shadow class="-rotate-3" />
+		</div>
+		<div class="absolute max-sm:hidden bottom-20 left-8 z-10">
+			<Sticker src={epochSticker} alt="" width={96} shadow class="rotate-3" />
+		</div>
+
+		<div class="absolute -bottom-8 -right-4 z-10">
+			<Sticker src={undertaleSticker} alt="" width={194} shadow class="rotate-6" />
+		</div>
+		<div class="absolute max-sm:hidden bottom-12 right-8 z-10">
+			<Sticker src={gameLabSticker} alt="" width={96} shadow class="-rotate-3" />
+		</div>
+	</div>
 
 
 	<div class="flex flex-col py-12 mt-12">
@@ -262,26 +223,22 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 			<p class="max-w-xl mt-2 text-center">featuring: highway magazine (by acon + everyone who designed their own page) and juice magazine (by kai ling + tongyu + juicers)</p>
 		</div>
 
-			<div class="relative w-full">
-				<div class="w-full overflow-x-clip"><Pastmagazines /></div>
+		<div class="relative w-full">
+			<div class="w-full overflow-x-clip"><Pastmagazines /></div>
 				
-				<div class="absolute z-10 -bottom-4 left-8 lg:left-24">
-					<Sticker src={undercityCarSticker} alt="" width={196} shadow />
-				</div>
-				<div class="absolute z-10 max-lg:hidden -top-16 right-8 lg:right-24">
-					<Sticker src={juiceSticker} alt="" width={128} shadow class="rotate-4" />
-				</div>
+			<div class="absolute z-10 -bottom-4 left-8 lg:left-24">
+				<Sticker src={undercityCarSticker} alt="" width={196} shadow />
 			</div>
-			
-
-			
-		</div>
+			<div class="absolute z-10 max-lg:hidden -top-16 right-8 lg:right-24">
+				<Sticker src={juiceSticker} alt="" width={128} shadow class="rotate-4" />
+			</div>
+		</div>			
+	</div>
 
 	<div class="flex flex-col justify-center items-center py-12 mx-5">
 		<p class="text-3xl font-bold">frequently asked questions</p>
 
-			<div class="grid grid-cols-1 relative md:grid-cols-2 gap-8 mt-9">
-
+		<div class="grid grid-cols-1 relative md:grid-cols-2 gap-8 mt-9">
 			<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
 				<p class="text-xl font-bold">how can i get a copy of the magazine?</p>
 				<p class="mt-2">an online pdf will be put out for free! you'll also be able to purchase a physical copy from the <a href="https://flavortown.hackclub.com/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">flavortown</a> shop! depending on leftover budget, some will also get shipped to those with super cool page designs :D</p>
@@ -301,11 +258,9 @@ import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.
 				<p class="text-xl font-bold">where can i ask more questions?</p>
 				<p class="mt-2">feel free to put it in <a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="underline hover:decoration-wavy">#magazine</a>! it's also a great place to get design feedback and talk about projects :D</p>
 			</div>
-				
-			</div>
 		</div>
+	</div>
 
-		<Footer />
-
-	</body>
-</html>
+	<Footer />
+	
+</Layout>
