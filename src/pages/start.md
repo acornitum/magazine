@@ -5,7 +5,7 @@ layout: ../layouts/Article.astro
 
 # getting started!!!
 
-welcome! heres the guide :D
+welcome! here's the guide :D
 
 feel free to ask in [#magazine](https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR) at any point if you have questions!
 
@@ -60,7 +60,7 @@ you are free to request a number of pages; however it will be highly dependent o
 
 on average, most projects will probably be assigned the mid projects tier. projects will be given more or less space depending on their polish, and the author's ability to design a magazine page.
 
-if you have multiple projects, please ship them all in the same post - you will be able to give you a multiple attached pages for you to design with if so!
+if you have multiple projects, please ship them all in the same post - then we can give you multiple attached pages for you to design with!
 
 ### step 2: design your page!
 
@@ -74,7 +74,7 @@ don't have any ideas on what aesthetic you want? here are some:
 
 - [game ui database](https://www.gameuidatabase.com/index.php) is full of screenshots from games - pick your favourite and take design elements from it!
 - use the aesthetic of the ysws program you submitted it for!
-- pick an enviornment you like and use its aesthetic! (ie: city night, cottagecore, makers desk, etc)
+- pick an environment you like and use its aesthetic! (ie: city night, cottagecore, makers desk, etc)
 - worst case: just use the design elements from this site/program
 
 some general design tips:
@@ -84,15 +84,15 @@ some general design tips:
 - layout is so important - make sure there is padding in your text boxes and adequate margin between your elements
 - look at previously designed magazine pages to see what they did!
 
-i recommend designing it in your own figma file - copy over the a5 sheet with bleed template, then start! when you're done and want a review, put it into the main magazine figma. 
+i recommend designing it in your own figma file - copy over the a5 sheet with bleed template, then start! when you're done and want a review, put it into the main magazine figma.
 
 **first draft due by: jan 19, 11:59 pm est**
 
 ### step 3: get reviewed!
 
-organizers (currently @acon and @gideon) will review your page by commenting in figma! 
+organizers (currently @acon and @gideon) will review your page by commenting in figma!
 
-if your page has been moved into the approved section, that means it will be printed. you should still make updates if we have commented suggestions though. 
+if your page has been moved into the approved section, that means it will be printed. you should still make updates if we have commented suggestions though.
 
 if your page hasn't been moved, that means it hasn't been approved - please update it according to feedback and comment again when you're ready.
 
@@ -104,14 +104,10 @@ most beginner-designed pages go through 2-3 whole review cycles before passing -
 
 the magazine is planned to be ordered before february. it'll probably be available to ship out to people after campfire flagship! just hold on tight :D
 
-if you're someone who's good at raster art / vector design in figma and would like to help out, shoot @acon a dm! 
+if you're someone who's good at raster art / vector design in figma and would like to help out, shoot @acon a dm!
 
-if you've organized a large hack club event with many cool projects submitted to this magazine and want to make a page introducting it (ie: flavortown, shipwrecked, storyboard, blueprint), shoot @acon a dm! 
+if you've organized a large hack club event with many cool projects submitted to this magazine and want to make a page introducing it (ie: flavortown, shipwrecked, storyboard, blueprint), shoot @acon a dm!
 
 got any questions? feel free to ask in slack!
 
 this page will probably be updated as more questions are asked - if you want to add anything, let us know!
-
-
-
-
