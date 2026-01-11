@@ -6,11 +6,16 @@ feel free to ask in #magazine at any point if you have questions!
 
 ### step 0: project requirements
 
-fdjsklfds
+your project must be: 
 
-- not designed/made by ai
-- something unique (especially if it comes from a beginner ysws - ie: average hackpad will be rejected)
+- not designed by ai, contains no ai art / text
+- something unique - no tutorial projects (ie: average hackpad will be rejected)
 - if it is hardware, it must be physically working (and have a demo video)
+
+these projects will also be rejected: 
+
+- projects that only exist within themselves (ie: a website with just basic facts on climate change)
+- projects that are advertisement (ie: a site for your school / hackathon / club) 
 
 ### step 1: submit your project!
 
@@ -20,7 +25,7 @@ make a post in #magazine with:
 
 - project name
 - project description
-- repo
+- repo link
 - demo link
 - screenshots (if software) / irl pictures (if hardware)
 - what program/hackathon it was originally made for (if applicable) 
@@ -35,3 +40,9 @@ you are free to request a number of pages; however it will be highly dependent o
 on average, most projects will probably be assigned the mid projects tier. 
 
 if you have multiple projects, please ship them all in the same post - you will be able to give you a multiple attached pages for you to design with if so!
+
+### step 2: design your page!
+
+use figma! this way, organizers can directly edit elements of your page and do last minute changes of neccessary. 
+
+never used figma before? [download here] [also, tutorial here!]

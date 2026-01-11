@@ -2,6 +2,7 @@
 import "../styles/global.css";
 import Examples from "../components/examples.astro";
 import Pastmagazines from "../components/pastmagazines.astro";
+import Footer from "../components/footer.astro"
 ---
 
 <html lang="en">
@@ -18,9 +19,9 @@ import Pastmagazines from "../components/pastmagazines.astro";
 
 		<a href="https://hackclub.com/"><img style="position: absolute; left: 0px; border: 0; z-index: 999;" class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>
 
-		<div class="absolute right-12 top-12">
+		<div class="absolute right-4 top-6 md:right-12 md:top-16">
 			<a href="/start"><div class="bg-[#84F7E8] px-6 py-2 rounded hover:scale-105 transition">
-				<p class="font-semibold text-xl opacity-90">getting started</p>
+				<p class="font-semibold text-xl opacity-90">get started</p>
 			</div></a>
 		</div>
 
@@ -84,7 +85,7 @@ import Pastmagazines from "../components/pastmagazines.astro";
 				<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3 pop">
 					<img src="/postcard1.svg" class="w-full h-auto"/>
 					<p class="absolute top-8 px-6 text-xl text-center font-bold">1. submit your project!</p>
-					<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in #magazine on the hack club slack!</p>
+					<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in <a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="underline hover:decoration-wavy">#magazine</a> on the hack club slack!</p>
 				</div>
 
 				<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-3 lg:translate-y-24 pop">
@@ -108,9 +109,9 @@ import Pastmagazines from "../components/pastmagazines.astro";
 				</div>
 			</div>
 
-			<div class="flex flex-col justify-center items-center mt-4">
+			<div class="flex flex-col justify-center items-center mt-8 md:mt-4">
 				<div class="border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded underline hover:decoration-wavy hover:scale-102 transition">
-					<p class="text-xl font-bold"><a href="/start">getting started →</a></p>
+					<p class="text-xl font-bold"><a href="/start">get started →</a></p>
 				</div>
 			</div>
 
@@ -141,17 +142,17 @@ import Pastmagazines from "../components/pastmagazines.astro";
 
 				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
 					<p class="text-xl font-bold">will michael reeves actually see it?</p>
-					<p class="mt-2">yes! we're going to give him a copy at campfire flagship - he has seen the highway magazine before at opensauce. we'll hopefully also give out a bunch more to other creators and tech executives!</p>
+					<p class="mt-2">yes! we're going to give him a copy at <a href="https://flagship.campfire.hackclub.com/" class="underline hover:decoration-wavy">campfire flagship</a> - he has seen the highway magazine before at opensauce. we'll hopefully also give out a bunch more to other creators and tech executives!</p>
 				</div>
 
 				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
 					<p class="text-xl font-bold">project requirements?</p>
-					<p class="mt-2">the quick tldr: must be a shipped and working project, but go read [link] for more requirements!</p>
+					<p class="mt-2">the quick tldr: must be a cool shipped and working project, but go read the <a href="/start" class="underline hover:decoration-wavy">getting started</a> page for more requirements!</p>
 				</div>
 
 				<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
 					<p class="text-xl font-bold">where can i ask more questions?</p>
-					<p class="mt-2">feel free to put it in #magazine! it's also a great place to get design feedback and talk about projects :D</p>
+					<p class="mt-2">feel free to put it in <a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="underline hover:decoration-wavy">#magazine</a>! it's also a great place to get design feedback and talk about projects :D</p>
 				</div>
 				
 			</div>
@@ -159,20 +160,7 @@ import Pastmagazines from "../components/pastmagazines.astro";
 
 
 
-		<div class="flex flex-col justify-center items-center my-8 mt-16 font-semibold">
-			<div>
-				<p>made with :3 by <a href="https://github.com/acornitum" class="text-[#3590FF] opacity-80 hover:opacity-100 transition" target="_blank" rel="noopenner noreferrer">acon</a> + <a href="https://github.com/heygideon" class="text-[#3590FF] opacity-80 hover:opacity-100 transition" target="_blank" rel="noopenner noreferrer">gideon</a> (<a href="https://github.com/acornitum/magazine" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">repo</a>)</p>
-			</div>
-			<div class="flex flex-wrap space-x-2">
-				<a href="https://hackclub.com/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hack club</a>
-				<p>//</p>
-				<a href="https://hackclub.com/slack/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">slack</a>
-				<p>//</p>
-				<a href="https://hackclub.com/clubs/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">clubs</a>
-				<p>//</p>
-				<a href="https://hackclub.com/hackathons/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hackathons</a>
-			</div>
-		</div>
+		<Footer />
 
 
 
