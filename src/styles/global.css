@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-jua: var(--font-jua), cursive;
+  --font-jua: var(--font-jua);
   --drop-shadow-sticker: 0 3px 2px rgba(0, 0, 0, 0.25);
 }
 @custom-variant dragging ([data-dragging="true"]);
