@@ -16,7 +16,7 @@ const { src, alt, width, shadow, class: className } = Astro.props;
 	<Image src={src} alt={alt} width={width * 2} class:list={[
     className,
     shadow && "drop-shadow-sticker",
-    "transition-[scale,opacity] group-hover:scale-110 group-active:scale-100 group-active:opacity-75"
+    "transition-[scale,opacity] group-hover:scale-110 group-dragging:scale-100 group-dragging:pointer-coarse:scale-95 group-dragging:opacity-75"
   ]} style={`width: ${width}px`} draggable={false} />
 </div>
 
@@ -27,14 +27,14 @@ const { src, alt, width, shadow, class: className } = Astro.props;
     const image = sticker.querySelector('img');
     if(!image) continue;
 
-    sticker.addEventListener("mousedown", (event) => {
+    sticker.addEventListener("pointerdown", (event) => {
       event.preventDefault();
       sticker.dataset.dragging = "true";
     });
-    document.addEventListener("mouseup", () => {
+    document.addEventListener("pointerup", () => {
       delete sticker.dataset.dragging;
     });
-    document.addEventListener("mousemove", (event) => {
+    document.addEventListener("pointermove", (event) => {
       if (sticker.dataset.dragging === "true") {
         if(sticker.dataset.x === undefined || sticker.dataset.y === undefined) {
           sticker.dataset.x = "0";
@@ -49,7 +49,7 @@ const { src, alt, width, shadow, class: className } = Astro.props;
         sticker.dataset.y = y.toString();
       }
     });
-    sticker.addEventListener("mousemove", (event) => {
+    sticker.addEventListener("pointermove", (event) => {
       if (sticker.dataset.dragging !== "true") {
         const {left, top} = sticker.getBoundingClientRect();
         const centerX = left + sticker.offsetWidth / 2;

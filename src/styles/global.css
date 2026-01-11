@@ -3,6 +3,7 @@
 @theme {
   --drop-shadow-sticker: 0 3px 2px rgba(0, 0, 0, 0.25);
 }
+@custom-variant dragging ([data-dragging="true"]);
 
 body {
   background-color: #f3faff;
