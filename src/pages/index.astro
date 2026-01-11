@@ -49,9 +49,16 @@ import Layout from "../layouts/Layout.astro";
 		/>
 	</a>
 
-	<a href="/start" class="absolute z-10 right-4 top-6 md:right-12 md:top-16 h-10 px-4 flex items-center bg-stripes text-white text-lg font-jua transition hover:scale-105 active:scale-100">
-		get started!
-	</a>
+	<div class="absolute z-10 right-4 top-6 md:right-12 md:top-16 flex max-sm:flex-col-reverse max-sm:items-end gap-3">
+		<a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="h-10 px-4 flex items-center bg-stripes bg-stripes-green text-white text-lg font-jua transition hover:scale-105 active:scale-100">
+			<span class="size-5 mr-2 grid place-items-center bg-white text-[#8ed49e] rounded-full text-sm">#</span>
+			slack
+		</a>
+		<a href="/start" class="h-10 px-4 flex items-center bg-stripes text-white text-lg font-jua transition hover:scale-105 active:scale-100">
+			<span class="size-5 mr-2 grid place-items-center bg-white text-[#5e6fe5] rounded-full text-sm">A</span>
+			get started!
+		</a>
+	</div>
 
 	<div class="min-h-screen relative overflow-x-clip flex flex-col items-center justify-center">
 

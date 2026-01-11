@@ -13,13 +13,13 @@
     content: "";
     @apply absolute inset-0 -z-10 shadow-md rounded-4xl corner-squircle transition;
 
-    background-color: #5e6fe5;
+    background-color: var(--color-stripes-bg, #5e6fe5);
     background-image: repeating-linear-gradient(
       -45deg,
       transparent,
       transparent 12px,
-      #5167dd 12px,
-      #5167dd 24px
+      var(--color-stripes-fg, #5167dd) 12px,
+      var(--color-stripes-fg, #5167dd) 24px
     );
     background-size: 200% 100%;
     background-position: 0 0;
@@ -29,6 +29,10 @@
     @apply brightness-75;
     animation: stripe-move 1s linear infinite;
   }
+}
+@utility bg-stripes-green {
+  --color-stripes-bg: #8ed49e;
+  --color-stripes-fg: #7ac592;
 }
 @keyframes stripe-move {
   0% {
