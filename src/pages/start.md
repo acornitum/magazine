@@ -108,6 +108,8 @@ if you're someone who's good at raster art / vector design in figma and would li
 
 if you've organized a large hack club event with many cool projects submitted to this magazine and want to make a page introducing it (ie: flavortown, shipwrecked, storyboard, blueprint), shoot @acon a dm!
 
+this page will probably be updated as more questions are asked - if you want to add anything, let us know!
+
 got any questions? feel free to ask in slack!
 
-this page will probably be updated as more questions are asked - if you want to add anything, let us know!
+thanks for reading :D
