@@ -19,11 +19,14 @@ import Footer from "../components/footer.astro"
 
 		<a href="https://hackclub.com/"><img style="position: absolute; left: 0px; border: 0; z-index: 999;" class="top-5 md:top-10 w-44 md:w-64 opacity-90 hover:opacity-100 hover:rotate-2 transition" src="https://assets.hackclub.com/flag-orpheus-left.svg" alt="Hack Club"/></a>
 
-		<div class="absolute right-4 top-6 md:right-12 md:top-16">
+		<!-- <div class="absolute right-4 top-6 md:right-12 md:top-16">
 			<a href="/start"><div class="bg-[#84F7E8] px-6 py-2 rounded hover:scale-105 transition">
 				<p class="font-semibold text-xl opacity-90">get started</p>
 			</div></a>
-		</div>
+		</div> -->
+		<a href="/start" class="absolute right-4 top-6 md:right-12 md:top-16 h-10 px-4 flex items-center bg-stripes text-white text-lg font-bold transition hover:scale-105 active:scale-100">
+			get started!
+		</a>
 
 		<div class="min-h-screen flex flex-col items-center justify-center">
 
@@ -110,9 +113,9 @@ import Footer from "../components/footer.astro"
 			</div>
 
 			<div class="flex flex-col justify-center items-center mt-8 md:mt-4">
-				<div class="border-8 border-[#BFEAE1] bg-[#FEFEF2] p-4 px-24 rounded underline hover:decoration-wavy hover:scale-102 transition">
-					<p class="text-xl font-bold"><a href="/start">get started →</a></p>
-				</div>
+				<a href="/start" class="h-14 px-6 flex items-center bg-stripes text-white text-xl font-bold transition hover:scale-105 active:scale-100">
+					get started!
+				</a>
 			</div>
 
 		</div>

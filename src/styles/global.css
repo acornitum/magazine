@@ -1,11 +1,46 @@
 @import "tailwindcss";
 
+@utility bg-stripes {
+  @apply relative isolate;
+
+  &::before {
+    content: "";
+    @apply absolute inset-0 -z-10 shadow-md rounded-4xl corner-squircle transition;
+
+    background-color: #5e6fe5;
+    background-image: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 12px,
+      #5167dd 12px,
+      #5167dd 24px
+    );
+    background-size: 200% 100%;
+    background-position: 0 0;
+  }
+
+  &:hover::before {
+    @apply brightness-75;
+    animation: stripe-move 1s linear infinite;
+  }
+}
+@keyframes stripe-move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -33.9411254969543px 0;
+  }
+}
+@utility corner-squircle {
+  corner-shape: squircle;
+}
 
 body {
-    background-color: #F3FAFF;
-    background-image: url("/bglines.svg");
-    background-repeat: repeat;
-    color: #473B47;
+  background-color: #f3faff;
+  background-image: url("/bglines.svg");
+  background-repeat: repeat;
+  color: #473b47;
 }
 
 .pop {
@@ -81,14 +116,14 @@ article ol {
 }
 
 article ul {
-  list-style-type: disc;      
-  list-style-position: inside; 
-  padding-left: 1.5rem;      
+  list-style-type: disc;
+  list-style-position: inside;
+  padding-left: 1.5rem;
   margin: 1rem 0;
 }
 
 article ul li {
-  margin-top: 0rem;        
+  margin-top: 0rem;
 }
 
 article img {
