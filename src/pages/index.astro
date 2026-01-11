@@ -19,6 +19,7 @@ import enjoySticker from "../assets/stickers/classic/enjoy.png";
 import epochSticker from "../assets/stickers/classic/epoch.png";
 import gameLabSticker from "../assets/stickers/classic/game-lab.png";
 import hackStrikesBackSticker from "../assets/stickers/classic/hack-strikes-back.png";
+import hackToTheFutureSticker from "../assets/stickers/classic/hack-to-the-future.png";
 import hackersAssembleSticker from "../assets/stickers/classic/hackers-assemble.png";
 import hqSticker from "../assets/stickers/classic/hq.png";
 import insideSticker from "../assets/stickers/classic/inside.png";
@@ -29,7 +30,6 @@ import shipSticker from "../assets/stickers/classic/ship.png";
 import undertaleSticker from "../assets/stickers/classic/undertale.png";
 import valorantSticker from "../assets/stickers/classic/valorant.png";
 
-import astronautSticker from "../assets/stickers/ren/moonshot-orph.png";
 import haxmasSticker from "../assets/stickers/ren/haxmas-raccoon.png";
 
 import undercityFlagSticker from "../assets/stickers/undercity/undercity-flag.png";
@@ -81,8 +81,8 @@ import Layout from "../layouts/Layout.astro";
 
 		<div class="relative w-full">
 			<div class="translate-y-24 w-full overflow-x-clip"><Examples /></div>
-			<div class="absolute z-10 top-12 right-8 lg:right-24">
-				<Sticker src={astronautSticker} alt="" width={144} shadow />
+			<div class="absolute z-10 top-16 right-8 lg:right-24">
+				<Sticker src={hackersAssembleSticker} alt="" width={128} shadow />
 			</div>
 			<div class="absolute z-10 -bottom-20 left-8 lg:left-24">
 				<Sticker src={undercityFlagSticker} alt="" width={196} shadow class="-rotate-1" />
@@ -183,12 +183,12 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 
 		<div class="absolute -top-4 -left-2 z-10">
-			<Sticker src={hackersAssembleSticker} alt="" width={128} class="-rotate-6" />
+			<Sticker src={hackToTheFutureSticker} alt="" width={144} class="-rotate-6" />
 		</div>
-		<div class="absolute max-sm:hidden top-18 left-16 z-10">
+		<div class="absolute max-sm:hidden top-8 left-16 z-10">
 			<Sticker src={shipSticker} alt="" width={128} class="-rotate-6" />
 		</div>
-		<div class="absolute max-sm:hidden top-30 -left-4 z-10">
+		<div class="absolute max-sm:hidden top-20 -left-4 z-10">
 			<Sticker src={hqSticker} alt="" width={128} shadow class="rotate-2" />
 		</div>
 
