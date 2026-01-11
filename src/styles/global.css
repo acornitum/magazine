@@ -139,9 +139,10 @@ article ul li {
 }
 
 article img {
-  max-width: 100%;
+  max-width: 800px;
   height: auto;
   display: block;
   margin: 1rem 0;
   border-radius: 0.25rem;
+  margin-bottom: 2rem;
 }
