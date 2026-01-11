@@ -139,7 +139,7 @@ article ul li {
 }
 
 article img {
-  max-width: 800px;
+  max-width: min(100%, 800px);
   height: auto;
   display: block;
   margin: 1rem 0;

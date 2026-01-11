@@ -6,16 +6,14 @@ const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter?.title}>
-	<div class="flex flex-col justify-center items-center p-8">
-    <div class="max-w-6xl">
-      <a href="/" class="group w-fit h-10 px-4 bg-[#F6F8E3] text-[#897A68] hover:text-[#665F4A] shadow-sm font-jua rounded-3xl corner-squircle flex items-center transition hover:scale-105 hover:bg-[#D6E69F] active:scale-100">
-        <span class="size-5 mr-1.5 grid place-items-center bg-[#897A68] text-[#F6F8E3] rounded-full text-sm transition group-hover:bg-[#665F4A] group-hover:text-[#D6E69F]">B</span>
-        back to home
-      </a>
-      <article>
-				<slot />
-			</article>
-		</div>
+  <div class="w-full max-w-6xl mx-auto p-8">
+    <a href="/" class="group w-fit h-10 px-4 bg-[#F6F8E3] text-[#897A68] hover:text-[#665F4A] shadow-sm font-jua rounded-3xl corner-squircle flex items-center transition hover:scale-105 hover:bg-[#D6E69F] active:scale-100">
+      <span class="size-5 mr-1.5 grid place-items-center bg-[#897A68] text-[#F6F8E3] rounded-full text-sm transition group-hover:bg-[#665F4A] group-hover:text-[#D6E69F]">B</span>
+      back to home
+    </a>
+    <article>
+			<slot />
+		</article>
 	</div>
 
   <Footer />
