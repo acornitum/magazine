@@ -1,3 +1,8 @@
+---
+title: Getting Started
+layout: ../layouts/Article.astro
+---
+
 # getting started!!!
 
 welcome! heres the guide :D
