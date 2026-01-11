@@ -1,0 +1,65 @@
+---
+import { Image } from "astro:assets"
+import type { ImageMetadata } from "astro"
+
+interface Props {
+  src: ImageMetadata;
+  alt: string;
+  width: number;
+  shadow?: boolean;
+  class?: string;
+}
+const { src, alt, width, shadow, class: className } = Astro.props;
+---
+
+<div class="group touch-none cursor-grab active:cursor-grabbing" data-sticker>
+	<Image src={src} alt={alt} width={width * 2} class:list={[
+    className,
+    shadow && "drop-shadow-sticker",
+    "transition-[scale,opacity] group-hover:scale-110 group-dragging:scale-100 group-dragging:pointer-coarse:scale-95 group-dragging:opacity-75"
+  ]} style={`width: ${width}px`} draggable={false} />
+</div>
+
+<script>
+  const stickers = document.querySelectorAll<HTMLDivElement>('[data-sticker]');
+
+  for (const sticker of stickers) {
+    const image = sticker.querySelector('img');
+    if(!image) continue;
+
+    sticker.addEventListener("pointerdown", (event) => {
+      event.preventDefault();
+      sticker.dataset.dragging = "true";
+    });
+    document.addEventListener("pointerup", () => {
+      delete sticker.dataset.dragging;
+    });
+    document.addEventListener("pointermove", (event) => {
+      if (sticker.dataset.dragging === "true") {
+        if(sticker.dataset.x === undefined || sticker.dataset.y === undefined) {
+          sticker.dataset.x = "0";
+          sticker.dataset.y = "0";
+        }
+        const dx = event.movementX;
+        const dy = event.movementY;
+        const x = parseFloat(sticker.dataset.x) + dx;
+        const y = parseFloat(sticker.dataset.y) + dy;
+        sticker.style.transform = `translate(${x}px, ${y}px)`;
+        sticker.dataset.x = x.toString();
+        sticker.dataset.y = y.toString();
+      }
+    });
+    sticker.addEventListener("pointermove", (event) => {
+      if (sticker.dataset.dragging !== "true") {
+        const {left, top} = sticker.getBoundingClientRect();
+        const centerX = left + sticker.offsetWidth / 2;
+        const centerY = top + sticker.offsetHeight / 2;
+        
+        const rotateX = (event.clientY - centerY) / (sticker.offsetHeight / 2) * -10;
+        const rotateY = (event.clientX - centerX) / (sticker.offsetWidth / 2) * 10;
+
+        image.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      }
+    });
+  }
+</script>

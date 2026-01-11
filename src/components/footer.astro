@@ -1,6 +1,16 @@
 ---
+import Sticker from "../components/sticker.astro";
+
+import skateboardingSticker from "../assets/stickers/classic/orpheus-skateboarding.png";
+import yippeeSticker from "../assets/stickers/classic/orphmoji-yippee.png";
+import adobeSticker from "../assets/stickers/classic/adobe.svg";
+import raycastSticker from "../assets/stickers/classic/raycast.png";
+
+import carabinerSticker from "../assets/stickers/ren/fuse-carabiner.png";
+import undercity2Sticker from "../assets/stickers/undercity/undercity-2.png";
 ---
-<div class="flex flex-col justify-center items-center my-8 mt-16 font-semibold">
+
+<div class="relative overflow-x-clip flex flex-col justify-center items-center my-8 mt-16 font-semibold">
     <div>
         <p>made with :3 by <a href="https://github.com/acornitum" class="text-[#3590FF] opacity-80 hover:opacity-100 transition" target="_blank" rel="noopenner noreferrer">acon</a> + <a href="https://github.com/heygideon" class="text-[#3590FF] opacity-80 hover:opacity-100 transition" target="_blank" rel="noopenner noreferrer">gideon</a> (<a href="https://github.com/acornitum/magazine" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">repo</a>)</p>
     </div>
@@ -13,4 +23,28 @@
         <p>//</p>
         <a href="https://hackclub.com/hackathons/" class="underline hover:decoration-wavy" target="_blank" rel="noopenner noreferrer">hackathons</a>
     </div>
+
+    
+
+	<div class="absolute bottom-4 -right-4">
+	    <Sticker src={skateboardingSticker} alt="" width={128} shadow class="-rotate-2" />
+	</div>
+	<div class="absolute -bottom-8 right-6">
+		<Sticker src={raycastSticker} alt="" width={96} shadow class="-rotate-2" />
+	</div>
+	<div class="absolute -bottom-10 right-20">
+		<Sticker src={yippeeSticker} alt="" width={128} shadow class="rotate-4" />
+    </div>
+    
+    <div class="absolute bottom-8 -left-6">
+		<Sticker src={carabinerSticker} alt="" width={128} shadow class="-rotate-2" />
+	</div>
+	<div class="absolute -bottom-6 left-2">
+		<Sticker src={adobeSticker} alt="" width={96} shadow class="rotate-2" />
+	</div>
+	<div class="absolute -bottom-10 left-20">
+		<Sticker src={undercity2Sticker} alt="" width={96} shadow class="-rotate-2" />
+	</div>
 </div>
+
+<img src="/topbar.svg" class="w-full relative" />
