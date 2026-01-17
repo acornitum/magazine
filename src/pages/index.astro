@@ -34,6 +34,11 @@ import haxmasSticker from "../assets/stickers/ren/haxmas-raccoon.png";
 import undercityFlagSticker from "../assets/stickers/undercity/undercity-flag.png";
 import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.png";
 
+import postcard1 from "../assets/postcard1.svg";
+import postcard2 from "../assets/postcard2.svg";
+import postcard3 from "../assets/postcard3.svg";
+import postcard4 from "../assets/postcard4.svg";
+
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -144,14 +149,14 @@ import Layout from "../layouts/Layout.astro";
 
 		<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-y-24 relative mx-auto lg:pb-24">
 			<div class="relative w-full max-w-md flex justify-center shadow-xs -rotate-3 pop">
-				<img src="/postcard1.svg" class="w-full h-auto"/>
+				<Image src={postcard1} alt="" class="max-w-full h-auto"/>
 				<p class="absolute top-8 px-6 text-xl text-center font-jua">1. submit your project!</p>
 				<p class="absolute top-30 px-8 text-center">put your project description, repo, demo link, screenshots, and what program/hackathon it was originally made for (if applicable) in <a href="https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR" class="underline hover:decoration-wavy">#magazine</a> on the hack club slack!</p>
 			</div>
 
 			<div class="relative w-full max-w-md lg:translate-y-24">
 				<div class="relative flex justify-center shadow-xs rotate-3 pop">
-					<img src="/postcard2.svg" class="w-full h-auto"/>
+					<Image src={postcard2} alt="" class="max-w-full h-auto"/>
 					<p class="absolute top-8 px-6 text-xl text-center font-jua">2. get reviewed!</p>
 					<p class="absolute top-30 px-8 text-center">an organizer will respond in thread with how many pages you'll be allowed to use! this ranges from 1/4th pages (for small projects) to 2 pages (for super large cool swagger projects)</p>
 				</div>
@@ -162,7 +167,7 @@ import Layout from "../layouts/Layout.astro";
 
 			<div class="relative w-full max-w-md lg:-translate-y-12">
 				<div class="relative flex justify-center shadow-xs -rotate-1 pop">
-					<img src="/postcard3.svg" class="w-full h-auto"/>
+					<Image src={postcard3} alt="" class="max-w-full h-auto"/>
 					<p class="absolute top-8 px-6 text-xl text-center font-jua">3. design your page!</p>
 					<p class="absolute top-30 px-8 text-center">go to the figma with instructions, and start designing! if you're using less than a full page, find a friend to share / design with to fit multiple projects :D</p>
 					<p class="absolute bottom-4 right-6 text-[#C2D426] text-2xl font-jua"><i>first draft due jan 19</i></p>
@@ -173,7 +178,7 @@ import Layout from "../layouts/Layout.astro";
 			</div>
 
 			<div class="relative w-full max-w-md flex justify-center shadow-xs rotate-2 lg:translate-y-16 pop">
-				<img src="/postcard4.svg" class="w-full h-auto"/>
+				<Image src={postcard4} alt="" class="max-w-full h-auto"/>
 				<p class="absolute top-8 px-6 text-xl text-center font-jua">4. receive feedback!</p>
 				<p class="absolute top-30 px-8 text-center">organizers will comment in figma with feedback - continuously update your page until it is approved for printing!</p>
 				<p class="absolute bottom-4 right-6 text-[#38CEB9] text-2xl font-jua"><i>final page due jan 26</i></p>
