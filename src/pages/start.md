@@ -90,7 +90,7 @@ i recommend designing it in your own figma file - copy over the a5 sheet with bl
 
 ### step 3: get reviewed!
 
-organizers (currently @acon and @gideon) will review your page by commenting in figma!
+organizers (currently @acon, @gideon, @valen and @KittyCat) will review your page by commenting in figma!
 
 if your page has been moved into the approved section, that means it will be printed. you should still make updates if we have commented suggestions though.
 
