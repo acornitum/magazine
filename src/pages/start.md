@@ -62,6 +62,8 @@ on average, most projects will probably be assigned the mid projects tier. proje
 
 if you have multiple projects, please ship them all in the same post - then we can give you multiple attached pages for you to design with!
 
+**submissions due by: jan 19, 11:59 pm est**
+
 ### step 2: design your page!
 
 use figma! this way, organizers can directly edit elements of your page and make last minute changes if necessary.
@@ -86,7 +88,7 @@ some general design tips:
 
 i recommend designing it in your own figma file - copy over the a5 sheet with bleed template, then start! when you're done and want a review, put it into the main magazine figma.
 
-**first draft due by: jan 19, 11:59 pm est**
+**first draft due by: jan 20, 11:59 pm est**
 
 ### step 3: get reviewed!
 
