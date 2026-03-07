@@ -1,45 +1,45 @@
 ---
-import Examples from "../components/examples.astro";
-import Pastmagazines from "../components/pastmagazines.astro";
-import Footer from "../components/footer.astro"
+import Examples from "../../components/examples.astro";
+import Pastmagazines from "../../components/pastmagazines.astro";
+import Footer from "../../components/footer.astro"
 
 import { Image } from "astro:assets";
-import titleRaccoon from "../assets/title-raccoon.png";
+import titleRaccoon from "../../assets/title-raccoon.png";
 
-import Sticker from "../components/sticker.astro";
+import Sticker from "../../components/sticker.astro";
 
-import bobaSticker from "../assets/stickers/classic/orpheus-boba.png";
-import peefestSticker from "../assets/stickers/classic/orphmoji-peefest.png";
-import progressSticker from "../assets/stickers/classic/progress.png";
-import assembleSticker from "../assets/stickers/classic/assemble.png";
-import burstSticker from "../assets/stickers/classic/burst.png";
-import designAwardsSticker from "../assets/stickers/classic/design-awards.png";
-import enjoySticker from "../assets/stickers/classic/enjoy.png";
-import epochSticker from "../assets/stickers/classic/epoch.png";
-import gameLabSticker from "../assets/stickers/classic/game-lab.png";
-import hackStrikesBackSticker from "../assets/stickers/classic/hack-strikes-back.png";
-import hackToTheFutureSticker from "../assets/stickers/classic/hack-to-the-future.png";
-import hackersAssembleSticker from "../assets/stickers/classic/hackers-assemble.png";
-import hqSticker from "../assets/stickers/classic/hq.png";
-import insideSticker from "../assets/stickers/classic/inside.png";
-import jetlagSticker from "../assets/stickers/classic/jetlag.png";
-import juiceSticker from "../assets/stickers/classic/juice.png";
-import macintoshSticker from "../assets/stickers/classic/macintosh.png";
-import shipSticker from "../assets/stickers/classic/ship.png";
-import undertaleSticker from "../assets/stickers/classic/undertale.png";
-import valorantSticker from "../assets/stickers/classic/valorant.png";
+import bobaSticker from "../../assets/stickers/classic/orpheus-boba.png";
+import peefestSticker from "../../assets/stickers/classic/orphmoji-peefest.png";
+import progressSticker from "../../assets/stickers/classic/progress.png";
+import assembleSticker from "../../assets/stickers/classic/assemble.png";
+import burstSticker from "../../assets/stickers/classic/burst.png";
+import designAwardsSticker from "../../assets/stickers/classic/design-awards.png";
+import enjoySticker from "../../assets/stickers/classic/enjoy.png";
+import epochSticker from "../../assets/stickers/classic/epoch.png";
+import gameLabSticker from "../../assets/stickers/classic/game-lab.png";
+import hackStrikesBackSticker from "../../assets/stickers/classic/hack-strikes-back.png";
+import hackToTheFutureSticker from "../../assets/stickers/classic/hack-to-the-future.png";
+import hackersAssembleSticker from "../../assets/stickers/classic/hackers-assemble.png";
+import hqSticker from "../../assets/stickers/classic/hq.png";
+import insideSticker from "../../assets/stickers/classic/inside.png";
+import jetlagSticker from "../../assets/stickers/classic/jetlag.png";
+import juiceSticker from "../../assets/stickers/classic/juice.png";
+import macintoshSticker from "../../assets/stickers/classic/macintosh.png";
+import shipSticker from "../../assets/stickers/classic/ship.png";
+import undertaleSticker from "../../assets/stickers/classic/undertale.png";
+import valorantSticker from "../../assets/stickers/classic/valorant.png";
 
-import haxmasSticker from "../assets/stickers/ren/haxmas-raccoon.png";
+import haxmasSticker from "../../assets/stickers/ren/haxmas-raccoon.png";
 
-import undercityFlagSticker from "../assets/stickers/undercity/undercity-flag.png";
-import undercityCarSticker from "../assets/stickers/undercity/undercity-racecar.png";
+import undercityFlagSticker from "../../assets/stickers/undercity/undercity-flag.png";
+import undercityCarSticker from "../../assets/stickers/undercity/undercity-racecar.png";
 
-import postcard1 from "../assets/postcard1.svg";
-import postcard2 from "../assets/postcard2.svg";
-import postcard3 from "../assets/postcard3.svg";
-import postcard4 from "../assets/postcard4.svg";
+import postcard1 from "../../assets/postcard1.svg";
+import postcard2 from "../../assets/postcard2.svg";
+import postcard3 from "../../assets/postcard3.svg";
+import postcard4 from "../../assets/postcard4.svg";
 
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
@@ -59,7 +59,7 @@ import Layout from "../layouts/Layout.astro";
 			<span class="size-5 mr-2 grid place-items-center bg-white text-[#8ed49e] rounded-full text-sm">#</span>
 			slack
 		</a>
-		<a href="/start" class="h-10 px-4 flex items-center bg-stripes text-white text-lg font-jua transition hover:scale-105 active:scale-100">
+		<a href="/v1/start" class="h-10 px-4 flex items-center bg-stripes text-white text-lg font-jua transition hover:scale-105 active:scale-100">
 			<span class="size-5 mr-2 grid place-items-center bg-white text-[#5e6fe5] rounded-full text-sm">A</span>
 			get started!
 		</a>
@@ -186,7 +186,7 @@ import Layout from "../layouts/Layout.astro";
 		</div>
 
 		<div class="flex flex-col justify-center items-center mt-8 md:mt-4">
-			<a href="/start" class="h-14 px-6 flex items-center bg-stripes text-white text-2xl font-jua transition hover:scale-105 active:scale-100">
+			<a href="/v1/start" class="h-14 px-6 flex items-center bg-stripes text-white text-2xl font-jua transition hover:scale-105 active:scale-100">
 				<span class="size-5 mr-2 grid place-items-center bg-white text-[#5e6fe5] rounded-full text-sm">A</span>
 				get started!
 			</a>
@@ -262,7 +262,7 @@ import Layout from "../layouts/Layout.astro";
 
 			<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
 				<p class="text-xl font-jua">project requirements?</p>
-				<p class="mt-2">the quick tldr: must be a cool shipped and working project, but go read the <a href="/start" class="underline hover:decoration-wavy">getting started</a> page for more requirements!</p>
+				<p class="mt-2">the quick tldr: must be a cool shipped and working project, but go read the <a href="/v1/start" class="underline hover:decoration-wavy">getting started</a> page for more requirements!</p>
 			</div>
 
 			<div class="border-4 border-dashed border-[#473B47] p-6 max-w-xl">
