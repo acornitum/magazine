@@ -19,6 +19,8 @@
   --color-juice-bg: #cee5c0;
   --color-juice-fg: #467346;
   --color-highway: #302c61;
+
+  --color-amber-soft: #ffbf71;
 }
 @custom-variant dragging ([data-dragging="true"]);
 

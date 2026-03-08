@@ -1,0 +1,44 @@
+---
+import { Image } from "astro:assets";
+
+import rightArrow from "@/assets/right-arrow.svg";
+import largeLogo from "@/assets/footer-large-logo.svg";
+---
+
+<footer class="bg-neutral-900 text-white">
+  <div class="p-16">
+    <div class="flex gap-16">
+      <div class="w-40 flex-none space-y-3 text-xl">
+        <p class="italic">hack club</p>
+        <p class="italic">slack</p>
+        <p class="italic">clubs</p>
+        <p class="italic">hackathons</p>
+      </div>
+      <div class="min-w-0 flex-1 text-xl leading-relaxed">
+        <p>
+          Hack Club is a 501(c)(3) nonprofit and network of 60k+ technical high
+          schoolers. We believe you learn best by building, so we're creating
+          community and providing grants so you can make awesome projects. In
+          the past few years, we've partnered with GitHub to run Summer of
+          Making, hosted the world's longest hackathon on land, and ran Canada's
+          largest high school hackathon.
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <Image
+            src={rightArrow}
+            alt=""
+            role="presentation"
+            class="h-6 w-auto flex-none"
+          />
+          <p class="text-amber-soft min-w-0 flex-1 font-bold">
+            At Hack Club, students aren't just learning, they're shipping.
+          </p>
+        </div>
+        <p class="mt-4 text-base text-current/60">
+          © 2026 Hack Club. 501(c)(3) nonprofit (EIN: 81-2908499)
+        </p>
+      </div>
+    </div>
+  </div>
+  <Image src={largeLogo} alt="" role="presentation" class="h-auto w-full" />
+</footer>
