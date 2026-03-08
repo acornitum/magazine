@@ -21,6 +21,9 @@
   --color-highway: #302c61;
 
   --color-amber-soft: #ffbf71;
+  --color-blue-soft: #86d5ff;
+  --color-indigo-soft: #8686ff;
+  --color-pink-soft: #f989ff;
 }
 @custom-variant dragging ([data-dragging="true"]);
 

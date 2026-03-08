@@ -2,17 +2,71 @@
 import { Image } from "astro:assets";
 
 import rightArrow from "@/assets/right-arrow.svg";
-import largeLogo from "@/assets/footer-large-logo.svg";
+import largeLogo from "@/assets/footer/large-logo.svg";
+
+import hcLogo from "@/assets/hc-logo.svg";
+import Acon from "@/assets/footer/name-acon.svg";
+import Gideon from "@/assets/footer/name-gideon.svg";
+import Valen from "@/assets/footer/name-valen.svg";
+import Lilia from "@/assets/footer/name-lilia.svg";
 ---
 
 <footer class="bg-neutral-900 text-white">
   <div class="p-16">
+    <div class="mb-6 flex items-center gap-1">
+      <Image src={hcLogo} alt="" role="presentation" class="h-12 w-auto" />
+      <div class="min-w-0 flex-1"></div>
+      <a
+        href="https://aconlin.com"
+        class="hover:text-indigo-soft px-1.5 text-white/10 not-hover:transition-colors"
+      >
+        <Acon role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Acon</span>
+      </a>
+      <a
+        href="https://gideon.sh"
+        class="hover:text-amber-soft px-1.5 text-white/10 not-hover:transition-colors"
+      >
+        <Gideon role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Gideon</span>
+      </a>
+      <a
+        href="https://valen.zip"
+        class="hover:text-blue-soft px-1.5 text-white/10 not-hover:transition-colors"
+      >
+        <Valen role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Valen</span>
+      </a>
+      <a
+        href="https://lilia.rocks"
+        class="hover:text-pink-soft px-1.5 text-white/10 not-hover:transition-colors"
+      >
+        <Lilia role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Lilia</span>
+      </a>
+    </div>
     <div class="flex gap-16">
-      <div class="w-40 flex-none space-y-3 text-xl">
-        <p class="italic">hack club</p>
-        <p class="italic">slack</p>
-        <p class="italic">clubs</p>
-        <p class="italic">hackathons</p>
+      <div class="group w-40 flex-none space-y-2 text-xl leading-relaxed">
+        <p
+          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
+        >
+          hack club
+        </p>
+        <p
+          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
+        >
+          slack
+        </p>
+        <p
+          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
+        >
+          clubs
+        </p>
+        <p
+          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
+        >
+          hackathons
+        </p>
       </div>
       <div class="min-w-0 flex-1 text-xl leading-relaxed">
         <p>
