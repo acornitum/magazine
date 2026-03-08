@@ -11,6 +11,13 @@ export default defineConfig({
     fonts: [
       {
         provider: fontProviders.google(),
+        name: "Archivo",
+        cssVariable: "--font-archivo",
+        weights: ["400 700"],
+        subsets: ["latin"],
+      },
+      {
+        provider: fontProviders.google(),
         name: "Jua",
         cssVariable: "--font-jua",
         fallbacks: ["Comic Sans MS", "cursive"],

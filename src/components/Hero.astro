@@ -1,0 +1,79 @@
+---
+import { Image } from "astro:assets";
+
+import backTitle from "@/assets/logo/back-title.png";
+import backSub from "@/assets/logo/back-sub.png";
+import title from "@/assets/logo/title-magazine.png";
+import subTop from "@/assets/logo/sub-top.png";
+import subBottom from "@/assets/logo/sub-bottom.png";
+
+import topBar from "@/assets/topbar.svg";
+---
+
+<Image src={topBar} alt="" role="presentation" class="h-auto w-full" />
+<div class="bg-grid flex flex-col items-center justify-center p-16 py-56">
+  <div
+    class="relative isolate flex w-full max-w-3xl items-center justify-center md:w-auto"
+  >
+    <div class="absolute -top-10 -left-8 -rotate-3 overflow-hidden rounded-sm">
+      <Image
+        src={backSub}
+        alt=""
+        role="presentation"
+        class="h-16 w-60 object-cover"
+      />
+      <Image
+        src={subTop}
+        alt="project:"
+        class="absolute top-1/2 left-1/2 h-10 w-auto -translate-x-1/2 -translate-y-1/2 rotate-1"
+      />
+    </div>
+
+    <div class="relative -z-10">
+      <Image src={backTitle} alt="" role="presentation" class="h-48 w-auto" />
+      <Image
+        src={title}
+        alt="magazine"
+        class="absolute top-1/2 left-1/2 h-28 w-auto -translate-x-1/2 -translate-y-1/2"
+      />
+    </div>
+
+    <div
+      class="absolute -right-8 -bottom-10 rotate-3 overflow-hidden rounded-sm"
+    >
+      <Image
+        src={backSub}
+        alt=""
+        role="presentation"
+        class="h-16 w-52 object-cover"
+      />
+      <Image
+        src={subBottom}
+        alt="by hack club"
+        class="absolute top-1/2 left-1/2 h-10 w-auto -translate-x-1/2 -translate-y-1/2 -rotate-6"
+      />
+    </div>
+  </div>
+  <div class="mt-8 flex gap-4">
+    <a
+      href="#"
+      class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-14 items-center px-5 text-2xl text-white transition hover:scale-105 active:scale-100"
+    >
+      <span
+        class="text-blue-bg mr-2.5 grid size-6 place-items-center rounded-full bg-white text-base uppercase"
+        >a</span
+      >
+      get a copy
+    </a>
+    <a
+      href="#"
+      class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-14 items-center px-5 text-2xl text-white transition hover:scale-105 active:scale-100"
+    >
+      <span
+        class="text-green-bg mr-2.5 grid size-6 place-items-center rounded-full bg-white text-base uppercase"
+        >x</span
+      >
+      see the pdf
+    </a>
+  </div>
+</div>

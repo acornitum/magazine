@@ -1,5 +1,5 @@
 ---
-import { Font } from 'astro:assets';
+import { Font } from "astro:assets";
 
 import "../styles/global.css";
 
@@ -10,16 +10,19 @@ const { title } = Astro.props;
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}</title>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      {title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}
+    </title>
 
+    <Font cssVariable="--font-archivo" />
     <Font cssVariable="--font-jua" />
-	</head>
-	<body>
+  </head>
+  <body>
     <slot />
   </body>
 </html>

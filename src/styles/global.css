@@ -1,31 +1,48 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: var(--font-archivo);
   --font-jua: var(--font-jua);
+
   --drop-shadow-sticker: 0 3px 2px rgba(0, 0, 0, 0.25);
+
+  --color-blue-bg: #5e6fe5;
+  --color-blue-fg: #5167dd;
+  --color-green-bg: #65c3b5;
+  --color-green-fg: #70c9bb;
+  --color-text: #473b47;
+
+  --color-gradient-start: #c3e6f3;
+  --color-gradient-end: #abc8f4;
+
+  --color-magazine: #e11d48;
+  --color-juice-bg: #cee5c0;
+  --color-juice-fg: #467346;
+  --color-highway: #302c61;
 }
 @custom-variant dragging ([data-dragging="true"]);
 
 @layer base {
-  body {
+  html {
+    /* font-size: clamp(16px, 1.25vw, 20px); */
     font-size: max(16px, 1.25vw);
   }
 }
 
-@utility bg-stripes {
+@utility bg-stripes-from-* {
   @apply relative isolate;
 
   &::before {
     content: "";
-    @apply absolute inset-0 -z-10 shadow-md rounded-4xl corner-squircle transition;
+    @apply corner-squircle absolute inset-0 -z-10 rounded-4xl shadow-md transition;
 
-    background-color: var(--color-stripes-bg, #5e6fe5);
+    background-color: --value(--color-*, [color]);
     background-image: repeating-linear-gradient(
-      -45deg,
+      -60deg,
       transparent,
-      transparent 12px,
-      var(--color-stripes-fg, #5167dd) 12px,
-      var(--color-stripes-fg, #5167dd) 24px
+      transparent 1rem,
+      var(--stripes-fg) 1rem,
+      var(--stripes-fg) 2rem
     );
     background-size: 200% 100%;
     background-position: 0 0;
@@ -36,16 +53,17 @@
     animation: stripe-move 1s linear infinite;
   }
 }
-@utility bg-stripes-green {
-  --color-stripes-bg: #8ed49e;
-  --color-stripes-fg: #7ac592;
+@utility bg-stripes-to-* {
+  &::before {
+    --stripes-fg: --value(--color-*, [color]);
+  }
 }
 @keyframes stripe-move {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: -33.9411254969543px 0;
+    background-position: calc(-2rem / sin(60deg)) 0;
   }
 }
 @utility corner-squircle {
@@ -54,8 +72,7 @@
 
 .bg-grid {
   background-color: #f3faff;
-  background-image: url("/bglines.svg");
-  background-repeat: repeat;
+  background: url("/bglines.svg") center repeat;
 }
 
 .pop {
