@@ -7,12 +7,6 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  redirects: {
-    "/": {
-      destination: "/v1",
-      status: 302,
-    },
-  },
   experimental: {
     fonts: [
       {

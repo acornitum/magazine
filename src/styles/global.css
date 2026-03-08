@@ -6,6 +6,12 @@
 }
 @custom-variant dragging ([data-dragging="true"]);
 
+@layer base {
+  body {
+    font-size: max(16px, 1.25vw);
+  }
+}
+
 @utility bg-stripes {
   @apply relative isolate;
 
@@ -46,11 +52,10 @@
   corner-shape: squircle;
 }
 
-body {
+.bg-grid {
   background-color: #f3faff;
   background-image: url("/bglines.svg");
   background-repeat: repeat;
-  color: #473b47;
 }
 
 .pop {
@@ -59,94 +64,4 @@ body {
 
 .pop:hover {
   transform: scale(1.02);
-}
-
-article h1 {
-  font-size: 2.25rem;
-  /* font-weight: 700; */
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.25;
-  font-family: var(--font-jua);
-}
-
-article h2 {
-  font-size: 1.875rem;
-  /* font-weight: 600; */
-  margin-top: 1.75rem;
-  margin-bottom: 1rem;
-  font-family: var(--font-jua);
-}
-
-article h3 {
-  font-size: 1.5rem;
-  /* font-weight: 600; */
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-family: var(--font-jua);
-}
-
-article h4 {
-  font-size: 1.25rem;
-  /* font-weight: 600; */
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-jua);
-}
-
-article h5 {
-  font-size: 1.125rem;
-  /* font-weight: 600; */
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-jua);
-}
-
-article h6 {
-  font-size: 1rem;
-  /* font-weight: 600; */
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-jua);
-}
-
-article p {
-  margin-bottom: 1rem;
-}
-
-article a {
-  color: #3b82f6;
-  text-decoration: underline;
-}
-
-article a:hover {
-  color: #2563eb;
-  text-decoration: wavy;
-}
-
-article ul,
-article ol {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 2rem;
-}
-
-article ul {
-  list-style-type: disc;
-  list-style-position: inside;
-  padding-left: 1.5rem;
-  margin: 1rem 0;
-}
-
-article ul li {
-  margin-top: 0rem;
-}
-
-article img {
-  max-width: min(100%, 800px);
-  height: auto;
-  display: block;
-  margin: 1rem 0;
-  border-radius: 0.25rem;
-  margin-bottom: 2rem;
 }

@@ -1,6 +1,6 @@
 ---
 title: Getting Started
-layout: ../../layouts/Article.astro
+layout: ../../layouts/v1/Article.astro
 ---
 
 # getting started!!!
