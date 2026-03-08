@@ -12,6 +12,10 @@ export default defineConfig({
       destination: "/v1",
       status: 302,
     },
+    "/start": {
+      destination: "/v1/start",
+      status: 302,
+    },
   },
   experimental: {
     fonts: [
