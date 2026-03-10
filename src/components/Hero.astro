@@ -10,6 +10,8 @@ import subBottom from "@/assets/logo/sub-bottom.png";
 import front from "@/assets/textures/front.png";
 import back from "@/assets/textures/back.png";
 import spine from "@/assets/textures/spine.png";
+import spineHorizontal from "@/assets/textures/spine-horizontal.png";
+import spineVertical from "@/assets/textures/spine-vertical.png";
 
 import doodleBl from "@/assets/textures/doodle-bl.svg";
 import doodleTr from "@/assets/textures/doodle-tr.svg";
@@ -39,22 +41,23 @@ import hcFlag from "@/assets/hc-flag.svg";
     </div>
   </div>
   <div class="flex w-full justify-center gap-8 p-16">
-    <div class="group relative isolate flex-none px-16 perspective-midrange">
+    <div class="group relative isolate flex-none px-16 perspective-distant">
       <div
-        class="aspect-magazine relative h-104 rotate-6 rotate-x-3 -rotate-y-3 shadow-lg transition duration-1000 transform-3d group-hover:rotate-y-183"
+        id="magazine-3d"
+        class="aspect-magazine relative h-104 rotate-6 rotate-x-3 -rotate-y-3 shadow-lg transform-3d"
       >
         <!-- Front and back sides -->
         <Image
           src={front}
           alt=""
           role="presentation"
-          class="absolute inset-0 size-full translate-z-1 object-cover backface-hidden"
+          class="absolute inset-0 size-full translate-z-1.5 object-cover backface-hidden"
         />
         <Image
           src={back}
           alt=""
           role="presentation"
-          class="absolute inset-0 size-full -translate-z-1 rotate-y-180 object-cover backface-hidden"
+          class="absolute inset-0 size-full -translate-z-1.5 rotate-y-180 object-cover backface-hidden"
         />
 
         <!-- Spine -->
@@ -62,21 +65,22 @@ import hcFlag from "@/assets/hc-flag.svg";
           src={spine}
           alt=""
           role="presentation"
-          class="absolute top-0 right-full h-full w-2 origin-right translate-z-1 -rotate-y-90 object-cover backface-hidden"
+          class="absolute top-0 right-full h-full w-3 origin-right translate-z-1.5 -rotate-y-90 object-cover backface-hidden"
+        />
+        <Image
+          src={spineVertical}
+          alt=""
+          role="presentation"
+          class="absolute top-0 left-full h-full w-3 origin-left translate-z-1.5 rotate-y-90 object-cover backface-hidden"
         />
 
-        <!-- White boxes to cover other three sides -->
-        <!-- TODO: a paper texture would be kinda cool here? idk  -->
+        <!-- White boxes to cover top and bottom sides -->
         <div
-          class="absolute top-0 left-full h-full w-2 origin-left translate-z-1 rotate-y-90 bg-white backface-hidden"
+          class="absolute bottom-full left-0 h-3 w-full origin-bottom translate-z-1.5 rotate-x-90 bg-white backface-hidden"
         >
         </div>
         <div
-          class="absolute bottom-full left-0 h-2 w-full origin-bottom translate-z-1 rotate-x-90 bg-white backface-hidden"
-        >
-        </div>
-        <div
-          class="absolute top-full left-0 h-2 w-full origin-top translate-z-1 -rotate-x-90 bg-white backface-hidden"
+          class="absolute top-full left-0 h-3 w-full origin-top translate-z-1.5 -rotate-x-90 bg-white backface-hidden"
         >
         </div>
       </div>
@@ -136,3 +140,20 @@ import hcFlag from "@/assets/hc-flag.svg";
     </div>
   </div>
 </div>
+
+<script>
+  import { animate } from "animejs";
+
+  animate("#magazine-3d", {
+    rotateY: ["-3deg", "-183deg", "-363deg"],
+    ease: "inOutExpo",
+    duration: 7500,
+    loop: true,
+  }).play();
+  // animate("#magazine-3d", {
+  //   rotateY: ["-3deg", "-183deg", "-363deg"],
+  //   ease: "linear",
+  //   duration: 10_000,
+  //   loop: true,
+  // }).play();
+</script>
