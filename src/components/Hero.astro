@@ -7,73 +7,132 @@ import title from "@/assets/logo/title-magazine.png";
 import subTop from "@/assets/logo/sub-top.png";
 import subBottom from "@/assets/logo/sub-bottom.png";
 
+import front from "@/assets/textures/front.png";
+import back from "@/assets/textures/back.png";
+import spine from "@/assets/textures/spine.png";
+
+import doodleBl from "@/assets/textures/doodle-bl.svg";
+import doodleTr from "@/assets/textures/doodle-tr.svg";
+
 import topBar from "@/assets/topbar.svg";
+import hcFlag from "@/assets/hc-flag.svg";
 ---
 
 <Image src={topBar} alt="" role="presentation" class="h-auto w-full" />
-<div class="bg-grid flex flex-col items-center justify-center p-16 py-56">
-  <div
-    class="relative isolate flex w-full max-w-3xl items-center justify-center md:w-auto"
-  >
-    <div class="absolute -top-10 -left-8 -rotate-3 overflow-hidden rounded-sm">
-      <Image
-        src={backSub}
-        alt=""
-        role="presentation"
-        class="h-16 w-60 object-cover"
-      />
-      <Image
-        src={subTop}
-        alt="project:"
-        class="absolute top-1/2 left-1/2 h-10 w-auto -translate-x-1/2 -translate-y-1/2 rotate-1"
-      />
-    </div>
-
-    <div class="relative -z-10">
-      <Image src={backTitle} alt="" role="presentation" class="h-48 w-auto" />
-      <Image
-        src={title}
-        alt="magazine"
-        class="absolute top-1/2 left-1/2 h-28 w-auto -translate-x-1/2 -translate-y-1/2"
-      />
-    </div>
-
-    <div
-      class="absolute -right-8 -bottom-10 rotate-3 overflow-hidden rounded-sm"
-    >
-      <Image
-        src={backSub}
-        alt=""
-        role="presentation"
-        class="h-16 w-52 object-cover"
-      />
-      <Image
-        src={subBottom}
-        alt="by hack club"
-        class="absolute top-1/2 left-1/2 h-10 w-auto -translate-x-1/2 -translate-y-1/2 -rotate-6"
-      />
+<div class="bg-grid">
+  <div class="flex px-16">
+    <div class="min-w-0 flex-1"></div>
+    <Image
+      src={hcFlag}
+      alt=""
+      role="presentation"
+      class="h-24 w-auto flex-none"
+    />
+    <div class="flex min-w-0 flex-1 items-center justify-end">
+      <p class="text-text text-sm">
+        see how it all started: <a
+          href="/v1"
+          class="text-blue-fg font-bold underline-offset-2 transition hover:text-blue-800 hover:underline"
+          >go to v1 →</a
+        >
+      </p>
     </div>
   </div>
-  <div class="mt-8 flex gap-4">
-    <a
-      href="#"
-      class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-14 items-center px-5 text-2xl text-white transition hover:scale-105 active:scale-100"
-    >
-      <span
-        class="text-blue-bg mr-2.5 grid size-6 place-items-center rounded-full bg-white text-base uppercase"
-        >a</span
+  <div class="flex w-full justify-center gap-8 p-16">
+    <div class="group relative isolate flex-none px-16 perspective-midrange">
+      <div
+        class="aspect-magazine relative h-104 rotate-6 rotate-x-3 -rotate-y-3 shadow-lg transition duration-1000 transform-3d group-hover:rotate-y-183"
       >
-      get a copy
-    </a>
-    <a
-      href="#"
-      class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-14 items-center px-5 text-2xl text-white transition hover:scale-105 active:scale-100"
-    >
-      <span
-        class="text-green-bg mr-2.5 grid size-6 place-items-center rounded-full bg-white text-base uppercase"
-        >x</span
-      >
-      see the pdf
-    </a>
+        <!-- Front and back sides -->
+        <Image
+          src={front}
+          alt=""
+          role="presentation"
+          class="absolute inset-0 size-full translate-z-1 object-cover backface-hidden"
+        />
+        <Image
+          src={back}
+          alt=""
+          role="presentation"
+          class="absolute inset-0 size-full -translate-z-1 rotate-y-180 object-cover backface-hidden"
+        />
+
+        <!-- Spine -->
+        <Image
+          src={spine}
+          alt=""
+          role="presentation"
+          class="absolute top-0 right-full h-full w-2 origin-right translate-z-1 -rotate-y-90 object-cover backface-hidden"
+        />
+
+        <!-- White boxes to cover other three sides -->
+        <!-- TODO: a paper texture would be kinda cool here? idk  -->
+        <div
+          class="absolute top-0 left-full h-full w-2 origin-left translate-z-1 rotate-y-90 bg-white backface-hidden"
+        >
+        </div>
+        <div
+          class="absolute bottom-full left-0 h-2 w-full origin-bottom translate-z-1 rotate-x-90 bg-white backface-hidden"
+        >
+        </div>
+        <div
+          class="absolute top-full left-0 h-2 w-full origin-top translate-z-1 -rotate-x-90 bg-white backface-hidden"
+        >
+        </div>
+      </div>
+
+      <Image
+        src={doodleBl}
+        alt=""
+        role="presentation"
+        class="absolute -bottom-8 -left-4 -z-10 h-16 w-auto"
+      />
+      <Image
+        src={doodleTr}
+        alt=""
+        role="presentation"
+        class="absolute -top-14 -right-2 -z-10 h-24 w-auto"
+      />
+    </div>
+
+    <div class="flex min-w-0 flex-1 flex-col justify-center">
+      <div class="relative w-fit">
+        <Image src={backTitle} alt="" role="presentation" class="h-24 w-auto" />
+        <Image
+          src={title}
+          alt="magazine"
+          class="absolute top-1/2 left-1/2 h-14 w-auto -translate-x-1/2 -translate-y-1/2"
+        />
+      </div>
+      <p class="font-jua text-text mt-8 text-3xl">
+        The 2025 Hack Club showcase. Over 150 of the most unique and awesome
+        projects. Designed and built by teenagers, for you to explore.
+      </p>
+      <div class="mt-8 flex gap-4">
+        <a
+          href="#"
+          class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
+        >
+          <span
+            class="text-blue-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+            >a</span
+          >
+          get a copy
+        </a>
+        <a
+          href="#"
+          class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
+        >
+          <span
+            class="text-green-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+            >x</span
+          >
+          see the pdf
+        </a>
+      </div>
+      <p class="mt-4 text-sm text-neutral-500">
+        or scroll down to discover more!
+      </p>
+    </div>
   </div>
 </div>
