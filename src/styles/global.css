@@ -24,6 +24,8 @@
   --color-blue-soft: #86d5ff;
   --color-indigo-soft: #8686ff;
   --color-pink-soft: #f989ff;
+
+  --aspect-magazine: 420 / 595;
 }
 @custom-variant dragging ([data-dragging="true"]);
 
