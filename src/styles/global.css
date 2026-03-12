@@ -81,8 +81,9 @@
 }
 
 .bg-grid {
-  background-color: #f3faff;
-  background: url("/bglines.svg") center repeat;
+  background:
+    url("/bglines.svg") center repeat,
+    #f3faff;
 }
 
 .pop {
