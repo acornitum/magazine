@@ -1,0 +1,44 @@
+- id: magazine
+  pages:
+    - ~/assets/pages/magazine/30.png
+    - ~/assets/pages/magazine/31.png
+    - ~/assets/pages/magazine/107.png
+    - ~/assets/pages/magazine/36.png
+    - ~/assets/pages/magazine/37.png
+    - ~/assets/pages/magazine/85.png
+    - ~/assets/pages/magazine/99.png
+    - ~/assets/pages/magazine/79.png
+    - ~/assets/pages/magazine/32.png
+    - ~/assets/pages/magazine/34.png
+    - ~/assets/pages/magazine/82.png
+    - ~/assets/pages/magazine/93.png
+
+- id: juice
+  pages:
+    - ~/assets/pages/juice/1.png
+    - ~/assets/pages/juice/2.png
+    - ~/assets/pages/juice/5.png
+    - ~/assets/pages/juice/6.png
+    - ~/assets/pages/juice/113.png
+    - ~/assets/pages/juice/114.png
+    - ~/assets/pages/juice/13.png
+    - ~/assets/pages/juice/14.png
+    - ~/assets/pages/juice/49.png
+    - ~/assets/pages/juice/58.png
+    - ~/assets/pages/juice/21.png
+    - ~/assets/pages/juice/22.png
+
+- id: highway
+  pages:
+    - ~/assets/pages/highway/front.png
+    - ~/assets/pages/highway/back.png
+    - ~/assets/pages/highway/20.png
+    - ~/assets/pages/highway/21.png
+    - ~/assets/pages/highway/10.png
+    - ~/assets/pages/highway/43.png
+    - ~/assets/pages/highway/6.png
+    - ~/assets/pages/highway/54.png
+    - ~/assets/pages/highway/55.png
+    - ~/assets/pages/highway/3.png
+    - ~/assets/pages/highway/18.png
+    - ~/assets/pages/highway/4.png

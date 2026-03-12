@@ -1,5 +1,18 @@
-<div class="bg-juice-bg text-black">
-  <div class="p-16">
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Gallery from "./Gallery.astro";
+
+const entry = await getEntry("magazines", "juice");
+if (!entry) {
+  throw new Error("Juice magazine entry not found");
+}
+
+const { pages } = entry.data;
+---
+
+<div class="bg-juice-bg overflow-clip text-black">
+  <div class="p-16 pb-12">
     <div class="flex justify-between text-xl text-current/75">
       <p>#2</p>
       <p>&mdash; juice</p>
@@ -19,5 +32,8 @@
         >&gt;</span
       >
     </a>
+  </div>
+  <div class="relative">
+    <Gallery id="juice" />
   </div>
 </div>

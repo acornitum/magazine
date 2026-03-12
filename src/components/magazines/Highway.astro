@@ -1,4 +1,17 @@
-<div class="bg-highway text-white">
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Gallery from "./Gallery.astro";
+
+const entry = await getEntry("magazines", "highway");
+if (!entry) {
+  throw new Error("Highway magazine entry not found");
+}
+
+const { pages } = entry.data;
+---
+
+<div class="bg-highway overflow-clip text-white">
   <div class="p-16">
     <div class="flex justify-between text-xl text-current/75">
       <p>#3</p>
@@ -19,5 +32,8 @@
         >&gt;</span
       >
     </a>
+  </div>
+  <div class="relative">
+    <Gallery id="highway" />
   </div>
 </div>

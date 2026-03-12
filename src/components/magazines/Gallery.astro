@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+
+interface Props {
+  id: "magazine" | "highway" | "juice" | (string & {});
+}
+const { id } = Astro.props;
+
+const entry = await getEntry("magazines", id);
+if (!entry) {
+  throw new Error(`${id} magazine entry not found`);
+}
+
+const { pages } = entry.data;
+---
+
+<div class="flex -rotate-2 flex-col items-center gap-4">
+  <div class="flex w-max gap-4">
+    {
+      pages
+        .slice(0, 6)
+        .map((image) => (
+          <Image
+            src={image}
+            alt=""
+            role="presentation"
+            class="aspect-magazine h-80 w-auto object-cover shadow-lg"
+          />
+        ))
+    }
+  </div>
+  <div class="flex w-max gap-4">
+    {
+      pages
+        .slice(6)
+        .map((image) => (
+          <Image
+            src={image}
+            alt=""
+            role="presentation"
+            class="aspect-magazine h-80 w-auto object-cover shadow-lg"
+          />
+        ))
+    }
+  </div>
+</div>

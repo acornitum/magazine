@@ -1,4 +1,8 @@
-<div class="bg-magazine text-white">
+---
+import Gallery from "./Gallery.astro";
+---
+
+<div class="bg-magazine overflow-clip text-white">
   <div class="p-16">
     <div class="flex justify-between text-xl text-current/75">
       <p>#1</p>
@@ -19,5 +23,8 @@
         >&gt;</span
       >
     </a>
+  </div>
+  <div class="relative">
+    <Gallery id="magazine" />
   </div>
 </div>
