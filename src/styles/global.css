@@ -53,11 +53,14 @@
     );
     background-size: 200% 100%;
     background-position: 0 0;
+
+    animation: stripe-move 1s linear infinite;
+    animation-play-state: paused;
   }
 
   &:hover::before {
     @apply brightness-75;
-    animation: stripe-move 1s linear infinite;
+    animation-play-state: running;
   }
 }
 @utility bg-stripes-to-* {
