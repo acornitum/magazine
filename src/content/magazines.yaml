@@ -1,4 +1,5 @@
 - id: magazine
+  logo: ~/assets/logos/mag-magazine.png
   pages:
     - ~/assets/pages/magazine/30.png
     - ~/assets/pages/magazine/31.png
@@ -14,6 +15,7 @@
     - ~/assets/pages/magazine/93.png
 
 - id: juice
+  logo: ~/assets/logos/mag-juice.png
   pages:
     - ~/assets/pages/juice/1.png
     - ~/assets/pages/juice/2.png
@@ -29,6 +31,7 @@
     - ~/assets/pages/juice/22.png
 
 - id: highway
+  logo: ~/assets/logos/mag-highway.png
   pages:
     - ~/assets/pages/highway/front.png
     - ~/assets/pages/highway/back.png

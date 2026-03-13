@@ -5,6 +5,7 @@ const magazines = defineCollection({
   loader: file("src/content/magazines.yaml"),
   schema: ({ image }) =>
     z.object({
+      logo: image(),
       pages: z.array(image()).min(12),
     }),
 });

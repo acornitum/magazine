@@ -1,5 +1,14 @@
 ---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
 import Gallery from "./Gallery.astro";
+
+const entry = await getEntry("magazines", "magazine");
+if (!entry) {
+  throw new Error("Hack Club magazine entry not found");
+}
+
+const { logo, pages } = entry.data;
 ---
 
 <div class="bg-magazine overflow-clip text-white">
@@ -25,6 +34,12 @@ import Gallery from "./Gallery.astro";
     </a>
   </div>
   <div class="relative">
-    <Gallery id="magazine" />
+    <Gallery pages={pages} />
+    <Image
+      src={logo}
+      alt=""
+      role="presentation"
+      class="absolute top-1/2 left-1/2 h-45 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2 shadow-xl"
+    />
   </div>
 </div>

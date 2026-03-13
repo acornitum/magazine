@@ -1,18 +1,12 @@
 ---
+import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
-import { getEntry } from "astro:content";
 
 interface Props {
-  id: "magazine" | "highway" | "juice" | (string & {});
-}
-const { id } = Astro.props;
-
-const entry = await getEntry("magazines", id);
-if (!entry) {
-  throw new Error(`${id} magazine entry not found`);
+  pages: ImageMetadata[];
 }
 
-const { pages } = entry.data;
+const { pages } = Astro.props;
 ---
 
 <div class="flex -rotate-2 flex-col items-center gap-4">

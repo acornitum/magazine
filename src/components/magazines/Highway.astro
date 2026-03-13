@@ -8,7 +8,7 @@ if (!entry) {
   throw new Error("Highway magazine entry not found");
 }
 
-const { pages } = entry.data;
+const { logo, pages } = entry.data;
 ---
 
 <div class="bg-highway overflow-clip text-white">
@@ -34,6 +34,12 @@ const { pages } = entry.data;
     </a>
   </div>
   <div class="relative">
-    <Gallery id="highway" />
+    <Gallery pages={pages} />
+    <Image
+      src={logo}
+      alt=""
+      role="presentation"
+      class="absolute top-1/2 left-1/2 h-54 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2"
+    />
   </div>
 </div>
