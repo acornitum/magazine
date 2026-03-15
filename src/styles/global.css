@@ -26,6 +26,7 @@
   --color-pink-soft: #f989ff;
 
   --aspect-magazine: 420 / 595;
+  --aspect-postcard: 461 / 289;
 }
 @custom-variant dragging ([data-dragging="true"]);
 

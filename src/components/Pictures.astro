@@ -1,10 +1,13 @@
 ---
 import { Image } from "astro:assets";
 
-import magazineSolo from "@/assets/magazine-solo.png";
+// import magazineSolo from "@/assets/magazine-solo.png";
+import physical from "@/assets/pictures/physical.jpg";
+import michaelReeves from "@/assets/pictures/michael-reeves.png";
+import techjoyce from "@/assets/pictures/techjoyce.png";
 ---
 
-<div class="text-text p-16">
+<div class="text-text p-12 sm:p-16">
   <p class="text-3xl leading-snug">
     We gave out 100 copies of the magazine at Campfire Flagship, to all the
     attendees, Open Sauce staff, and YouTubers there!
@@ -32,10 +35,54 @@ import magazineSolo from "@/assets/magazine-solo.png";
     </a>
   </div>
 
-  <div class="mt-12 grid h-160 grid-cols-2 grid-rows-2 gap-6">
-    <div class="corner-squircle row-span-2 rounded-4xl bg-red-100"></div>
-    <div class="corner-squircle rounded-4xl bg-lime-100"></div>
-    <div class="corner-squircle rounded-4xl bg-blue-100"></div>
+  <div
+    class="mt-12 grid grid-cols-1 grid-rows-4 gap-6 md:grid-cols-2 md:grid-rows-2"
+  >
+    <div
+      class="corner-squircle relative row-span-2 overflow-clip rounded-4xl contain-size"
+    >
+      <Image
+        src={physical}
+        alt=""
+        role="presentation"
+        class="size-full object-cover"
+      />
+      <div
+        class="corner-squircle absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+      >
+        <p class="font-jua text-text">physical magazine wowow</p>
+      </div>
+    </div>
+    <div
+      class="corner-squircle relative h-88 overflow-clip rounded-4xl contain-size"
+    >
+      <Image
+        src={michaelReeves}
+        alt=""
+        role="presentation"
+        class="size-full object-cover object-[50%_25%]"
+      />
+      <div
+        class="corner-squircle absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+      >
+        <p class="font-jua text-text">michael reeves</p>
+      </div>
+    </div>
+    <div
+      class="corner-squircle relative h-88 overflow-clip rounded-4xl contain-size"
+    >
+      <Image
+        src={techjoyce}
+        alt=""
+        role="presentation"
+        class="size-full object-cover object-[50%_40%]"
+      />
+      <div
+        class="corner-squircle absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+      >
+        <p class="font-jua text-text">techjoyce</p>
+      </div>
+    </div>
   </div>
 
   <!-- <div class="font-jua relative mt-12 space-y-4 text-8xl text-black/5">

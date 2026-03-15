@@ -12,66 +12,98 @@ import hours from "@/assets/stats/hours.svg";
 import countries from "@/assets/stats/countries.svg";
 ---
 
-<div
-  class="from-gradient-start to-gradient-end flex justify-between bg-linear-to-b px-10 py-16"
->
-  <div class="flex-none space-y-12">
-    <div class="relative rotate-3">
-      <Image src={postcard4} alt="" role="presentation" class="h-90 w-auto" />
-      <div class="absolute inset-0 flex flex-col items-center justify-center">
+<div class="from-gradient-start to-gradient-end @container bg-linear-to-b">
+  <div class="flex gap-[3.5cqw] px-10 py-16 max-md:flex-col">
+    <div class="flex min-w-0 flex-1 flex-col gap-y-[4cqw] max-md:gap-y-[8cqw]">
+      <div class="aspect-postcard @container-[size] relative w-full rotate-3">
         <Image
-          src={magprojects}
-          alt="158"
+          src={postcard4}
+          alt=""
           role="presentation"
-          class="h-21 w-auto"
+          class="size-full object-cover shadow-lg"
         />
-        <p class="font-jua mt-4 text-4xl text-white text-shadow-md">
-          projects in magazine
-        </p>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={magprojects}
+            alt="158"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            projects in magazine
+          </p>
+        </div>
+      </div>
+      <div class="aspect-postcard @container-[size] relative w-full -rotate-2">
+        <Image
+          src={postcard1}
+          alt=""
+          role="presentation"
+          class="size-full object-cover shadow-lg"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={projects}
+            alt="23,077"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            projects made
+          </p>
+        </div>
       </div>
     </div>
-    <div class="-rotate-2">
-      <Image src={postcard1} alt="" role="presentation" class="h-90 w-auto" />
-      <div class="absolute inset-0 flex flex-col items-center justify-center">
+    <div
+      class="flex min-w-0 flex-1 flex-col gap-y-[4.5cqw] pt-[3cqw] max-md:gap-y-[8cqw]"
+    >
+      <div class="aspect-postcard @container-[size] relative w-full -rotate-3">
         <Image
-          src={projects}
-          alt="23,077"
+          src={postcard2}
+          alt=""
           role="presentation"
-          class="h-21 w-auto"
+          class="size-full object-cover shadow-lg"
         />
-        <p class="font-jua mt-4 text-4xl text-white text-shadow-md">
-          projects made
-        </p>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={hours}
+            alt="240,000+"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            hours spent making
+          </p>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="flex-none space-y-14 pt-8">
-    <div class="-rotate-3">
-      <Image src={postcard2} alt="" role="presentation" class="h-90 w-auto" />
-      <div class="absolute inset-0 flex flex-col items-center justify-center">
+      <div
+        class="aspect-postcard @container-[size] relative -ml-2 w-full rotate-1 max-md:order-first"
+      >
         <Image
-          src={hours}
-          alt="240,000+"
+          src={postcard3}
+          alt=""
           role="presentation"
-          class="h-21 w-auto"
+          class="size-full object-cover shadow-lg"
         />
-        <p class="font-jua mt-4 text-4xl text-white text-shadow-md">
-          hours spent making
-        </p>
-      </div>
-    </div>
-    <div class="-ml-2 rotate-1">
-      <Image src={postcard3} alt="" role="presentation" class="h-90 w-auto" />
-      <div class="absolute inset-0 flex flex-col items-center justify-center">
-        <Image
-          src={countries}
-          alt="112"
-          role="presentation"
-          class="h-21 w-auto"
-        />
-        <p class="font-jua mt-4 text-4xl text-white text-shadow-md">
-          countries
-        </p>
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={countries}
+            alt="112"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            countries
+          </p>
+        </div>
       </div>
     </div>
   </div>

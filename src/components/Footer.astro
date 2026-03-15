@@ -9,11 +9,24 @@ import Acon from "@/assets/footer/name-acon.svg";
 import Gideon from "@/assets/footer/name-gideon.svg";
 import Valen from "@/assets/footer/name-valen.svg";
 import Lilia from "@/assets/footer/name-lilia.svg";
+
+import ArrowRight from "@/assets/icons/arrow-right.svg";
+
+type Link = {
+  text: string;
+  href: string;
+};
+const links: Link[] = [
+  { text: "hack club", href: "https://hackclub.com" },
+  { text: "slack", href: "https://hackclub.com/slack" },
+  { text: "clubs", href: "https://hackclub.com/clubs" },
+  { text: "hackathons", href: "https://hackclub.com/hackathons" },
+];
 ---
 
-<footer class="bg-neutral-900 text-white">
-  <div class="p-16">
-    <div class="mb-6 flex items-center gap-1">
+<footer class="@container bg-neutral-900 text-white">
+  <div class="p-12 sm:p-16">
+    <div class="flex items-center gap-1">
       <Image src={hcLogo} alt="" role="presentation" class="h-12 w-auto" />
       <div class="min-w-0 flex-1"></div>
       <a
@@ -45,28 +58,41 @@ import Lilia from "@/assets/footer/name-lilia.svg";
         <span class="sr-only">Lilia</span>
       </a>
     </div>
-    <div class="flex gap-16">
-      <div class="group w-40 flex-none space-y-2 text-xl leading-relaxed">
-        <p
-          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
-        >
-          hack club
-        </p>
-        <p
-          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
-        >
-          slack
-        </p>
-        <p
-          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
-        >
-          clubs
-        </p>
-        <p
-          class="italic transition-all group-has-hover:not-hover:opacity-50 hover:pl-1"
-        >
-          hackathons
-        </p>
+    <div class="mt-8 @5xl:hidden">
+      <div class="flex gap-2 text-lg text-neutral-400 italic">
+        {
+          links.map((link, idx) => (
+            <>
+              {idx > 0 && <span aria-hidden="true">//</span>}
+              <a
+                href={link.href}
+                class="underline underline-offset-2 transition hover:text-white"
+              >
+                {link.text}
+              </a>
+            </>
+          ))
+        }
+      </div>
+    </div>
+    <div class="mt-6 flex gap-x-12">
+      <div class="group w-40 flex-none text-xl leading-relaxed @max-5xl:hidden">
+        {
+          links.map((link) => (
+            <a
+              href={link.href}
+              class="group/link relative block py-0.5 italic transition-all group-has-hover:not-hover:opacity-50 hover:font-bold"
+            >
+              <ArrowRight
+                class="pointer-events-none absolute top-1/2 -left-3.5 size-4 -translate-x-3 -translate-y-1/2 text-white opacity-0 transition group-hover/link:translate-x-0 group-hover/link:opacity-100"
+                stroke-width={3}
+              />
+              <span class="block transition-transform group-hover/link:translate-x-2">
+                {link.text}
+              </span>
+            </a>
+          ))
+        }
       </div>
       <div class="min-w-0 flex-1 text-xl leading-relaxed">
         <p>
@@ -82,7 +108,7 @@ import Lilia from "@/assets/footer/name-lilia.svg";
             src={rightArrow}
             alt=""
             role="presentation"
-            class="h-6 w-auto flex-none"
+            class="h-6 w-fit flex-none @max-3xl:hidden"
           />
           <p class="text-amber-soft min-w-0 flex-1 font-bold">
             At Hack Club, students aren't just learning, they're shipping.

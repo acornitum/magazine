@@ -31,7 +31,7 @@ import hcFlag from "@/assets/hc-flag.svg";
       class="h-24 w-auto flex-none"
     />
     <div class="flex min-w-0 flex-1 items-center justify-end">
-      <p class="text-text text-sm">
+      <p class="text-text text-base">
         see how it all started: <a
           href="/v1"
           class="text-blue-fg font-bold underline-offset-2 transition hover:text-blue-800 hover:underline"
@@ -40,7 +40,9 @@ import hcFlag from "@/assets/hc-flag.svg";
       </p>
     </div>
   </div>
-  <div class="flex w-full justify-center gap-8 p-16">
+  <div
+    class="flex w-full justify-center gap-x-8 gap-y-12 p-12 max-lg:flex-col max-lg:items-center sm:p-16"
+  >
     <div class="group relative isolate flex-none px-16 perspective-distant">
       <div
         id="magazine-3d"
@@ -99,8 +101,8 @@ import hcFlag from "@/assets/hc-flag.svg";
       />
     </div>
 
-    <div class="flex min-w-0 flex-1 flex-col justify-center">
-      <div class="relative w-fit">
+    <div class="flex min-w-0 flex-1 flex-col justify-center max-lg:text-center">
+      <div class="relative w-fit max-lg:mx-auto">
         <Image src={backTitle} alt="" role="presentation" class="h-24 w-auto" />
         <Image
           src={title}
@@ -108,11 +110,11 @@ import hcFlag from "@/assets/hc-flag.svg";
           class="absolute top-1/2 left-1/2 h-14 w-auto -translate-x-1/2 -translate-y-1/2"
         />
       </div>
-      <p class="font-jua text-text mt-8 text-3xl">
+      <p class="font-jua text-text mt-8 text-3xl text-pretty max-lg:max-w-2xl">
         The 2025 Hack Club showcase. Over 150 of the most unique and awesome
         projects. Designed and built by teenagers, for you to explore.
       </p>
-      <div class="mt-8 flex gap-4">
+      <div class="mt-8 flex gap-4 max-lg:justify-center">
         <a
           href="#"
           class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
@@ -134,7 +136,7 @@ import hcFlag from "@/assets/hc-flag.svg";
           see the pdf
         </a>
       </div>
-      <p class="mt-4 text-sm text-neutral-500">
+      <p class="mt-4 text-base text-neutral-500">
         or scroll down to discover more!
       </p>
     </div>
