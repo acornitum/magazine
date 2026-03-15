@@ -1,6 +1,7 @@
 ---
 import type { ImageMetadata } from "astro";
 import { Image } from "astro:assets";
+import Carousel from "../Carousel.astro";
 
 interface Props {
   pages: ImageMetadata[];
@@ -9,33 +10,7 @@ interface Props {
 const { pages } = Astro.props;
 ---
 
-<div class="flex -rotate-2 flex-col items-center gap-4">
-  <div class="flex w-max gap-4">
-    {
-      pages
-        .slice(0, 6)
-        .map((image) => (
-          <Image
-            src={image}
-            alt=""
-            role="presentation"
-            class="aspect-magazine h-80 w-auto object-cover shadow-lg"
-          />
-        ))
-    }
-  </div>
-  <div class="flex w-max gap-4">
-    {
-      pages
-        .slice(6)
-        .map((image) => (
-          <Image
-            src={image}
-            alt=""
-            role="presentation"
-            class="aspect-magazine h-80 w-auto object-cover shadow-lg"
-          />
-        ))
-    }
-  </div>
+<div class="group space-y-4">
+  <Carousel pages={pages.slice(0, 6)} />
+  <Carousel pages={pages.slice(6)} reverse />
 </div>

@@ -18,10 +18,18 @@ import doodleTr from "@/assets/textures/doodle-tr.svg";
 
 import topBar from "@/assets/topbar.svg";
 import hcFlag from "@/assets/hc-flag.svg";
+import Carousel from "./Carousel.astro";
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("magazines", "magazine");
+if (!entry) {
+  throw new Error("Hack Club magazine entry not found");
+}
+const { pages } = entry.data;
 ---
 
 <Image src={topBar} alt="" role="presentation" class="h-auto w-full" />
-<div class="bg-grid">
+<div class="bg-grid relative">
   <div class="flex px-12 sm:px-16">
     <div class="min-w-0 flex-1 max-lg:hidden"></div>
     <Image
@@ -140,6 +148,10 @@ import hcFlag from "@/assets/hc-flag.svg";
         or scroll down to discover more!
       </p>
     </div>
+  </div>
+
+  <div class="overflow-x-clip bg-linear-to-t from-white py-8">
+    <Carousel pages={pages} />
   </div>
 </div>
 
