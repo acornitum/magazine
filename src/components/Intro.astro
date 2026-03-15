@@ -2,6 +2,8 @@
 import { Image } from "astro:assets";
 
 import magazineStar from "@/assets/magazinestar.svg";
+
+import catWoah from "@/assets/emoji/cat-woah.webp";
 ---
 
 <div class="text-text space-y-8 p-12 text-4xl leading-snug sm:p-16">
@@ -13,7 +15,12 @@ import magazineStar from "@/assets/magazinestar.svg";
   <p>
     This magazine is a collection of over 150 of the coolest, most fun, and most
     technical software and hardware projects made by Hack Clubbers in just one
-    year.
+    year. <Image
+      src={catWoah}
+      alt=""
+      role="presentation"
+      class="-mt-1 inline h-8 w-auto"
+    />
   </p>
   <p>
     Video games played on real custom-made consoles, balloons sent into space,
