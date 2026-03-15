@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import Gallery from "./Gallery.astro";
 
+import stickers from "@/assets/magazines/magazine/stickers.png";
+
 const entry = await getEntry("magazines", "magazine");
 if (!entry) {
   throw new Error("Hack Club magazine entry not found");
@@ -42,4 +44,10 @@ const { logo, pages } = entry.data;
       class="absolute top-1/2 left-1/2 h-45 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2 shadow-xl"
     />
   </div>
+  <Image
+    src={stickers}
+    alt=""
+    role="presentation"
+    class="mt-4 h-auto w-full drop-shadow-lg"
+  />
 </div>

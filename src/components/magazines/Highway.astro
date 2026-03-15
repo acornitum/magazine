@@ -3,6 +3,9 @@ import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import Gallery from "./Gallery.astro";
 
+import landing from "@/assets/magazines/highway/landing.png";
+import racecar from "@/assets/magazines/highway/racecar.png";
+
 const entry = await getEntry("magazines", "highway");
 if (!entry) {
   throw new Error("Highway magazine entry not found");
@@ -11,7 +14,7 @@ if (!entry) {
 const { logo, pages } = entry.data;
 ---
 
-<div class="bg-highway overflow-clip text-white">
+<div class="bg-highway @container relative isolate overflow-clip text-white">
   <div class="p-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
       <p>#3</p>
@@ -42,4 +45,17 @@ const { logo, pages } = entry.data;
       class="absolute top-1/2 left-1/2 h-54 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2"
     />
   </div>
+
+  <Image
+    src={racecar}
+    alt=""
+    role="presentation"
+    class="relative z-10 mx-auto -mt-[4cqw] -mb-[16cqw] h-[16cqw] w-auto"
+  />
+  <Image
+    src={landing}
+    alt=""
+    role="presentation"
+    class="relative -z-10 -mt-[4cqw] h-[20cqw] w-full object-cover object-top"
+  />
 </div>

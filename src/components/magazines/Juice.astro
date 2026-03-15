@@ -3,6 +3,8 @@ import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
 import Gallery from "./Gallery.astro";
 
+import stickers from "@/assets/magazines/juice/stickers.png";
+
 const entry = await getEntry("magazines", "juice");
 if (!entry) {
   throw new Error("Juice magazine entry not found");
@@ -42,4 +44,10 @@ const { logo, pages } = entry.data;
       class="absolute top-1/2 left-1/2 h-50 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2"
     />
   </div>
+  <Image
+    src={stickers}
+    alt=""
+    role="presentation"
+    class="mt-4 h-auto w-full drop-shadow-lg"
+  />
 </div>
