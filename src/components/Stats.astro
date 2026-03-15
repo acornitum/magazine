@@ -10,9 +10,15 @@ import magprojects from "@/assets/stats/magprojects.svg";
 import projects from "@/assets/stats/projects.svg";
 import hours from "@/assets/stats/hours.svg";
 import countries from "@/assets/stats/countries.svg";
+
+import Sep from "@/assets/sep.svg";
 ---
 
-<div class="from-gradient-start to-gradient-end @container bg-linear-to-b">
+<div
+  class="from-gradient-start to-gradient-end @container relative bg-linear-to-b"
+>
+  <Sep class="absolute inset-x-0 -top-2.5 h-auto w-full text-white" />
+
   <div class="flex gap-[3.5cqw] px-10 py-16 max-md:flex-col">
     <div class="flex min-w-0 flex-1 flex-col gap-y-[4cqw] max-md:gap-y-[8cqw]">
       <div class="aspect-postcard @container-[size] relative w-full rotate-3">

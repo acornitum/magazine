@@ -6,6 +6,8 @@ import Gallery from "./Gallery.astro";
 import landing from "@/assets/magazines/highway/landing.png";
 import racecar from "@/assets/magazines/highway/racecar.png";
 
+import Sep from "@/assets/sep.svg";
+
 const entry = await getEntry("magazines", "highway");
 if (!entry) {
   throw new Error("Highway magazine entry not found");
@@ -14,7 +16,9 @@ if (!entry) {
 const { logo, pages } = entry.data;
 ---
 
-<div class="bg-highway @container relative isolate overflow-clip text-white">
+<div class="bg-highway @container relative isolate text-white">
+  <Sep class="text-highway absolute inset-x-0 -top-2.5 h-auto w-full" />
+
   <div class="p-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
       <p>#3</p>
@@ -36,7 +40,7 @@ const { logo, pages } = entry.data;
       >
     </a>
   </div>
-  <div class="relative">
+  <div class="relative overflow-x-clip">
     <Gallery pages={pages} />
     <Image
       src={logo}

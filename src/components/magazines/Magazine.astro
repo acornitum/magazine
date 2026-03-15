@@ -5,6 +5,8 @@ import Gallery from "./Gallery.astro";
 
 import stickers from "@/assets/magazines/magazine/stickers.png";
 
+import Sep from "@/assets/sep.svg";
+
 const entry = await getEntry("magazines", "magazine");
 if (!entry) {
   throw new Error("Hack Club magazine entry not found");
@@ -13,7 +15,9 @@ if (!entry) {
 const { logo, pages } = entry.data;
 ---
 
-<div class="bg-magazine overflow-clip text-white">
+<div class="bg-magazine relative text-white">
+  <Sep class="text-magazine absolute inset-x-0 -top-2.5 h-auto w-full" />
+
   <div class="p-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
       <p>#1</p>
@@ -35,7 +39,7 @@ const { logo, pages } = entry.data;
       >
     </a>
   </div>
-  <div class="relative">
+  <div class="relative overflow-x-clip">
     <Gallery pages={pages} />
     <Image
       src={logo}
@@ -44,10 +48,12 @@ const { logo, pages } = entry.data;
       class="absolute top-1/2 left-1/2 h-45 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2 shadow-xl"
     />
   </div>
-  <Image
-    src={stickers}
-    alt=""
-    role="presentation"
-    class="mt-4 h-auto w-full drop-shadow-lg"
-  />
+  <div class="mt-4 overflow-clip">
+    <Image
+      src={stickers}
+      alt=""
+      role="presentation"
+      class="h-auto w-full drop-shadow-lg"
+    />
+  </div>
 </div>

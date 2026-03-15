@@ -14,6 +14,8 @@ import Lilia from "@/assets/footer/name-lilia.svg";
 
 import ArrowRight from "@/assets/icons/arrow-right.svg";
 
+import Sep from "@/assets/sep.svg";
+
 type Link = {
   text: string;
   href: string;
@@ -26,7 +28,9 @@ const links: Link[] = [
 ];
 ---
 
-<footer class="@container bg-neutral-900 text-white">
+<footer class="@container relative bg-neutral-900 text-white">
+  <Sep class="absolute inset-x-0 -top-2.5 h-auto w-full text-neutral-900" />
+
   <div class="p-12 sm:p-16">
     <div class="flex items-center gap-1">
       <Image src={hcLogo} alt="" role="presentation" class="h-12 w-auto" />
