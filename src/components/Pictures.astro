@@ -5,6 +5,8 @@ import { Image } from "astro:assets";
 import physical from "@/assets/pictures/physical.jpg";
 import michaelReeves from "@/assets/pictures/michael-reeves.png";
 import techjoyce from "@/assets/pictures/techjoyce.png";
+
+import YouTube from "@/assets/icons/youtube.svg";
 ---
 
 <div class="text-text p-12 sm:p-16">
@@ -50,7 +52,7 @@ import techjoyce from "@/assets/pictures/techjoyce.png";
       <div
         class="corner-squircle absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
       >
-        <p class="font-jua text-text">physical magazine wowow</p>
+        <p class="font-jua text-text text-lg">physical magazine wowow</p>
       </div>
     </div>
     <div
@@ -62,11 +64,16 @@ import techjoyce from "@/assets/pictures/techjoyce.png";
         role="presentation"
         class="size-full object-cover object-[50%_25%]"
       />
-      <div
-        class="corner-squircle absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+      <a
+        href="https://youtube.com/@MichaelReeves"
+        class="corner-squircle group font-jua absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
       >
-        <p class="font-jua text-text">michael reeves</p>
-      </div>
+        <p class="text-text text-lg underline-offset-2 group-hover:underline">
+          michael reeves
+        </p>
+        <YouTube class="ml-2 h-4 text-[#ff0000]" />
+        <span class="-mb-0.5 ml-1 text-xs text-[#ff0000]">7.7m</span>
+      </a>
     </div>
     <div
       class="corner-squircle relative h-88 overflow-clip rounded-4xl contain-size"
@@ -77,11 +84,16 @@ import techjoyce from "@/assets/pictures/techjoyce.png";
         role="presentation"
         class="size-full object-cover object-[50%_40%]"
       />
-      <div
-        class="corner-squircle absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+      <a
+        href="https://youtube.com/@TechJoyce"
+        class="corner-squircle font-jua group absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
       >
-        <p class="font-jua text-text">techjoyce</p>
-      </div>
+        <p class="text-text text-lg underline-offset-2 group-hover:underline">
+          techjoyce
+        </p>
+        <YouTube class="ml-2 h-4 text-[#ff0000]" />
+        <span class="-mb-0.5 ml-1 text-xs text-[#ff0000]">2.7m</span>
+      </a>
     </div>
   </div>
 
