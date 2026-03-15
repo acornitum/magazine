@@ -62,12 +62,14 @@ const { pages } = entry.data;
           alt=""
           role="presentation"
           class="absolute inset-0 size-full translate-z-1.5 object-cover backface-hidden"
+          priority
         />
         <Image
           src={back}
           alt=""
           role="presentation"
           class="absolute inset-0 size-full -translate-z-1.5 rotate-y-180 object-cover backface-hidden"
+          priority
         />
 
         <!-- Spine -->
@@ -76,12 +78,14 @@ const { pages } = entry.data;
           alt=""
           role="presentation"
           class="absolute top-0 right-full h-full w-3 origin-right translate-z-1.5 -rotate-y-90 object-cover backface-hidden"
+          priority
         />
         <Image
           src={spineVertical}
           alt=""
           role="presentation"
           class="absolute top-0 left-full h-full w-3 origin-left translate-z-1.5 rotate-y-90 object-cover backface-hidden"
+          priority
         />
 
         <!-- White boxes to cover top and bottom sides -->
@@ -100,22 +104,31 @@ const { pages } = entry.data;
         alt=""
         role="presentation"
         class="absolute -bottom-8 -left-4 -z-10 h-16 w-auto"
+        priority
       />
       <Image
         src={doodleTr}
         alt=""
         role="presentation"
         class="absolute -top-14 -right-2 -z-10 h-24 w-auto"
+        priority
       />
     </div>
 
     <div class="flex min-w-0 flex-1 flex-col justify-center max-lg:text-center">
       <div class="relative w-fit max-lg:mx-auto">
-        <Image src={backTitle} alt="" role="presentation" class="h-24 w-auto" />
+        <Image
+          src={backTitle}
+          alt=""
+          role="presentation"
+          class="h-24 w-auto"
+          priority
+        />
         <Image
           src={title}
           alt="magazine"
           class="absolute top-1/2 left-1/2 h-14 w-auto -translate-x-1/2 -translate-y-1/2"
+          priority
         />
       </div>
       <p class="font-jua text-text mt-8 text-3xl text-pretty max-lg:max-w-2xl">
@@ -160,6 +173,7 @@ const { pages } = entry.data;
 
   animate("#magazine-3d", {
     rotateY: ["-3deg", "-183deg", "-363deg"],
+    rotateX: ["3deg", "-3deg", "3deg"],
     ease: "inOutExpo",
     duration: 7500,
     loop: true,
