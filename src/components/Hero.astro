@@ -54,7 +54,7 @@ const { pages } = entry.data;
     <div class="group relative isolate flex-none px-16 perspective-distant">
       <div
         id="magazine-3d"
-        class="aspect-magazine relative h-104 rotate-6 rotate-x-3 -rotate-y-3 shadow-lg transform-3d"
+        class="aspect-magazine relative h-104 rotate-6 rotate-x-3 -rotate-y-3 opacity-0 shadow-lg transform-3d"
       >
         <!-- Front and back sides -->
         <Image
@@ -100,23 +100,25 @@ const { pages } = entry.data;
       </div>
 
       <Image
+        id="hero-doodle-bl"
         src={doodleBl}
         alt=""
         role="presentation"
-        class="absolute -bottom-8 -left-4 -z-10 h-16 w-auto"
+        class="absolute -bottom-8 -left-4 -z-10 h-16 w-auto opacity-0"
         priority
       />
       <Image
+        id="hero-doodle-tr"
         src={doodleTr}
         alt=""
         role="presentation"
-        class="absolute -top-14 -right-2 -z-10 h-24 w-auto"
+        class="absolute -top-14 -right-2 -z-10 h-24 w-auto opacity-0"
         priority
       />
     </div>
 
     <div class="flex min-w-0 flex-1 flex-col justify-center max-lg:text-center">
-      <div class="relative w-fit max-lg:mx-auto">
+      <div id="hero-logo" class="relative w-fit opacity-0 max-lg:mx-auto">
         <Image
           src={backTitle}
           alt=""
@@ -131,57 +133,155 @@ const { pages } = entry.data;
           priority
         />
       </div>
-      <p class="font-jua text-text mt-8 text-3xl text-pretty max-lg:max-w-2xl">
+      <p
+        id="hero-strapline"
+        class="font-jua text-text mt-8 text-3xl text-pretty opacity-0 max-lg:max-w-2xl"
+      >
         The 2025 Hack Club showcase. Over 150 of the most unique and awesome
         projects. Designed and built by teenagers, for you to explore.
       </p>
-      <div class="mt-8 flex gap-4 max-lg:justify-center">
-        <a
-          href="#"
-          class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
-        >
-          <span
-            class="text-blue-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
-            >a</span
+      <div id="hero-btns" class="mt-8 flex gap-4 max-lg:justify-center">
+        <div class="flex-none opacity-0">
+          <a
+            href="#"
+            class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
           >
-          get a copy
-        </a>
-        <a
-          href="#"
-          class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
-        >
-          <span
-            class="text-green-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
-            >x</span
+            <span
+              class="text-blue-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+              >a</span
+            >
+            get a copy
+          </a>
+        </div>
+        <div class="flex-none opacity-0">
+          <a
+            href="#"
+            class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
           >
-          see the pdf
-        </a>
+            <span
+              class="text-green-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+              >x</span
+            >
+            see the pdf
+          </a>
+        </div>
       </div>
-      <p class="mt-4 text-base text-neutral-500">
+      <p id="hero-discover" class="mt-4 text-base text-neutral-500 opacity-0">
         or scroll down to discover more!
       </p>
     </div>
   </div>
 
-  <div class="overflow-x-clip bg-linear-to-t from-white py-8">
+  <div
+    id="hero-carousel"
+    class="overflow-x-clip bg-linear-to-t from-white py-8 opacity-0"
+  >
     <Carousel pages={pages} />
   </div>
 </div>
 
 <script>
-  import { animate } from "animejs";
+  import { animate, createTimeline, stagger } from "animejs";
 
-  animate("#magazine-3d", {
-    rotateY: ["-3deg", "-183deg", "-363deg"],
-    rotateX: ["3deg", "-3deg", "3deg"],
-    ease: "inOutExpo",
-    duration: 7500,
-    loop: true,
-  }).play();
   // animate("#magazine-3d", {
   //   rotateY: ["-3deg", "-183deg", "-363deg"],
   //   ease: "linear",
   //   duration: 10_000,
   //   loop: true,
   // }).play();
+
+  const timelineLeft = createTimeline()
+    .add("#magazine-3d", {
+      opacity: [0, 1],
+      scale: [0.8, 1],
+      rotateY: ["-3deg", "-3deg"],
+      rotateX: ["3deg", "3deg"],
+      ease: "outBack",
+      duration: 400,
+    })
+    .add(
+      "#hero-doodle-tr",
+      {
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        translateY: [20, 0],
+        ease: "outBack(4)",
+        duration: 400,
+      },
+      "<<+=200",
+    )
+    .add(
+      "#hero-doodle-bl",
+      {
+        opacity: [0, 1],
+        translateX: [20, 0],
+        translateY: [-20, 0],
+        ease: "outBack(4)",
+        duration: 400,
+      },
+      "<<",
+    );
+
+  const timelineRight = createTimeline()
+    .add("#hero-logo", {
+      opacity: [0, 1],
+      translateY: [20, 0],
+      ease: "outExpo",
+      duration: 1000,
+    })
+    .add(
+      "#hero-strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        ease: "outExpo",
+        duration: 1000,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#hero-btns > div",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        ease: "outExpo",
+        duration: 1000,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#hero-discover",
+      {
+        opacity: [0, 1],
+        ease: "linear",
+        duration: 200,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#hero-carousel",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        ease: "outExpo",
+        duration: 1000,
+      },
+      "<<+=100",
+    );
+
+  const timelineMain = createTimeline()
+    .sync(timelineLeft)
+    .sync(timelineRight, "<<+=500")
+    .play();
+
+  timelineMain.then(() => {
+    animate("#magazine-3d", {
+      rotateY: ["-3deg", "-183deg", "-363deg"],
+      rotateX: ["3deg", "-3deg", "3deg"],
+      ease: "inOutExpo",
+      duration: 7500,
+      loop: true,
+    }).play();
+  });
 </script>
