@@ -19,6 +19,9 @@ import doodleTr from "@/assets/textures/doodle-tr.svg";
 import topBar from "@/assets/topbar.svg";
 import hcFlag from "@/assets/hc-flag.svg";
 import Carousel from "./Carousel.astro";
+
+import Star from "@/assets/magazinestar-white.svg";
+
 import { getEntry } from "astro:content";
 
 const entry = await getEntry("magazines", "magazine");
@@ -27,6 +30,23 @@ if (!entry) {
 }
 const { pages } = entry.data;
 ---
+
+<div
+  id="loading-overlay"
+  class="fixed inset-0 isolate z-30 flex items-center justify-center overflow-clip text-white"
+>
+  <div
+    class="bg-magazine circle absolute top-1/2 left-1/2 -z-10 size-[141.5vmax] -translate-x-1/2 -translate-y-1/2 rounded-full"
+  >
+  </div>
+  <div
+    class="circle absolute top-1/2 left-1/2 -z-10 size-[110vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/25"
+  >
+  </div>
+  <div class="star">
+    <Star class="h-16 animate-pulse" />
+  </div>
+</div>
 
 <Image src={topBar} alt="" role="presentation" class="h-auto w-full" />
 <div class="bg-grid relative">
@@ -182,6 +202,7 @@ const { pages } = entry.data;
 
 <script>
   import { animate, createTimeline, stagger } from "animejs";
+  import { $ } from "animejs/utils";
 
   // animate("#magazine-3d", {
   //   rotateY: ["-3deg", "-183deg", "-363deg"],
@@ -190,7 +211,7 @@ const { pages } = entry.data;
   //   loop: true,
   // }).play();
 
-  const timelineLeft = createTimeline()
+  const timelineLeft = createTimeline({ autoplay: false })
     .add("#magazine-3d", {
       opacity: [0, 1],
       scale: [0.8, 1],
@@ -222,7 +243,7 @@ const { pages } = entry.data;
       "<<",
     );
 
-  const timelineRight = createTimeline()
+  const timelineRight = createTimeline({ autoplay: false })
     .add("#hero-logo", {
       opacity: [0, 1],
       translateY: [20, 0],
@@ -270,18 +291,34 @@ const { pages } = entry.data;
       "<<+=100",
     );
 
-  const timelineMain = createTimeline()
+  const timelineMain = createTimeline({ autoplay: false })
     .sync(timelineLeft)
-    .sync(timelineRight, "<<+=500")
-    .play();
+    .sync(timelineRight, "<<+=500");
 
-  timelineMain.then(() => {
-    animate("#magazine-3d", {
-      rotateY: ["-3deg", "-183deg", "-363deg"],
-      rotateX: ["3deg", "-3deg", "3deg"],
-      ease: "inOutExpo",
-      duration: 7500,
-      loop: true,
-    }).play();
+  const timelineWithLoading = createTimeline({
+    onBegin: () => {
+      $("#loading-overlay")[0].style.pointerEvents = "none";
+    },
+    autoplay: false,
+  })
+    .add("#loading-overlay .star", {
+      opacity: [1, 0],
+      scale: [1, 0.8],
+      ease: "inExpo",
+      duration: 1000,
+    })
+    .add(
+      "#loading-overlay .circle",
+      {
+        scale: [1, 0],
+        ease: "inExpo",
+        duration: 1000,
+      },
+      "<<+=200",
+    )
+    .sync(timelineMain, "-=100");
+
+  window.addEventListener("load", () => {
+    timelineWithLoading.play();
   });
 </script>
