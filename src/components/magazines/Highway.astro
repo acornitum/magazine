@@ -16,31 +16,33 @@ if (!entry) {
 const { logo, pages } = entry.data;
 ---
 
-<div class="bg-highway @container relative isolate text-white">
-  <Sep class="text-highway absolute inset-x-0 -top-2.5 h-auto w-full" />
+<div id="mag-highway" class="bg-highway @container relative isolate text-white">
+  <Sep class="text-highway absolute inset-x-0 -top-[0.78125vw] h-auto w-full" />
 
   <div class="p-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
-      <p>#3</p>
-      <p>&mdash; highway</p>
+      <p class="header-left opacity-0">#3</p>
+      <p class="header-right opacity-0">&mdash; highway</p>
     </div>
-    <p class="mt-4 text-3xl leading-snug text-pretty">
+    <p class="strapline mt-4 text-3xl leading-snug text-pretty opacity-0">
       A hardware grant program where any teen could make any hardware project.
       They made the coolest keyboards, cyberdecks, 3D printers, devboards, game
       consoles, and more!
     </p>
-    <a
-      href="#"
-      class="font-jua corner-squircle text-highway mt-6 flex h-12 w-fit items-center rounded-3xl bg-white px-5 text-xl transition hover:scale-105 hover:bg-neutral-200 active:scale-100"
-    >
-      view highway magazine
-      <span
-        class="bg-highway ml-2 grid size-5 place-items-center rounded-full text-sm text-white uppercase"
-        >&gt;</span
+    <div class="cta mt-6 opacity-0">
+      <a
+        href="#"
+        class="font-jua corner-squircle text-highway flex h-12 w-fit items-center rounded-3xl bg-white px-5 text-xl transition hover:scale-105 hover:bg-neutral-200 active:scale-100"
       >
-    </a>
+        view highway magazine
+        <span
+          class="bg-highway ml-2 grid size-5 place-items-center rounded-full text-sm text-white uppercase"
+          >&gt;</span
+        >
+      </a>
+    </div>
   </div>
-  <div class="relative overflow-x-clip">
+  <div class="gallery relative overflow-x-clip opacity-0">
     <Gallery pages={pages} />
     <Image
       src={logo}
@@ -54,12 +56,86 @@ const { logo, pages } = entry.data;
     src={racecar}
     alt=""
     role="presentation"
-    class="relative z-10 mx-auto -mt-[4cqw] -mb-[16cqw] h-[16cqw] w-auto"
+    class="racecar relative z-10 mx-auto -mt-[4cqw] -mb-[16cqw] h-[16cqw] w-auto opacity-0"
   />
   <Image
     src={landing}
     alt=""
     role="presentation"
-    class="relative -z-10 -mt-[4cqw] h-[20cqw] w-full object-cover object-top"
+    class="landing relative -z-10 -mt-[4cqw] h-[20cqw] w-full object-cover object-top opacity-0"
   />
 </div>
+
+<script>
+  import { createTimeline, onScroll } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#mag-highway",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#mag-highway .header-left", {
+      opacity: [0, 1],
+      translateX: [20, 0],
+      duration: 800,
+    })
+    .add(
+      "#mag-highway .header-right",
+      {
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        duration: 800,
+      },
+      "<<",
+    )
+    .add(
+      "#mag-highway .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-highway .cta",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-highway .gallery",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#mag-highway .landing",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-highway .racecar",
+      {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    );
+</script>

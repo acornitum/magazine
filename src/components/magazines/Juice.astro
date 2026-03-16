@@ -15,31 +15,35 @@ if (!entry) {
 const { logo, pages } = entry.data;
 ---
 
-<div class="bg-juice-bg relative text-black">
-  <Sep class="text-juice-bg absolute inset-x-0 -top-2.5 h-auto w-full" />
+<div id="mag-juice" class="bg-juice-bg relative text-black">
+  <Sep
+    class="text-juice-bg absolute inset-x-0 -top-[0.78125vw] h-auto w-full"
+  />
 
   <div class="p-12 pb-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
-      <p>#2</p>
-      <p>&mdash; juice</p>
+      <p class="header-left opacity-0">#2</p>
+      <p class="header-right opacity-0">&mdash; juice</p>
     </div>
-    <p class="mt-4 text-3xl leading-snug text-pretty">
+    <p class="strapline mt-4 text-3xl leading-snug text-pretty opacity-0">
       Over 2 months, high schoolers from around the world spent one hundred
       hours making their own game - and over 100 of them flew to Shanghai to
       open a pop-up juice bar & game exhibition.
     </p>
-    <a
-      href="#"
-      class="font-jua corner-squircle bg-juice-fg mt-6 flex h-12 w-fit items-center rounded-3xl px-5 text-xl text-white transition hover:scale-105 hover:bg-green-900 active:scale-100"
-    >
-      view juice magazine
-      <span
-        class="text-juice-fg ml-2 grid size-5 place-items-center rounded-full bg-white text-sm uppercase"
-        >&gt;</span
+    <div class="cta mt-6 opacity-0">
+      <a
+        href="#"
+        class="font-jua corner-squircle bg-juice-fg flex h-12 w-fit items-center rounded-3xl px-5 text-xl text-white transition hover:scale-105 hover:bg-green-900 active:scale-100"
       >
-    </a>
+        view juice magazine
+        <span
+          class="text-juice-fg ml-2 grid size-5 place-items-center rounded-full bg-white text-sm uppercase"
+          >&gt;</span
+        >
+      </a>
+    </div>
   </div>
-  <div class="relative overflow-x-clip">
+  <div class="gallery relative overflow-x-clip opacity-0">
     <Gallery pages={pages} />
     <Image
       src={logo}
@@ -53,7 +57,72 @@ const { logo, pages } = entry.data;
       src={stickers}
       alt=""
       role="presentation"
-      class="h-auto w-full drop-shadow-lg"
+      class="stickers h-auto w-full opacity-0 drop-shadow-lg"
     />
   </div>
 </div>
+
+<script>
+  import { createTimeline, onScroll } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#mag-juice",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#mag-juice .header-left", {
+      opacity: [0, 1],
+      translateX: [20, 0],
+      duration: 800,
+    })
+    .add(
+      "#mag-juice .header-right",
+      {
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        duration: 800,
+      },
+      "<<",
+    )
+    .add(
+      "#mag-juice .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-juice .cta",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-juice .gallery",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#mag-juice .stickers",
+      {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    );
+</script>

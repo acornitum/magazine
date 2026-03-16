@@ -15,13 +15,16 @@ import Sep from "@/assets/sep.svg";
 ---
 
 <div
+  id="stats"
   class="from-gradient-start to-gradient-end @container relative bg-linear-to-b"
 >
-  <Sep class="absolute inset-x-0 -top-2.5 h-auto w-full text-white" />
+  <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-white" />
 
   <div class="flex gap-[3.5cqw] px-10 py-16 max-md:flex-col">
     <div class="flex min-w-0 flex-1 flex-col gap-y-[4cqw] max-md:gap-y-[8cqw]">
-      <div class="aspect-postcard @container-[size] relative w-full rotate-3">
+      <div
+        class="aspect-postcard @container-[size] relative w-full rotate-3 opacity-0"
+      >
         <Image
           src={postcard4}
           alt=""
@@ -42,7 +45,9 @@ import Sep from "@/assets/sep.svg";
           </p>
         </div>
       </div>
-      <div class="aspect-postcard @container-[size] relative w-full -rotate-2">
+      <div
+        class="aspect-postcard @container-[size] relative w-full -rotate-2 opacity-0"
+      >
         <Image
           src={postcard1}
           alt=""
@@ -67,7 +72,9 @@ import Sep from "@/assets/sep.svg";
     <div
       class="flex min-w-0 flex-1 flex-col gap-y-[4.5cqw] pt-[3cqw] max-md:gap-y-[8cqw]"
     >
-      <div class="aspect-postcard @container-[size] relative w-full -rotate-3">
+      <div
+        class="aspect-postcard @container-[size] relative w-full -rotate-3 opacity-0"
+      >
         <Image
           src={postcard2}
           alt=""
@@ -89,7 +96,7 @@ import Sep from "@/assets/sep.svg";
         </div>
       </div>
       <div
-        class="aspect-postcard @container-[size] relative -ml-2 w-full rotate-1 max-md:order-first"
+        class="aspect-postcard @container-[size] relative -ml-2 w-full rotate-1 opacity-0"
       >
         <Image
           src={postcard3}
@@ -114,3 +121,24 @@ import Sep from "@/assets/sep.svg";
     </div>
   </div>
 </div>
+
+<script>
+  import { createTimeline, onScroll, stagger } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#stats",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  }).add("#stats .aspect-postcard", {
+    opacity: [0, 1],
+    translateY: [20, 0],
+    rotate: [-12, 0],
+    duration: 800,
+    delay: stagger(200),
+  });
+</script>

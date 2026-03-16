@@ -13,10 +13,10 @@ import yay from "@/assets/emoji/yay.gif";
 import Sep from "@/assets/sep.svg";
 ---
 
-<div class="text-text relative p-12 sm:p-16">
-  <Sep class="absolute inset-x-0 -top-2.5 h-auto w-full text-white" />
+<div id="pictures" class="text-text relative p-12 sm:p-16">
+  <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-white" />
 
-  <p class="text-3xl leading-snug">
+  <p class="strapline text-3xl leading-snug opacity-0">
     We gave out 100 copies of the magazine at Campfire Flagship, to all the
     attendees, Open Sauce staff, and YouTubers there! <Image
       src={yay}
@@ -25,34 +25,38 @@ import Sep from "@/assets/sep.svg";
       class="-mt-1 inline h-8 w-auto"
     />
   </p>
-  <div class="mt-6 flex gap-4">
-    <a
-      href="#"
-      class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
-    >
-      <span
-        class="text-blue-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
-        >a</span
+  <div class="cta mt-6 flex gap-4">
+    <div class="flex-none opacity-0">
+      <a
+        href="#"
+        class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
       >
-      get a copy
-    </a>
-    <a
-      href="#"
-      class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
-    >
-      <span
-        class="text-green-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
-        >x</span
+        <span
+          class="text-blue-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+          >a</span
+        >
+        get a copy
+      </a>
+    </div>
+    <div class="flex-none opacity-0">
+      <a
+        href="#"
+        class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
       >
-      see the pdf
-    </a>
+        <span
+          class="text-green-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+          >x</span
+        >
+        see the pdf
+      </a>
+    </div>
   </div>
 
   <div
-    class="mt-12 grid grid-cols-1 grid-rows-4 gap-6 md:grid-cols-2 md:grid-rows-2"
+    class="pictures mt-12 grid grid-cols-1 grid-rows-4 gap-6 md:grid-cols-2 md:grid-rows-2"
   >
     <div
-      class="corner-squircle relative row-span-2 overflow-clip rounded-4xl contain-size"
+      class="corner-squircle relative row-span-2 overflow-clip rounded-4xl opacity-0 contain-size"
     >
       <Image
         src={physical}
@@ -67,7 +71,7 @@ import Sep from "@/assets/sep.svg";
       </div>
     </div>
     <div
-      class="corner-squircle relative h-88 overflow-clip rounded-4xl contain-size"
+      class="corner-squircle relative h-88 overflow-clip rounded-4xl opacity-0 contain-size"
     >
       <Image
         src={michaelReeves}
@@ -87,7 +91,7 @@ import Sep from "@/assets/sep.svg";
       </a>
     </div>
     <div
-      class="corner-squircle relative h-88 overflow-clip rounded-4xl contain-size"
+      class="corner-squircle relative h-88 overflow-clip rounded-4xl opacity-0 contain-size"
     >
       <Image
         src={techjoyce}
@@ -138,3 +142,47 @@ import Sep from "@/assets/sep.svg";
     />
   </div> -->
 </div>
+
+<script>
+  import { createTimeline, onScroll, stagger } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#pictures",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add(
+      "#pictures .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#pictures .cta > div",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#pictures .pictures > div",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    );
+</script>

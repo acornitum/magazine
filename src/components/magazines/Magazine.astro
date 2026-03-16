@@ -15,31 +15,35 @@ if (!entry) {
 const { logo, pages } = entry.data;
 ---
 
-<div class="bg-magazine relative text-white">
-  <Sep class="text-magazine absolute inset-x-0 -top-2.5 h-auto w-full" />
+<div id="mag-magazine" class="bg-magazine relative text-white">
+  <Sep
+    class="text-magazine absolute inset-x-0 -top-[0.78125vw] h-auto w-full"
+  />
 
   <div class="p-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
-      <p>#1</p>
-      <p>&mdash; magazine</p>
+      <p class="header-left opacity-0">#1</p>
+      <p class="header-right opacity-0">&mdash; magazine</p>
     </div>
-    <p class="mt-4 text-3xl leading-snug text-pretty">
+    <p class="strapline mt-4 text-3xl leading-snug text-pretty opacity-0">
       The Hack Club showcase. 158 awesome projects made by 100 Hack Clubbers in
       2025, all in one magazine. Each teenager designed their own page to show
       off their project to you.
     </p>
-    <a
-      href="#"
-      class="font-jua corner-squircle text-magazine mt-6 flex h-12 w-fit items-center rounded-3xl bg-white px-5 text-xl transition hover:scale-105 hover:bg-neutral-200 active:scale-100"
-    >
-      view hack club magazine
-      <span
-        class="bg-magazine ml-2 grid size-5 place-items-center rounded-full text-sm text-white uppercase"
-        >&gt;</span
+    <div class="cta mt-6 opacity-0">
+      <a
+        href="#"
+        class="font-jua corner-squircle text-magazine flex h-12 w-fit items-center rounded-3xl bg-white px-5 text-xl transition hover:scale-105 hover:bg-neutral-200 active:scale-100"
       >
-    </a>
+        view hack club magazine
+        <span
+          class="bg-magazine ml-2 grid size-5 place-items-center rounded-full text-sm text-white uppercase"
+          >&gt;</span
+        >
+      </a>
+    </div>
   </div>
-  <div class="relative overflow-x-clip">
+  <div class="gallery relative overflow-x-clip opacity-0">
     <Gallery pages={pages} />
     <Image
       src={logo}
@@ -53,7 +57,72 @@ const { logo, pages } = entry.data;
       src={stickers}
       alt=""
       role="presentation"
-      class="h-auto w-full drop-shadow-lg"
+      class="stickers h-auto w-full opacity-0 drop-shadow-lg"
     />
   </div>
 </div>
+
+<script>
+  import { createTimeline, onScroll } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#mag-magazine",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#mag-magazine .header-left", {
+      opacity: [0, 1],
+      translateX: [20, 0],
+      duration: 800,
+    })
+    .add(
+      "#mag-magazine .header-right",
+      {
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        duration: 800,
+      },
+      "<<",
+    )
+    .add(
+      "#mag-magazine .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-magazine .cta",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-magazine .gallery",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#mag-magazine .stickers",
+      {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    );
+</script>

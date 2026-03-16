@@ -6,13 +6,19 @@ import magazineStar from "@/assets/magazinestar.svg";
 import catWoah from "@/assets/emoji/cat-woah.webp";
 ---
 
-<div class="text-text space-y-8 p-12 text-4xl leading-snug sm:p-16">
-  <Image src={magazineStar} alt="" role="presentation" class="h-16 w-auto" />
-  <p>
+<div id="intro" class="text-text space-y-8 p-12 text-4xl leading-snug sm:p-16">
+  <Image
+    id="intro-star"
+    src={magazineStar}
+    alt=""
+    role="presentation"
+    class="h-16 w-auto opacity-0"
+  />
+  <p class="opacity-0">
     Hack Club is a place where teenagers come together to learn and make amazing
     projects. And throughout 2025, that's exactly what they did.
   </p>
-  <p>
+  <p class="opacity-0">
     This magazine is a collection of over 150 of the coolest, most fun, and most
     technical software and hardware projects made by Hack Clubbers in just one
     year. <Image
@@ -22,10 +28,43 @@ import catWoah from "@/assets/emoji/cat-woah.webp";
       class="-mt-1 inline h-8 w-auto"
     />
   </p>
-  <p>
+  <p class="opacity-0">
     Video games played on real custom-made consoles, balloons sent into space,
     web browsers created from scratch, a playable version of Doom in a PDF, for
     some reason, and a whole lot more.
   </p>
-  <p>Designed and built with love and code, by teens from across the world.</p>
+  <p class="opacity-0">
+    Designed and built with love and code, by teens from across the world.
+  </p>
 </div>
+
+<script>
+  import { createTimeline, onScroll, stagger } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#intro",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#intro-star", {
+      opacity: [0, 1],
+      translateY: [20, 0],
+      rotate: [-12, 0],
+      duration: 800,
+    })
+    .add(
+      "#intro p",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    );
+</script>
