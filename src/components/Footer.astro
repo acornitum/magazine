@@ -28,39 +28,44 @@ const links: Link[] = [
 ];
 ---
 
-<footer class="@container relative bg-neutral-900 text-white">
+<footer id="footer" class="@container relative bg-neutral-900 text-white">
   <Sep
     class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-neutral-900"
   />
 
   <div class="p-12 sm:p-16">
     <div class="flex items-center gap-1">
-      <Image src={hcLogo} alt="" role="presentation" class="h-12 w-auto" />
+      <Image
+        src={hcLogo}
+        alt=""
+        role="presentation"
+        class="hc-logo h-12 w-auto opacity-0"
+      />
       <div class="min-w-0 flex-1"></div>
       <a
         href="https://aconlin.com"
-        class="hover:text-indigo-soft px-1.5 text-white/10 not-hover:transition-colors"
+        class="hover:text-indigo-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
       >
         <Acon role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Acon</span>
       </a>
       <a
         href="https://gideon.sh"
-        class="hover:text-amber-soft px-1.5 text-white/10 not-hover:transition-colors"
+        class="hover:text-amber-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
       >
         <Gideon role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Gideon</span>
       </a>
       <a
         href="https://valen.zip"
-        class="hover:text-blue-soft px-1.5 text-white/10 not-hover:transition-colors"
+        class="hover:text-blue-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
       >
         <Valen role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Valen</span>
       </a>
       <a
         href="https://lilia.rocks"
-        class="hover:text-pink-soft px-1.5 text-white/10 not-hover:transition-colors"
+        class="hover:text-pink-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
       >
         <Lilia role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Lilia</span>
@@ -71,10 +76,14 @@ const links: Link[] = [
         {
           links.map((link, idx) => (
             <>
-              {idx > 0 && <span aria-hidden="true">//</span>}
+              {idx > 0 && (
+                <span aria-hidden="true" class="link-mobile opacity-0">
+                  //
+                </span>
+              )}
               <a
                 href={link.href}
-                class="underline underline-offset-2 transition hover:text-white"
+                class="link-mobile underline underline-offset-2 opacity-0 hover:text-white"
               >
                 {link.text}
               </a>
@@ -89,23 +98,25 @@ const links: Link[] = [
       >
         {
           links.map((link) => (
-            <a
-              href={link.href}
-              class="group/link relative block py-0.5 italic transition-all group-has-hover:not-hover:opacity-50 hover:font-bold"
-            >
-              <ArrowRight
-                class="pointer-events-none absolute top-1/2 -left-3.5 size-4 -translate-x-3 -translate-y-1/2 text-white opacity-0 transition group-hover/link:translate-x-0 group-hover/link:opacity-100"
-                stroke-width={3}
-              />
-              <span class="block transition-transform group-hover/link:translate-x-2">
-                {link.text}
-              </span>
-            </a>
+            <div class="link-desktop opacity-0">
+              <a
+                href={link.href}
+                class="group/link relative block py-0.5 italic transition-all group-has-hover:not-hover:opacity-50 hover:font-bold"
+              >
+                <ArrowRight
+                  class="pointer-events-none absolute top-1/2 -left-3.5 size-4 -translate-x-3 -translate-y-1/2 text-white opacity-0 transition group-hover/link:translate-x-0 group-hover/link:opacity-100"
+                  stroke-width={3}
+                />
+                <span class="block transition-transform group-hover/link:translate-x-2">
+                  {link.text}
+                </span>
+              </a>
+            </div>
           ))
         }
       </div>
       <div class="min-w-0 flex-1 text-xl leading-relaxed">
-        <p>
+        <p class="about opacity-0">
           Hack Club is a 501(c)(3) nonprofit and network of 60k+ technical high
           schoolers. We believe you learn best by building, so we're creating
           community and providing grants so you can make awesome projects. In
@@ -113,7 +124,7 @@ const links: Link[] = [
           Making, hosted the world's longest hackathon on land, and ran Canada's
           largest high school hackathon.
         </p>
-        <div class="mt-4 flex items-center gap-3">
+        <div class="strapline mt-4 flex items-center gap-3 opacity-0">
           <Image
             src={rightArrow}
             alt=""
@@ -124,20 +135,22 @@ const links: Link[] = [
             At Hack Club, students aren't just learning, they're shipping.
           </p>
         </div>
-        <p class="mt-4 text-base text-current/60">
+        <p class="copyright mt-4 text-base text-current/60 opacity-0">
           © 2026 Hack Club. 501(c)(3) nonprofit (EIN: 81-2908499)
         </p>
       </div>
     </div>
   </div>
-  <div class="relative overflow-clip">
-    <LogoFill class="h-auto w-full text-white/1" />
-    <div class="bg-clip-logo absolute inset-0 bg-white/10">
-      <div
-        id="footer-logo-grad"
-        class="absolute -top-[6cqw] -left-[6cqw] size-[12cqw] rounded-full bg-white/10 blur-lg"
-        hidden
-      >
+  <div class="overflow-clip">
+    <div class="big-logo relative opacity-0">
+      <LogoFill class="h-auto w-full text-white/1" />
+      <div class="bg-clip-logo absolute inset-0 bg-white/10">
+        <div
+          id="footer-logo-grad"
+          class="absolute -top-[6cqw] -left-[6cqw] size-[12cqw] rounded-full bg-white/10 blur-lg"
+          hidden
+        >
+        </div>
       </div>
     </div>
   </div>
@@ -166,4 +179,91 @@ const links: Link[] = [
   }
 
   document.body.addEventListener("mousemove", onMouseMove);
+</script>
+
+<script>
+  import { createTimeline, onScroll, stagger } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#footer",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#footer .hc-logo", {
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      duration: 500,
+      ease: "outBack(3)",
+    })
+    .add(
+      "#footer .name",
+      {
+        opacity: [0, 1],
+        duration: 400,
+        ease: "linear",
+        delay: stagger(100, { reversed: true }),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .link-desktop",
+      {
+        opacity: [0, 1],
+        translateY: (_target, i, _length) => [(i + 1) * 5 + 15, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .link-mobile",
+      {
+        opacity: [0, 1],
+        translateX: [10, 0],
+        duration: 800,
+        delay: stagger(40),
+      },
+      "<<",
+    )
+    .add(
+      "#footer .about",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "-=600",
+    )
+    .add(
+      "#footer .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .copyright",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .big-logo",
+      {
+        opacity: [1, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=200",
+    );
 </script>
