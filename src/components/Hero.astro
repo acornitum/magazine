@@ -16,7 +16,7 @@ import spineVertical from "@/assets/textures/spine-vertical.png";
 import doodleBl from "@/assets/textures/doodle-bl.svg";
 import doodleTr from "@/assets/textures/doodle-tr.svg";
 
-import topBar from "@/assets/topbar.svg";
+import topBar from "@/assets/topbar.png";
 import hcFlag from "@/assets/hc-flag.svg";
 import Carousel from "./Carousel.astro";
 
@@ -48,7 +48,15 @@ const { pages } = entry.data;
   </div>
 </div>
 
-<Image src={topBar} alt="" role="presentation" class="h-auto w-full" />
+<Image
+  src={topBar}
+  alt=""
+  role="presentation"
+  class="h-auto w-full"
+  widths={[topBar.width / 4, topBar.width / 2, topBar.width]}
+  sizes="100vw"
+  priority
+/>
 <div class="bg-grid relative">
   <div class="flex px-12 sm:px-16">
     <div class="min-w-0 flex-1 max-lg:hidden"></div>
@@ -57,6 +65,7 @@ const { pages } = entry.data;
       alt=""
       role="presentation"
       class="h-20 w-auto flex-none"
+      priority
     />
     <div class="flex min-w-0 flex-1 items-center justify-end">
       <p class="text-text text-base">
