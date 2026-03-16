@@ -319,6 +319,14 @@ const { pages } = entry.data;
     .sync(timelineMain, "-=100");
 
   window.addEventListener("load", () => {
-    timelineWithLoading.play();
+    timelineWithLoading.play().then(() => {
+      animate("#magazine-3d", {
+        rotateY: ["-3deg", "-183deg", "-363deg"],
+        rotateX: ["3deg", "-3deg", "3deg"],
+        ease: "inOutExpo",
+        duration: 7500,
+        loop: true,
+      }).play();
+    });
   });
 </script>
