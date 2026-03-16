@@ -82,6 +82,8 @@ const { pages } = entry.data;
           alt=""
           role="presentation"
           class="absolute inset-0 size-full translate-z-1.5 object-cover backface-hidden"
+          widths={[front.width / 4, front.width / 2, front.width]}
+          sizes="(max-width: 1024px) 234.91px, 22.94w"
           priority
         />
         <Image
@@ -89,6 +91,8 @@ const { pages } = entry.data;
           alt=""
           role="presentation"
           class="absolute inset-0 size-full -translate-z-1.5 rotate-y-180 object-cover backface-hidden"
+          widths={[front.width / 4, front.width / 2, front.width]}
+          sizes="(max-width: 1024px) 234.91px, 22.94w"
           priority
         />
 
@@ -98,6 +102,8 @@ const { pages } = entry.data;
           alt=""
           role="presentation"
           class="absolute top-0 right-full h-full w-3 origin-right translate-z-1.5 -rotate-y-90 object-cover backface-hidden"
+          widths={[spine.width / 4, spine.width / 2, spine.width]}
+          sizes="(max-width: 1024px) 9.6px, 0.9375w"
           priority
         />
         <Image
@@ -105,6 +111,8 @@ const { pages } = entry.data;
           alt=""
           role="presentation"
           class="absolute top-0 left-full h-full w-3 origin-left translate-z-1.5 rotate-y-90 object-cover backface-hidden"
+          widths={[spine.width / 4, spine.width / 2, spine.width]}
+          sizes="(max-width: 1024px) 9.6px, 0.9375w"
           priority
         />
 
@@ -144,12 +152,16 @@ const { pages } = entry.data;
           alt=""
           role="presentation"
           class="h-24 w-auto"
+          widths={[backTitle.width / 4, backTitle.width / 2, backTitle.width]}
+          sizes="(max-width: 1024px) 271.83px, 0.2655vw"
           priority
         />
         <Image
           src={title}
           alt="magazine"
           class="absolute top-1/2 left-1/2 h-14 w-auto -translate-x-1/2 -translate-y-1/2"
+          widths={[title.width / 4, title.width / 2, title.width]}
+          sizes="(max-width: 1024px) 202.65px, 0.1979vw"
           priority
         />
       </div>

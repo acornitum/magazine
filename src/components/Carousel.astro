@@ -27,6 +27,8 @@ const DURATION = pages.length * 5;
             role="presentation"
             class="aspect-magazine pointer-events-auto h-80 w-auto object-cover shadow-lg transition group-has-hover:not-hover:opacity-75 hover:scale-105"
             class:list={[reverse ? "ml-4" : "mr-4"]}
+            widths={[image.width / 4, image.width / 2, image.width]}
+            sizes="(max-width: 1024px) 180.7px, 17.647vw"
           />
         ))}
       </div>
