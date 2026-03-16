@@ -1,0 +1,24 @@
+---
+import Footer from "@/components/Footer.astro";
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout title={frontmatter?.title}>
+  <div class="bg-grid p-8 sm:p-12">
+    <div class="bg-white p-8 text-[max(1rem,16px)] leading-relaxed shadow-lg">
+      <a
+        href="/"
+        class="text-blue-fg mb-6 block w-fit text-[max(1rem,16px)] font-bold underline-offset-2 transition hover:text-blue-800 hover:underline"
+      >
+        ← back to home
+      </a>
+      <article>
+        <slot />
+      </article>
+    </div>
+  </div>
+
+  <Footer />
+</Layout>
