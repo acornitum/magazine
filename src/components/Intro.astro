@@ -1,18 +1,16 @@
 ---
 import { Image } from "astro:assets";
 
-import magazineStar from "@/assets/magazinestar.svg";
+import MagazineStar from "@/assets/magazinestar.svg";
 
 import catWoah from "@/assets/emoji/cat-woah.webp";
 ---
 
 <div id="intro" class="text-text space-y-8 p-12 text-4xl leading-snug sm:p-16">
-  <Image
+  <MagazineStar
     id="intro-star"
-    src={magazineStar}
-    alt=""
     role="presentation"
-    class="h-16 w-auto opacity-0"
+    class="text-magazine-logo h-16 w-auto opacity-0"
   />
   <p class="opacity-0">
     Hack Club is a place where teenagers come together to learn and make amazing
