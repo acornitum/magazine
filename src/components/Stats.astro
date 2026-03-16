@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 
-import postcard1 from "@/assets/postcard1.svg";
-import postcard2 from "@/assets/postcard2.svg";
-import postcard3 from "@/assets/postcard3.svg";
-import postcard4 from "@/assets/postcard4.svg";
+import postcard1 from "@/assets/postcard1.png";
+import postcard2 from "@/assets/postcard2.png";
+import postcard3 from "@/assets/postcard3.png";
+import postcard4 from "@/assets/postcard4.png";
 
 import magprojects from "@/assets/stats/magprojects.svg";
 import projects from "@/assets/stats/projects.svg";
@@ -30,6 +30,8 @@ import Sep from "@/assets/sep.svg";
           alt=""
           role="presentation"
           class="size-full object-cover shadow-lg"
+          widths={[postcard4.width / 4, postcard4.width / 2, postcard4.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div class="absolute inset-0 flex flex-col items-center justify-center">
           <Image
@@ -53,6 +55,8 @@ import Sep from "@/assets/sep.svg";
           alt=""
           role="presentation"
           class="size-full object-cover shadow-lg"
+          widths={[postcard1.width / 4, postcard1.width / 2, postcard1.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div class="absolute inset-0 flex flex-col items-center justify-center">
           <Image
@@ -80,6 +84,8 @@ import Sep from "@/assets/sep.svg";
           alt=""
           role="presentation"
           class="size-full object-cover shadow-lg"
+          widths={[postcard2.width / 4, postcard2.width / 2, postcard2.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div class="absolute inset-0 flex flex-col items-center justify-center">
           <Image
@@ -103,6 +109,8 @@ import Sep from "@/assets/sep.svg";
           alt=""
           role="presentation"
           class="size-full object-cover shadow-lg"
+          widths={[postcard3.width / 4, postcard3.width / 2, postcard3.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
         />
         <div class="absolute inset-0 flex flex-col items-center justify-center">
           <Image

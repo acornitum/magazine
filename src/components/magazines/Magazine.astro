@@ -50,6 +50,8 @@ const { logo, pages } = entry.data;
       alt=""
       role="presentation"
       class="absolute top-1/2 left-1/2 h-45 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2 shadow-xl"
+      widths={[logo.width / 4, logo.width / 2, logo.width]}
+      sizes="(max-width: 1024px) 496px, 48.4375vw"
     />
   </div>
   <div class="mt-4 overflow-clip">
@@ -58,6 +60,8 @@ const { logo, pages } = entry.data;
       alt=""
       role="presentation"
       class="stickers h-auto w-full opacity-0 drop-shadow-lg"
+      widths={[stickers.width / 4, stickers.width / 2, stickers.width]}
+      sizes="100vw"
     />
   </div>
 </div>

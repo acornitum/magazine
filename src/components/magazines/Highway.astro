@@ -16,7 +16,7 @@ if (!entry) {
 const { logo, pages } = entry.data;
 ---
 
-<div id="mag-highway" class="bg-highway @container relative isolate text-white">
+<div id="mag-highway" class="bg-highway relative isolate text-white">
   <Sep class="text-highway absolute inset-x-0 -top-[0.78125vw] h-auto w-full" />
 
   <div class="p-12 sm:p-16">
@@ -49,6 +49,8 @@ const { logo, pages } = entry.data;
       alt=""
       role="presentation"
       class="absolute top-1/2 left-1/2 h-54 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2"
+      widths={[logo.width / 4, logo.width / 2, logo.width]}
+      sizes="(max-width: 1024px) 514.08px, 50.203vw"
     />
   </div>
 
@@ -56,13 +58,17 @@ const { logo, pages } = entry.data;
     src={racecar}
     alt=""
     role="presentation"
-    class="racecar relative z-10 mx-auto -mt-[4cqw] -mb-[16cqw] h-[16cqw] w-auto opacity-0"
+    class="racecar relative z-10 mx-auto -mt-[4vw] -mb-[16vw] h-[16vw] w-auto opacity-0"
+    widths={[racecar.width / 4, racecar.width / 2, racecar.width]}
+    sizes="40vw"
   />
   <Image
     src={landing}
     alt=""
     role="presentation"
-    class="landing relative -z-10 -mt-[4cqw] h-[20cqw] w-full object-cover object-top opacity-0"
+    class="landing relative -z-10 -mt-[4vw] h-[20vw] w-full object-cover object-top opacity-0"
+    widths={[landing.width / 4, landing.width / 2, landing.width]}
+    sizes="100vw"
   />
 </div>
 
