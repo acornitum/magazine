@@ -222,7 +222,7 @@ const { pages } = entry.data;
 </div>
 
 <script>
-  import { animate, createTimeline, stagger } from "animejs";
+  import { animate, createTimeline, splitText, stagger } from "animejs";
   import { $ } from "animejs/utils";
 
   // animate("#magazine-3d", {
@@ -231,6 +231,12 @@ const { pages } = entry.data;
   //   duration: 10_000,
   //   loop: true,
   // }).play();
+
+  const strapline = splitText("#hero-strapline", { words: true });
+  strapline.words.forEach((word) => {
+    word.style.opacity = "0";
+  });
+  strapline.$target.style.opacity = "1";
 
   const timelineLeft = createTimeline({ autoplay: false })
     .add("#magazine-3d", {
@@ -272,12 +278,13 @@ const { pages } = entry.data;
       duration: 1000,
     })
     .add(
-      "#hero-strapline",
+      strapline.words,
       {
         opacity: [0, 1],
         translateY: [20, 0],
         ease: "outExpo",
         duration: 1000,
+        delay: stagger(20),
       },
       "<<+=100",
     )
@@ -290,7 +297,7 @@ const { pages } = entry.data;
         duration: 1000,
         delay: stagger(100),
       },
-      "<<+=100",
+      "-=1000",
     )
     .add(
       "#hero-discover",
@@ -327,6 +334,7 @@ const { pages } = entry.data;
       opacity: [1, 0],
       scale: [1, 0.8],
       rotate: [0, 12],
+      filter: ["blur(0px)", "blur(4px)"],
       ease: "inExpo",
       duration: 1000,
     })
