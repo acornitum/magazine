@@ -297,6 +297,7 @@ const { pages } = entry.data;
 
   const timelineWithLoading = createTimeline({
     onBegin: () => {
+      $("html")[0].style.overflowY = "";
       $("#loading-overlay")[0].style.pointerEvents = "none";
     },
     autoplay: false,

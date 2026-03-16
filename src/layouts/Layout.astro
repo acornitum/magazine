@@ -5,11 +5,15 @@ import "../styles/global.css";
 
 interface Props {
   title?: string;
+  hideScrollbarOnLoad?: boolean;
 }
-const { title } = Astro.props;
+const { title, hideScrollbarOnLoad } = Astro.props;
 ---
 
-<html lang="en">
+<html
+  lang="en"
+  style={{ overflowY: hideScrollbarOnLoad ? "hidden" : undefined }}
+>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
