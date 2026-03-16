@@ -305,6 +305,7 @@ const { pages } = entry.data;
     .add("#loading-overlay .star", {
       opacity: [1, 0],
       scale: [1, 0.8],
+      rotate: [0, 12],
       ease: "inExpo",
       duration: 1000,
     })
@@ -314,6 +315,7 @@ const { pages } = entry.data;
         scale: [1, 0],
         ease: "inExpo",
         duration: 1000,
+        delay: stagger(100, { reversed: true }),
       },
       "<<+=200",
     )
