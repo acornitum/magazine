@@ -141,14 +141,13 @@ const links: Link[] = [
       </div>
     </div>
   </div>
-  <div class="overflow-clip">
+  <div id="footer-logo" class="overflow-clip">
     <div class="big-logo relative opacity-0">
       <LogoFill class="h-auto w-full text-white/1" />
       <div class="bg-clip-logo absolute inset-0 bg-white/10">
         <div
           id="footer-logo-grad"
-          class="absolute -top-[6cqw] -left-[6cqw] size-[12cqw] rounded-full bg-white/10 blur-lg"
-          hidden
+          class="absolute -top-[8cqw] -left-[8cqw] size-[16cqw] rounded-full bg-white/20 opacity-0 blur-[3.33cqw] transition-opacity"
         >
         </div>
       </div>
@@ -168,6 +167,7 @@ const links: Link[] = [
 </style>
 
 <script>
+  const logo = document.getElementById("footer-logo") as HTMLDivElement;
   const grad = document.getElementById("footer-logo-grad") as HTMLDivElement;
 
   function onMouseMove(event: MouseEvent) {
@@ -175,10 +175,14 @@ const links: Link[] = [
     const x = event.clientX - left;
     const y = event.clientY - top;
     grad.style.transform = `translate(${x}px, ${y}px)`;
-    grad.hidden = false;
+    grad.style.opacity = "1";
+  }
+  function onMouseLeave() {
+    grad.style.opacity = "0";
   }
 
-  document.body.addEventListener("mousemove", onMouseMove);
+  logo.addEventListener("mousemove", onMouseMove);
+  logo.addEventListener("mouseleave", onMouseLeave);
 </script>
 
 <script>
