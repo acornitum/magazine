@@ -81,17 +81,17 @@ const { logo, pages } = entry.data;
   })
     .add("#mag-juice .header-left", {
       opacity: [0, 1],
-      translateX: [20, 0],
-      duration: 800,
+      ease: "linear",
+      duration: 400,
     })
     .add(
       "#mag-juice .header-right",
       {
         opacity: [0, 1],
-        translateX: [-20, 0],
-        duration: 800,
+        ease: "linear",
+        duration: 400,
       },
-      "<<",
+      "<<+=100",
     )
     .add(
       "#mag-juice .strapline",
