@@ -6,6 +6,7 @@ const magazines = defineCollection({
   schema: ({ image }) =>
     z.object({
       logo: image(),
+      pdf: z.string().optional(),
       pages: z.array(image()).min(12),
     }),
 });

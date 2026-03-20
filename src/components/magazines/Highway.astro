@@ -7,13 +7,14 @@ import landing from "@/assets/magazines/highway/landing.png";
 import racecar from "@/assets/magazines/highway/racecar.png";
 
 import Sep from "@/assets/sep.svg";
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
 
 const entry = await getEntry("magazines", "highway");
 if (!entry) {
   throw new Error("Highway magazine entry not found");
 }
 
-const { logo, pages } = entry.data;
+const { logo, pages, pdf } = entry.data;
 ---
 
 <div id="mag-highway" class="bg-highway relative isolate text-white">
@@ -29,17 +30,20 @@ const { logo, pages } = entry.data;
       They made the coolest keyboards, cyberdecks, 3D printers, devboards, game
       consoles, and more!
     </p>
-    <div class="cta mt-6 opacity-0">
+    <div class="cta mt-6 flex items-center gap-3 opacity-0">
       <a
-        href="#"
+        href={pdf}
+        target="_blank"
         class="font-jua corner-squircle text-highway flex h-12 w-fit items-center rounded-3xl bg-white px-5 text-xl transition hover:scale-105 hover:bg-neutral-200 active:scale-100"
       >
         view highway magazine
         <span
           class="bg-highway ml-2 grid size-5 place-items-center rounded-full text-sm text-white uppercase"
-          >&gt;</span
         >
+          <ArrowRight class="size-3" stroke-width={4} />
+        </span>
       </a>
+      <p class="text-current/60">(43MB)</p>
     </div>
   </div>
   <div class="gallery relative overflow-x-clip opacity-0">

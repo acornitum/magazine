@@ -1,5 +1,6 @@
 - id: magazine
   logo: ~/assets/magazines/magazine/logo.png
+  pdf: https://cdn.hackclub.com/019d0cb5-b674-7532-80a3-d8aa74e4f4c0/magazine%20pdf%20final.pdf
   pages:
     - ~/assets/magazines/magazine/pages/30.png
     - ~/assets/magazines/magazine/pages/31.png
@@ -16,6 +17,7 @@
 
 - id: juice
   logo: ~/assets/magazines/juice/logo.png
+  pdf: https://cdn.hackclub.com/019d0cb6-581c-7774-931a-dbf18c331176/juice%20pdf%20final.pdf
   pages:
     - ~/assets/magazines/juice/pages/1.png
     - ~/assets/magazines/juice/pages/2.png
@@ -32,6 +34,7 @@
 
 - id: highway
   logo: ~/assets/magazines/highway/logo.png
+  pdf: https://cdn.hackclub.com/019d0cb9-b49c-7050-9822-1acf429cfe98/highway%20pdf%20final.pdf
   pages:
     - ~/assets/magazines/highway/pages/front.png
     - ~/assets/magazines/highway/pages/back.png
