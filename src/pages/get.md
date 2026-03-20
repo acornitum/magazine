@@ -19,8 +19,10 @@ it costs 🍪 (pending) cookies - that's around (pending) hours of coding. once 
 
 ### i'm an adult!
 
-you can buy a physical copy and we'll mail it straight to you! it costs $(pending) USD per copy.
+you can buy a physical copy and we'll mail it straight to you! it costs $20 USD per copy, plus $10 if you're outside the USA.
 
-best of all, you're supporting a nonprofit that directly rewards teens for learning to code and making projects that they're proud of.
+you're buying a copy for yourself and a copy for another teenager in Hack Club. best of all, you're supporting a nonprofit that directly rewards teens for learning to code and making projects that they're proud of. so it's a win-win-win 🎉
 
-if you're in, you can buy a copy here! (link pending)
+<!-- use slack emojis here! -->
+
+if you're in, you can buy a copy [right here!](https://forms.hackclub.com/magazine-shop)
