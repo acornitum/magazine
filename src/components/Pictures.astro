@@ -6,6 +6,7 @@ import physical from "@/assets/pictures/physical.jpg";
 import michaelReeves from "@/assets/pictures/michael-reeves.png";
 import techjoyce from "@/assets/pictures/techjoyce.png";
 
+import signatures from "@/assets/pictures/signatures.png";
 import back from "@/assets/stickers/magazine/back.png";
 
 import YouTube from "@/assets/icons/si-youtube.svg";
@@ -164,15 +165,25 @@ const { pdf } = entry.data;
   </div> -->
 </div>
 
-<div class="h-35.5 overflow-clip">
-  <img
-    src={back.src}
+<div class="grid grid-cols-1 grid-rows-1 items-end">
+  <Image
+    src={signatures}
     alt=""
-    width={back.width}
-    height={back.height}
     role="presentation"
-    class="mx-auto h-48 w-auto pixelated"
+    class="col-start-1 row-start-1 w-full opacity-20"
+    widths={[signatures.width / 4, signatures.width / 2, signatures.width]}
+    sizes="100vw"
   />
+  <div class="relative col-start-1 row-start-1 h-35.5 overflow-clip">
+    <img
+      src={back.src}
+      alt=""
+      width={back.width}
+      height={back.height}
+      role="presentation"
+      class="mx-auto h-48 w-auto pixelated"
+    />
+  </div>
 </div>
 
 <script>
