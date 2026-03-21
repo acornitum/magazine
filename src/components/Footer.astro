@@ -12,6 +12,8 @@ import Gideon from "@/assets/footer/name-gideon.svg";
 import Valen from "@/assets/footer/name-valen.svg";
 import Lilia from "@/assets/footer/name-lilia.svg";
 
+import front from "@/assets/stickers/magazine/front.png";
+
 import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
 
 import Sep from "@/assets/sep.svg";
@@ -26,12 +28,32 @@ const links: Link[] = [
   { text: "clubs", href: "https://hackclub.com/clubs" },
   { text: "hackathons", href: "https://hackclub.com/hackathons" },
 ];
+
+interface Props {
+  showSticker?: boolean;
+}
+const { showSticker = false } = Astro.props;
 ---
 
 <footer id="footer" class="@container relative bg-neutral-900 text-white">
   <Sep
     class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-neutral-900"
   />
+
+  {
+    showSticker && (
+      <div class="absolute inset-x-0 -top-2 flex h-14.5 items-end overflow-clip">
+        <img
+          src={front.src}
+          alt=""
+          width={front.width}
+          height={front.height}
+          role="presentation"
+          class="pixelated mx-auto h-48 w-auto"
+        />
+      </div>
+    )
+  }
 
   <div class="p-12 sm:p-16">
     <div class="flex items-center gap-1">

@@ -6,6 +6,8 @@ import physical from "@/assets/pictures/physical.jpg";
 import michaelReeves from "@/assets/pictures/michael-reeves.png";
 import techjoyce from "@/assets/pictures/techjoyce.png";
 
+import back from "@/assets/stickers/magazine/back.png";
+
 import YouTube from "@/assets/icons/si-youtube.svg";
 
 import yay from "@/assets/emoji/yay.gif";
@@ -21,7 +23,7 @@ if (!entry) {
 const { pdf } = entry.data;
 ---
 
-<div id="pictures" class="text-text relative p-12 sm:p-16">
+<div id="pictures" class="text-text relative p-12 pb-8! sm:p-16">
   <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-white" />
 
   <p class="strapline text-3xl leading-snug opacity-0">
@@ -160,6 +162,17 @@ const { pdf } = entry.data;
       class="absolute top-1/2 left-1/2 h-130 w-auto -translate-x-1/2 -translate-y-1/2"
     />
   </div> -->
+</div>
+
+<div class="h-35.5 overflow-clip">
+  <img
+    src={back.src}
+    alt=""
+    width={back.width}
+    height={back.height}
+    role="presentation"
+    class="pixelated mx-auto h-48 w-auto"
+  />
 </div>
 
 <script>

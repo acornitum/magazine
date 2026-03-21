@@ -83,6 +83,9 @@
 @utility corner-squircle {
   corner-shape: squircle;
 }
+@utility pixelated {
+  image-rendering: pixelated;
+}
 
 .bg-grid {
   background:
