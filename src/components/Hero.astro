@@ -28,7 +28,7 @@ const entry = await getEntry("magazines", "magazine");
 if (!entry) {
   throw new Error("Hack Club magazine entry not found");
 }
-const { pages } = entry.data;
+const { pages, pdf } = entry.data;
 ---
 
 <div
@@ -196,7 +196,8 @@ const { pages } = entry.data;
         </div>
         <div class="flex-none opacity-0">
           <a
-            href="#"
+            href={pdf}
+            target="_blank"
             class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
           >
             <span
@@ -360,5 +361,17 @@ const { pages } = entry.data;
         loop: true,
       }).play();
     });
+  });
+</script>
+
+<script is:inline define:vars={{ pdf }}>
+  window.addEventListener("keydown", (ev) => {
+    if (ev.key.toLowerCase() === "a") {
+      ev.preventDefault();
+      window.location.href = "/get";
+    } else if (ev.key.toLowerCase() === "x") {
+      ev.preventDefault();
+      window.open(pdf, "_blank");
+    }
   });
 </script>

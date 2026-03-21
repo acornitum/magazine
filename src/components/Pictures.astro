@@ -11,6 +11,14 @@ import YouTube from "@/assets/icons/si-youtube.svg";
 import yay from "@/assets/emoji/yay.gif";
 
 import Sep from "@/assets/sep.svg";
+
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("magazines", "magazine");
+if (!entry) {
+  throw new Error("Hack Club magazine entry not found");
+}
+const { pdf } = entry.data;
 ---
 
 <div id="pictures" class="text-text relative p-12 sm:p-16">
@@ -40,7 +48,8 @@ import Sep from "@/assets/sep.svg";
     </div>
     <div class="flex-none opacity-0">
       <a
-        href="#"
+        href={pdf}
+        target="_blank"
         class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
       >
         <span
