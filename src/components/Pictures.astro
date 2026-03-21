@@ -23,7 +23,7 @@ if (!entry) {
 const { pdf } = entry.data;
 ---
 
-<div id="pictures" class="text-text relative p-12 pb-8! sm:p-16">
+<div id="pictures" class="relative p-12 pb-8! text-text sm:p-16">
   <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-white" />
 
   <p class="strapline text-3xl leading-snug opacity-0">
@@ -39,10 +39,10 @@ const { pdf } = entry.data;
     <div class="flex-none opacity-0">
       <a
         href="/get"
-        class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
+        class="bg-stripes-from-blue-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-blue-fg transition bg-stripes-to-blue-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
       >
         <span
-          class="text-blue-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+          class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-blue-bg uppercase"
           >a</span
         >
         get a copy
@@ -52,10 +52,10 @@ const { pdf } = entry.data;
       <a
         href={pdf}
         target="_blank"
-        class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
+        class="bg-stripes-from-green-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-green-fg transition bg-stripes-to-green-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
       >
         <span
-          class="text-green-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+          class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-green-bg uppercase"
           >x</span
         >
         see the pdf
@@ -67,39 +67,39 @@ const { pdf } = entry.data;
     class="pictures mt-12 grid grid-cols-1 grid-rows-4 gap-6 md:grid-cols-2 md:grid-rows-2"
   >
     <div
-      class="corner-squircle group relative row-span-2 overflow-clip rounded-4xl opacity-0 contain-size"
+      class="group relative row-span-2 overflow-clip rounded-4xl opacity-0 contain-size corner-squircle"
     >
       <Image
         src={physical}
         alt=""
         role="presentation"
-        class="ease-in-out-expo size-full object-cover transition duration-750 group-hover:scale-110"
+        class="size-full object-cover transition duration-750 ease-in-out-expo group-hover:scale-110"
         widths={[360, 540, 720, 1440, 2160]}
         sizes="(max-width: 768px) 100vw, 50vw"
       />
       <div
-        class="corner-squircle absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+        class="absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5 corner-squircle"
       >
-        <p class="font-jua text-text text-lg">physical magazine wowow</p>
+        <p class="font-jua text-lg text-text">physical magazine wowow</p>
       </div>
     </div>
     <div
-      class="corner-squircle group relative h-88 overflow-clip rounded-4xl opacity-0 contain-size"
+      class="group relative h-88 overflow-clip rounded-4xl opacity-0 contain-size corner-squircle"
     >
       <Image
         src={michaelReeves}
         alt=""
         role="presentation"
-        class="ease-in-out-expo size-full object-cover object-[50%_25%] transition duration-750 group-hover:scale-110"
+        class="size-full object-cover object-[50%_25%] transition duration-750 ease-in-out-expo group-hover:scale-110"
         widths={[360, 540, 720, 1440, 2160]}
         sizes="(max-width: 768px) 100vw, 50vw"
       />
       <a
         href="https://youtube.com/@MichaelReeves"
-        class="corner-squircle group/link font-jua absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+        class="group/link absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5 font-jua outline-[#ff0000] corner-squircle focus:outline-2"
       >
         <p
-          class="text-text text-lg underline-offset-2 group-hover/link:underline"
+          class="text-lg text-text underline-offset-2 group-hover/link:underline"
         >
           michael reeves
         </p>
@@ -108,22 +108,22 @@ const { pdf } = entry.data;
       </a>
     </div>
     <div
-      class="corner-squircle group relative h-88 overflow-clip rounded-4xl opacity-0 contain-size"
+      class="group relative h-88 overflow-clip rounded-4xl opacity-0 contain-size corner-squircle"
     >
       <Image
         src={techjoyce}
         alt=""
         role="presentation"
-        class="ease-in-out-expo size-full object-cover object-[50%_40%] transition duration-750 group-hover:scale-110"
+        class="size-full object-cover object-[50%_40%] transition duration-750 ease-in-out-expo group-hover:scale-110"
         widths={[360, 540, 720, 1440, 2160]}
         sizes="(max-width: 768px) 100vw, 50vw"
       />
       <a
         href="https://youtube.com/@TechJoyce"
-        class="corner-squircle font-jua group/link absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5"
+        class="group/link absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5 font-jua outline-[#ff0000] corner-squircle focus:outline-2"
       >
         <p
-          class="text-text text-lg underline-offset-2 group-hover/link:underline"
+          class="text-lg text-text underline-offset-2 group-hover/link:underline"
         >
           techjoyce
         </p>
@@ -171,7 +171,7 @@ const { pdf } = entry.data;
     width={back.width}
     height={back.height}
     role="presentation"
-    class="pixelated mx-auto h-48 w-auto"
+    class="mx-auto h-48 w-auto pixelated"
   />
 </div>
 

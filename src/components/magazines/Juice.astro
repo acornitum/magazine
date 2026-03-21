@@ -16,9 +16,9 @@ if (!entry) {
 const { logo, pages, pdf } = entry.data;
 ---
 
-<div id="mag-juice" class="bg-juice-bg relative text-black">
+<div id="mag-juice" class="relative bg-juice-bg text-black">
   <Sep
-    class="text-juice-bg absolute inset-x-0 -top-[0.78125vw] h-auto w-full"
+    class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-juice-bg"
   />
 
   <div class="p-12 pb-12 sm:p-16">
@@ -35,11 +35,11 @@ const { logo, pages, pdf } = entry.data;
       <a
         href={pdf}
         target="_blank"
-        class="font-jua corner-squircle bg-juice-fg flex h-12 w-fit items-center rounded-3xl px-5 text-xl text-white transition hover:scale-105 hover:bg-green-900 active:scale-100"
+        class="flex h-12 w-fit items-center rounded-3xl bg-juice-fg px-5 font-jua text-xl text-white outline-offset-2 outline-juice-fg transition corner-squircle hover:scale-105 hover:bg-green-900 focus:scale-105 focus:bg-green-900 focus:outline-2 active:scale-100"
       >
         view juice magazine
         <span
-          class="text-juice-fg ml-2 grid size-5 place-items-center rounded-full bg-white text-sm uppercase"
+          class="ml-2 grid size-5 place-items-center rounded-full bg-white text-sm text-juice-fg uppercase"
         >
           <ArrowRight class="size-3" stroke-width={4} />
         </span>

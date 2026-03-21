@@ -22,6 +22,8 @@ import Carousel from "./Carousel.astro";
 
 import Star from "@/assets/magazinestar.svg";
 
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
+
 import { getEntry } from "astro:content";
 
 const entry = await getEntry("magazines", "magazine");
@@ -36,7 +38,7 @@ const { pages, pdf } = entry.data;
   class="fixed inset-0 isolate z-30 flex items-center justify-center overflow-clip text-white"
 >
   <div
-    class="bg-magazine circle absolute top-1/2 left-1/2 -z-10 size-[141.5vmax] -translate-x-1/2 -translate-y-1/2 rounded-full"
+    class="circle absolute top-1/2 left-1/2 -z-10 size-[141.5vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-magazine"
   >
   </div>
   <div
@@ -68,12 +70,17 @@ const { pages, pdf } = entry.data;
       priority
     />
     <div class="flex min-w-0 flex-1 items-center justify-end">
-      <p class="text-text text-base">
+      <p class="text-base text-text">
         see how it started: <a
           href="/v1"
-          class="text-blue-fg font-bold underline-offset-2 transition hover:text-blue-800 hover:underline"
-          >go to v1 →</a
+          class="group inline-flex items-center rounded-xl leading-none font-bold text-blue-fg underline-offset-2 outline-offset-4 outline-blue-fg transition corner-squircle hover:text-blue-800 hover:underline focus:text-blue-800 focus:outline-2"
         >
+          <span>go to v1</span>
+          <ArrowRight
+            class="ml-1 size-4 transition-transform group-hover:translate-x-0.5 group-focus:translate-x-0.5"
+            stroke-width={3}
+          />
+        </a>
       </p>
     </div>
   </div>
@@ -83,7 +90,7 @@ const { pages, pdf } = entry.data;
     <div class="group relative isolate flex-none px-16 perspective-distant">
       <div
         id="magazine-3d"
-        class="aspect-magazine relative h-104 rotate-6 rotate-x-3 -rotate-y-3 opacity-0 shadow-lg transform-3d"
+        class="relative aspect-magazine h-104 rotate-6 rotate-x-3 -rotate-y-3 opacity-0 shadow-lg transform-3d"
       >
         <!-- Front and back sides -->
         <Image
@@ -176,7 +183,7 @@ const { pages, pdf } = entry.data;
       </div>
       <p
         id="hero-strapline"
-        class="font-jua text-text mt-8 text-3xl text-pretty opacity-0 max-lg:max-w-2xl"
+        class="mt-8 font-jua text-3xl text-pretty text-text opacity-0 max-lg:max-w-2xl"
       >
         The 2025 Hack Club showcase. Over 150 of the most unique and awesome
         projects. Designed and built by teenagers, for you to explore.
@@ -185,10 +192,10 @@ const { pages, pdf } = entry.data;
         <div class="flex-none opacity-0">
           <a
             href="/get"
-            class="bg-stripes-from-blue-bg bg-stripes-to-blue-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
+            class="bg-stripes-from-blue-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-blue-fg transition bg-stripes-to-blue-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
           >
             <span
-              class="text-blue-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+              class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-blue-bg uppercase"
               >a</span
             >
             get a copy
@@ -198,10 +205,10 @@ const { pages, pdf } = entry.data;
           <a
             href={pdf}
             target="_blank"
-            class="bg-stripes-from-green-bg bg-stripes-to-green-fg font-jua flex h-12 items-center px-5 text-xl text-white transition hover:scale-105 active:scale-100"
+            class="bg-stripes-from-green-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-green-fg transition bg-stripes-to-green-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
           >
             <span
-              class="text-green-bg mr-2 grid size-6 place-items-center rounded-full bg-white text-sm uppercase"
+              class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-green-bg uppercase"
               >x</span
             >
             see the pdf

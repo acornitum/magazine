@@ -49,7 +49,7 @@ const { showSticker = false } = Astro.props;
           width={front.width}
           height={front.height}
           role="presentation"
-          class="pixelated mx-auto h-48 w-auto"
+          class="mx-auto h-48 w-auto pixelated"
         />
       </div>
     )
@@ -66,28 +66,28 @@ const { showSticker = false } = Astro.props;
       <div class="min-w-0 flex-1"></div>
       <a
         href="https://aconlin.com"
-        class="hover:text-indigo-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-indigo-soft corner-squircle not-hover:not-focus:transition-colors hover:text-indigo-soft focus:text-indigo-soft focus:outline-2"
       >
         <Acon role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Acon</span>
       </a>
       <a
         href="https://gideon.sh"
-        class="hover:text-amber-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-amber-soft corner-squircle not-hover:not-focus:transition-colors hover:text-amber-soft focus:text-amber-soft focus:outline-2"
       >
         <Gideon role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Gideon</span>
       </a>
       <a
         href="https://valen.zip"
-        class="hover:text-blue-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-blue-soft corner-squircle not-hover:not-focus:transition-colors hover:text-blue-soft focus:text-blue-soft focus:outline-2"
       >
         <Valen role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Valen</span>
       </a>
       <a
         href="https://lilia.rocks"
-        class="hover:text-pink-soft name px-1.5 text-white/10 opacity-0 not-hover:transition-colors"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-pink-soft corner-squircle not-hover:not-focus:transition-colors hover:text-pink-soft focus:text-pink-soft focus:outline-2"
       >
         <Lilia role="presentation" class="h-9 w-auto" />
         <span class="sr-only">Lilia</span>
@@ -105,7 +105,7 @@ const { showSticker = false } = Astro.props;
               )}
               <a
                 href={link.href}
-                class="link-mobile underline underline-offset-2 opacity-0 hover:text-white"
+                class="link-mobile rounded-xl underline underline-offset-2 opacity-0 outline-offset-2 outline-white corner-squircle hover:text-white focus:text-white focus:no-underline focus:outline-2"
               >
                 {link.text}
               </a>
@@ -123,13 +123,13 @@ const { showSticker = false } = Astro.props;
             <div class="link-desktop opacity-0">
               <a
                 href={link.href}
-                class="group/link relative block py-0.5 italic transition-all group-has-hover:not-hover:opacity-50 hover:font-bold"
+                class="group/link relative block py-0.5 italic transition-all outline-none group-has-hover:not-hover:opacity-50 group-has-focus:not-focus:opacity-50 hover:font-bold focus:font-bold"
               >
                 <ArrowRight
-                  class="pointer-events-none absolute top-1/2 -left-3.5 size-4 -translate-x-3 -translate-y-1/2 text-white opacity-0 transition group-hover/link:translate-x-0 group-hover/link:opacity-100"
+                  class="pointer-events-none absolute top-1/2 -left-3.5 size-4 -translate-x-3 -translate-y-1/2 text-white opacity-0 transition group-hover/link:translate-x-0 group-hover/link:opacity-100 group-focus/link:translate-x-0 group-focus/link:opacity-100"
                   stroke-width={3}
                 />
-                <span class="block transition-transform group-hover/link:translate-x-2">
+                <span class="block max-w-fit rounded-xl outline-offset-2 outline-white transition-transform corner-squircle group-hover/link:translate-x-2 group-focus/link:translate-x-2 group-focus/link:outline-2">
                   {link.text}
                 </span>
               </a>
@@ -153,7 +153,7 @@ const { showSticker = false } = Astro.props;
             role="presentation"
             class="h-6 w-fit flex-none @max-3xl:hidden"
           />
-          <p class="text-amber-soft min-w-0 flex-1 font-bold">
+          <p class="min-w-0 flex-1 font-bold text-amber-soft">
             At Hack Club, students aren't just learning, they're shipping.
           </p>
         </div>

@@ -17,8 +17,8 @@ if (!entry) {
 const { logo, pages, pdf } = entry.data;
 ---
 
-<div id="mag-highway" class="bg-highway relative isolate text-white">
-  <Sep class="text-highway absolute inset-x-0 -top-[0.78125vw] h-auto w-full" />
+<div id="mag-highway" class="relative isolate bg-highway text-white">
+  <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-highway" />
 
   <div class="p-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
@@ -34,11 +34,11 @@ const { logo, pages, pdf } = entry.data;
       <a
         href={pdf}
         target="_blank"
-        class="font-jua corner-squircle text-highway flex h-12 w-fit items-center rounded-3xl bg-white px-5 text-xl transition hover:scale-105 hover:bg-neutral-200 active:scale-100"
+        class="flex h-12 w-fit items-center rounded-3xl bg-white px-5 font-jua text-xl text-highway outline-offset-2 outline-white transition corner-squircle hover:scale-105 hover:bg-neutral-200 focus:scale-105 focus:bg-neutral-200 focus:outline-2 active:scale-100"
       >
         view highway magazine
         <span
-          class="bg-highway ml-2 grid size-5 place-items-center rounded-full text-sm text-white uppercase"
+          class="ml-2 grid size-5 place-items-center rounded-full bg-highway text-sm text-white uppercase"
         >
           <ArrowRight class="size-3" stroke-width={4} />
         </span>

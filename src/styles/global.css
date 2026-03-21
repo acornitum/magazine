@@ -41,11 +41,11 @@
 }
 
 @utility bg-stripes-from-* {
-  @apply relative isolate;
+  @apply relative isolate rounded-4xl corner-squircle;
 
   &::before {
     content: "";
-    @apply corner-squircle absolute inset-0 -z-10 rounded-4xl shadow-md transition;
+    @apply absolute inset-0 -z-10 rounded-4xl shadow-md transition corner-squircle;
 
     background-color: --value(--color-*, [color]);
     background-image: repeating-linear-gradient(
@@ -62,7 +62,8 @@
     animation-play-state: paused;
   }
 
-  &:hover::before {
+  &:hover::before,
+  &:focus::before {
     @apply brightness-75;
     animation-play-state: running;
   }
@@ -143,12 +144,19 @@ article p {
 
 article a {
   color: #3b82f6;
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+  @apply rounded-xl corner-squircle;
 }
 
 article a:hover {
   color: #2563eb;
-  text-decoration: wavy;
+  text-decoration-style: wavy;
+}
+article a:focus {
+  color: #2563eb;
+  text-decoration-line: none;
+  @apply outline-2 outline-offset-4 outline-[#2563eb];
 }
 
 article ul,

@@ -16,9 +16,9 @@ if (!entry) {
 const { logo, pages, pdf } = entry.data;
 ---
 
-<div id="mag-magazine" class="bg-magazine relative text-white">
+<div id="mag-magazine" class="relative bg-magazine text-white">
   <Sep
-    class="text-magazine absolute inset-x-0 -top-[0.78125vw] h-auto w-full"
+    class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-magazine"
   />
 
   <div class="p-12 sm:p-16">
@@ -35,11 +35,11 @@ const { logo, pages, pdf } = entry.data;
       <a
         href={pdf}
         target="_blank"
-        class="font-jua corner-squircle text-magazine flex h-12 w-fit items-center rounded-3xl bg-white px-5 text-xl transition hover:scale-105 hover:bg-neutral-200 active:scale-100"
+        class="flex h-12 w-fit items-center rounded-3xl bg-white px-5 font-jua text-xl text-magazine outline-offset-2 outline-white transition corner-squircle hover:scale-105 hover:bg-neutral-200 focus:scale-105 focus:bg-neutral-200 focus:outline-2 active:scale-100"
       >
         view hack club magazine
         <span
-          class="bg-magazine ml-2 grid size-5 place-items-center rounded-full text-sm text-white uppercase"
+          class="ml-2 grid size-5 place-items-center rounded-full bg-magazine text-sm text-white uppercase"
         >
           <ArrowRight class="size-3" stroke-width={4} />
         </span>

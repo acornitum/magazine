@@ -2,6 +2,8 @@
 import Footer from "@/components/Footer.astro";
 import Layout from "./Layout.astro";
 
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
+
 const { frontmatter } = Astro.props;
 ---
 
@@ -10,9 +12,13 @@ const { frontmatter } = Astro.props;
     <div class="bg-white p-8 text-[max(1rem,16px)] leading-relaxed shadow-lg">
       <a
         href="/"
-        class="text-blue-fg mb-6 block w-fit text-[max(1rem,16px)] font-bold underline-offset-2 transition hover:text-blue-800 hover:underline"
+        class="group mb-6 inline-flex w-fit items-center rounded-xl text-[max(1rem,16px)] leading-none font-bold text-blue-fg underline-offset-2 outline-offset-4 outline-blue-fg transition corner-squircle hover:text-blue-800 hover:underline focus:text-blue-800 focus:outline-2"
       >
-        ← back to home
+        <ArrowRight
+          class="mr-1 size-4 rotate-180 transition-transform group-hover:-translate-x-0.5 group-focus:-translate-x-0.5"
+          stroke-width={3}
+        />
+        <span>back to home</span>
       </a>
       <article>
         <slot />
