@@ -1,5 +1,6 @@
 import { file } from "astro/loaders";
-import { defineCollection, z } from "astro:content";
+import { defineCollection } from "astro:content";
+import { z } from "astro/zod";
 
 const magazines = defineCollection({
   loader: file("src/content/magazines.yaml"),
