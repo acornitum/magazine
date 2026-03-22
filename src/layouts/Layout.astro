@@ -22,6 +22,22 @@ const { title, hideScrollbarOnLoad } = Astro.props;
     <title>
       {title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}
     </title>
+    <meta
+      name="description"
+      content="The 2025 Hack Club showcase. Over 150 of the most unique and awesome projects. Designed and built by teenagers, for you to explore."
+    />
+
+    <meta
+      property="og:title"
+      content={title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}
+    />
+    <meta property="og:image" content={new URL("/og.png", Astro.url)} />
+    <meta
+      property="og:description"
+      content="The 2025 Hack Club showcase. Over 150 of the most unique and awesome projects. Designed and built by teenagers, for you to explore."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
 
     <Font cssVariable="--font-archivo" />
     <Font cssVariable="--font-jua" />
