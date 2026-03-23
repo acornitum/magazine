@@ -5,8 +5,6 @@ layout: ~/layouts/Article.astro
 
 # get a copy!
 
-> this section isn't finished yet - sit tight while we finalise the details!
-
 there's different ways to get a magazine copy, depending on whether you're a teen or an adult.
 
 ### for teenagers
@@ -17,9 +15,9 @@ there's different ways to get a magazine copy, depending on whether you're a tee
 
 you can buy one from the flavortown shop! flavortown is an event by hack club where you make projects, earn cookies, and buy cool prizes (like this magazine) from the shop.
 
-it costs 🍪 **(pending) cookies** - that's around (pending) hours of coding. once you've finished + shipped your project, you can buy it using cookies, and it's completely free 😼
+it costs 🍪 **150 cookies** - that's around 15 hours of coding. once you've finished + shipped your project, you can buy it using cookies, and it's completely free 😼
 
-(link pending)
+[flavortown.hackclub.com/shop/order?shop_item_id=189](https://flavortown.hackclub.com/shop/order?shop_item_id=189)
 
 ### for adults
 
