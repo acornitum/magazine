@@ -1,0 +1,83 @@
+---
+import { Image } from "astro:assets";
+
+import MagazineStar from "@/assets/magazinestar.svg";
+import circle from "@/assets/intro/circle.png";
+
+import catWoah from "@/assets/emoji/cat-woah.webp";
+---
+
+<div id="intro" class="text-text space-y-8 p-12 text-4xl leading-snug sm:p-16">
+  <MagazineStar
+    id="intro-star"
+    role="presentation"
+    class="text-magazine-logo h-16 w-auto opacity-0"
+  />
+  <p class="opacity-0">
+    Hack Club is a place where teenagers come together to learn and make amazing
+    projects. And throughout 2025, that's exactly what they did.
+  </p>
+  <p class="opacity-0">
+    This magazine is a collection of <strong
+      >over 150 of the coolest, most fun, and most technical software and
+      hardware projects</strong
+    > made by Hack Clubbers in just <span
+      class="relative isolate mx-1.5 inline-flex"
+      >one year.<Image
+        src={circle}
+        alt=""
+        role="presentation"
+        class="absolute top-1/2 left-1/2 -z-10 h-16 w-max max-w-none -translate-x-1/2 -translate-y-1/2"
+        widths={[circle.width / 2, circle.width]}
+        sizes="(max-width: 1024px) 137.6px, 13.438vw"
+      />
+    </span>
+    <Image
+      src={catWoah}
+      alt=""
+      role="presentation"
+      class="-mt-1 inline h-8 w-auto"
+      widths={[catWoah.width / 2, catWoah.width]}
+      sizes="(max-width: 1024px) 25.6px, 0.025vw"
+    />
+    <p class="opacity-0">
+      Video games played on real custom-made consoles, balloons sent into space,
+      web browsers created from scratch, a playable version of Doom in a PDF,
+      for some reason, and a whole lot more.
+    </p>
+    <p class="opacity-0">
+      Designed and built with love and code, by teens from across the world.
+    </p>
+
+    <script>
+      import { createTimeline, onScroll, stagger } from "animejs";
+
+      createTimeline({
+        autoplay: onScroll({
+          target: "#intro",
+          enter: "center",
+          leave: "center",
+        }),
+        defaults: {
+          ease: "outExpo",
+        },
+      })
+        .add("#intro-star", {
+          opacity: [0, 1],
+          translateY: [20, 0],
+          rotate: [-12, 0],
+          duration: 800,
+        })
+        .add(
+          "#intro p",
+          {
+            opacity: [0, 1],
+            translateY: [20, 0],
+            duration: 800,
+            delay: stagger(100),
+          },
+          "<<+=100",
+        );
+    </script>
+  </p>
+</div>

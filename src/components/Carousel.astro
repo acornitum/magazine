@@ -1,0 +1,61 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  pages: ImageMetadata[];
+  reverse?: boolean;
+}
+
+const { pages, reverse } = Astro.props;
+
+const LOOPS = 2;
+const DURATION = pages.length * 5;
+---
+
+<div
+  class="group pointer-events-none flex w-full -rotate-2"
+  class:list={[reverse && "justify-end"]}
+>
+  {
+    Array.from({ length: LOOPS }).map(() => (
+      <div class="track flex w-max flex-none">
+        {pages.map((image) => (
+          <Image
+            src={image}
+            alt=""
+            role="presentation"
+            class="pointer-events-auto aspect-magazine h-80 w-auto object-cover shadow-lg transition group-has-hover:not-hover:opacity-75 hover:scale-105"
+            class:list={[reverse ? "ml-4" : "mr-4"]}
+            widths={[image.width / 4, image.width / 2, image.width]}
+            sizes="(max-width: 1024px) 180.7px, 17.647vw"
+          />
+        ))}
+      </div>
+    ))
+  }
+</div>
+
+<style
+  define:vars={{
+    direction: reverse ? "100%" : "-100%",
+    duration: `${DURATION}s`,
+  }}
+>
+  .track {
+    animation: scroll var(--duration) linear infinite;
+  }
+  @media (pointer: fine) {
+    :global(.group):has(*:hover) .track {
+      animation-play-state: paused;
+    }
+  }
+  @keyframes scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(var(--direction));
+    }
+  }
+</style>

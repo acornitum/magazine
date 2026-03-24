@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+
+import front from "@/assets/textures/front.png";
+import back from "@/assets/textures/back.png";
+import spine from "@/assets/textures/spine.png";
+---
+
+<div class="p-12 sm:p-16">
+  <div
+    class="group relative flex h-120 w-full items-center justify-center border border-black/5 bg-neutral-50 p-12 perspective-midrange"
+  >
+    <div
+      class="aspect-magazine relative h-full rotate-6 rotate-x-3 -rotate-y-3 shadow-lg transition duration-1000 transform-3d group-hover:rotate-y-183"
+    >
+      <!-- Front and back sides -->
+      <Image
+        src={front}
+        alt=""
+        role="presentation"
+        class="absolute inset-0 size-full translate-z-1 object-cover backface-hidden"
+      />
+      <Image
+        src={back}
+        alt=""
+        role="presentation"
+        class="absolute inset-0 size-full -translate-z-1 rotate-y-180 object-cover backface-hidden"
+      />
+
+      <!-- Spine -->
+      <Image
+        src={spine}
+        alt=""
+        role="presentation"
+        class="absolute top-0 right-full h-full w-2 origin-right translate-z-1 -rotate-y-90 object-cover backface-hidden"
+      />
+
+      <!-- White boxes to cover other three sides -->
+      <!-- TODO: a paper texture would be kinda cool here? idk  -->
+      <div
+        class="absolute top-0 left-full h-full w-2 origin-left translate-z-1 rotate-y-90 bg-white backface-hidden"
+      >
+      </div>
+      <div
+        class="absolute bottom-full left-0 h-2 w-full origin-bottom translate-z-1 rotate-x-90 bg-white backface-hidden"
+      >
+      </div>
+      <div
+        class="absolute top-full left-0 h-2 w-full origin-top translate-z-1 -rotate-x-90 bg-white backface-hidden"
+      >
+      </div>
+    </div>
+  </div>
+</div>

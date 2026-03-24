@@ -9,8 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@tailwindcss/vite": "^4.1.18",
-    "astro": "^5.16.6",
-    "tailwindcss": "^4.1.18"
+    "@tailwindcss/vite": "^4.2.2",
+    "animejs": "^4.3.6",
+    "astro": "^6.0.8",
+    "date-fns": "^4.1.0",
+    "tailwindcss": "^4.2.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
   }
 }

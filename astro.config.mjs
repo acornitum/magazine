@@ -4,29 +4,25 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
+  site: `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`,
   vite: {
     plugins: [tailwindcss()],
   },
-  redirects: {
-    "/": {
-      destination: "/v1",
-      status: 302,
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Archivo",
+      cssVariable: "--font-archivo",
+      weights: ["400 700"],
+      subsets: ["latin"],
     },
-    "/start": {
-      destination: "/v1/start",
-      status: 302,
+    {
+      provider: fontProviders.google(),
+      name: "Jua",
+      cssVariable: "--font-jua",
+      fallbacks: ["Comic Sans MS", "cursive"],
+      weights: ["400"],
+      subsets: ["latin"],
     },
-  },
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Jua",
-        cssVariable: "--font-jua",
-        fallbacks: ["Comic Sans MS", "cursive"],
-        weights: ["400"],
-        subsets: ["latin"],
-      },
-    ],
-  },
+  ],
 });

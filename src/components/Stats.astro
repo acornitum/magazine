@@ -1,0 +1,152 @@
+---
+import { Image } from "astro:assets";
+
+import postcard1 from "@/assets/postcard1.png";
+import postcard2 from "@/assets/postcard2.png";
+import postcard3 from "@/assets/postcard3.png";
+import postcard4 from "@/assets/postcard4.png";
+
+import magprojects from "@/assets/stats/magprojects.svg";
+import projects from "@/assets/stats/projects.svg";
+import hours from "@/assets/stats/hours.svg";
+import countries from "@/assets/stats/countries.svg";
+
+import Sep from "@/assets/sep.svg";
+---
+
+<div
+  id="stats"
+  class="from-gradient-start to-gradient-end @container relative bg-linear-to-b"
+>
+  <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-white" />
+
+  <div class="flex gap-[3.5cqw] px-10 py-16 max-md:flex-col">
+    <div class="flex min-w-0 flex-1 flex-col gap-y-[4cqw] max-md:gap-y-[8cqw]">
+      <div
+        class="aspect-postcard @container-[size] relative w-full rotate-3 opacity-0"
+      >
+        <Image
+          src={postcard4}
+          alt=""
+          role="presentation"
+          class="size-full object-cover shadow-lg"
+          widths={[postcard4.width / 4, postcard4.width / 2, postcard4.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={magprojects}
+            alt="158"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            projects in magazine
+          </p>
+        </div>
+      </div>
+      <div
+        class="aspect-postcard @container-[size] relative w-full -rotate-2 opacity-0"
+      >
+        <Image
+          src={postcard1}
+          alt=""
+          role="presentation"
+          class="size-full object-cover shadow-lg"
+          widths={[postcard1.width / 4, postcard1.width / 2, postcard1.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={projects}
+            alt="23,077"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            projects made
+          </p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex min-w-0 flex-1 flex-col gap-y-[4.5cqw] pt-[3cqw] max-md:gap-y-[8cqw]"
+    >
+      <div
+        class="aspect-postcard @container-[size] relative w-full -rotate-3 opacity-0"
+      >
+        <Image
+          src={postcard2}
+          alt=""
+          role="presentation"
+          class="size-full object-cover shadow-lg"
+          widths={[postcard2.width / 4, postcard2.width / 2, postcard2.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={hours}
+            alt="240,000+"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            hours spent making
+          </p>
+        </div>
+      </div>
+      <div
+        class="aspect-postcard @container-[size] relative -ml-2 w-full rotate-1 opacity-0"
+      >
+        <Image
+          src={postcard3}
+          alt=""
+          role="presentation"
+          class="size-full object-cover shadow-lg"
+          widths={[postcard3.width / 4, postcard3.width / 2, postcard3.width]}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+        <div class="absolute inset-0 flex flex-col items-center justify-center">
+          <Image
+            src={countries}
+            alt="112"
+            role="presentation"
+            class="h-[22cqh] w-auto"
+          />
+          <p
+            class="font-jua mt-[4cqh] text-[10cqh] leading-tight text-white text-shadow-md"
+          >
+            countries
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  import { createTimeline, onScroll, stagger } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#stats",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  }).add("#stats .aspect-postcard", {
+    opacity: [0, 1],
+    translateY: [20, 0],
+    rotate: [-12, 0],
+    duration: 800,
+    delay: stagger(200),
+  });
+</script>

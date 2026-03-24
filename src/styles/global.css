@@ -1,152 +1,206 @@
 @import "tailwindcss";
 
 @theme {
+  --font-sans: var(--font-archivo);
   --font-jua: var(--font-jua);
+
   --drop-shadow-sticker: 0 3px 2px rgba(0, 0, 0, 0.25);
+
+  --color-blue-bg: #5e6fe5;
+  --color-blue-fg: #5167dd;
+  --color-green-bg: #65c3b5;
+  --color-green-fg: #70c9bb;
+  --color-text: #473b47;
+
+  --color-gradient-start: #c3e6f3;
+  --color-gradient-end: #abc8f4;
+
+  --color-magazine-logo: #ffa599;
+  --color-magazine: #e11d48;
+  --color-juice-bg: #cee5c0;
+  --color-juice-fg: #467346;
+  --color-highway: #302c61;
+
+  --color-amber-soft: #ffbf71;
+  --color-blue-soft: #86d5ff;
+  --color-indigo-soft: #8686ff;
+  --color-pink-soft: #f989ff;
+
+  --aspect-magazine: 420 / 595;
+  --aspect-postcard: 461 / 289;
+
+  --ease-in-out-expo: cubic-bezier(0.87, 0, 0.13, 1);
 }
 @custom-variant dragging ([data-dragging="true"]);
 
-@utility bg-stripes {
-  @apply relative isolate;
+@layer base {
+  html {
+    /* font-size: clamp(16px, 1.25vw, 20px); */
+    font-size: max(12.8px, 1.25vw);
+  }
+}
+
+@utility bg-stripes-from-* {
+  @apply relative isolate rounded-4xl corner-squircle;
 
   &::before {
     content: "";
-    @apply absolute inset-0 -z-10 shadow-md rounded-4xl corner-squircle transition;
+    @apply absolute inset-0 -z-10 rounded-4xl shadow-md transition corner-squircle;
 
-    background-color: var(--color-stripes-bg, #5e6fe5);
+    background-color: --value(--color-*, [color]);
     background-image: repeating-linear-gradient(
-      -45deg,
+      -60deg,
       transparent,
-      transparent 12px,
-      var(--color-stripes-fg, #5167dd) 12px,
-      var(--color-stripes-fg, #5167dd) 24px
+      transparent 1rem,
+      var(--stripes-fg) 1rem,
+      var(--stripes-fg) 2rem
     );
     background-size: 200% 100%;
     background-position: 0 0;
+
+    animation: stripe-move 1s linear infinite;
+    animation-play-state: paused;
   }
 
-  &:hover::before {
+  &:hover::before,
+  &:focus::before {
     @apply brightness-75;
-    animation: stripe-move 1s linear infinite;
+    animation-play-state: running;
   }
 }
-@utility bg-stripes-green {
-  --color-stripes-bg: #8ed49e;
-  --color-stripes-fg: #7ac592;
+@utility bg-stripes-to-* {
+  &::before {
+    --stripes-fg: --value(--color-*, [color]);
+  }
 }
 @keyframes stripe-move {
   0% {
     background-position: 0 0;
   }
   100% {
-    background-position: -33.9411254969543px 0;
+    background-position: calc(-2rem / sin(60deg)) 0;
   }
 }
 @utility corner-squircle {
   corner-shape: squircle;
 }
-
-body {
-  background-color: #f3faff;
-  background-image: url("/bglines.svg");
-  background-repeat: repeat;
-  color: #473b47;
+@utility pixelated {
+  image-rendering: pixelated;
 }
 
-.pop {
-  transition: transform 140ms ease;
+.bg-grid {
+  background:
+    url("/bglines.svg") center repeat,
+    #f3faff;
 }
 
-.pop:hover {
-  transform: scale(1.02);
+/* --- Article --- */
+
+article {
+  color: var(--color-text);
+  text-wrap: pretty;
+}
+
+article :is(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-jua);
+  line-height: 1.25;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
 
 article h1 {
-  font-size: 2.25rem;
+  font-size: 2.25em;
   /* font-weight: 700; */
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  line-height: 1.25;
-  font-family: var(--font-jua);
 }
 
 article h2 {
-  font-size: 1.875rem;
+  font-size: 1.875em;
   /* font-weight: 600; */
-  margin-top: 1.75rem;
-  margin-bottom: 1rem;
-  font-family: var(--font-jua);
 }
 
 article h3 {
-  font-size: 1.5rem;
+  font-size: 1.5em;
   /* font-weight: 600; */
-  margin-top: 1.5rem;
-  margin-bottom: 0.75rem;
-  font-family: var(--font-jua);
 }
 
 article h4 {
-  font-size: 1.25rem;
+  font-size: 1.25em;
   /* font-weight: 600; */
-  margin-top: 1.25rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-jua);
 }
 
 article h5 {
-  font-size: 1.125rem;
+  font-size: 1.125em;
   /* font-weight: 600; */
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-jua);
 }
 
 article h6 {
-  font-size: 1rem;
+  font-size: 1em;
   /* font-weight: 600; */
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  font-family: var(--font-jua);
 }
 
 article p {
-  margin-bottom: 1rem;
+  margin-bottom: 1em;
 }
 
 article a {
   color: #3b82f6;
-  text-decoration: underline;
+  text-decoration-line: underline;
+  text-decoration-skip-ink: none;
+  @apply rounded-xl corner-squircle;
 }
 
 article a:hover {
   color: #2563eb;
-  text-decoration: wavy;
+  text-decoration-style: wavy;
+}
+article a:focus {
+  color: #2563eb;
+  text-decoration-line: none;
+  @apply outline-2 outline-offset-4 outline-[#2563eb];
 }
 
 article ul,
 article ol {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 2rem;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 2em;
 }
 
 article ul {
   list-style-type: disc;
-  list-style-position: inside;
-  padding-left: 1.5rem;
-  margin: 1rem 0;
+  padding-left: 2em;
+  margin: 1em 0;
 }
 
 article ul li {
-  margin-top: 0rem;
+  margin-top: 0em;
+  padding-left: 0.25em;
+}
+article ul li + li {
+  margin-top: 0.25em;
 }
 
 article img {
   max-width: min(100%, 800px);
   height: auto;
   display: block;
-  margin: 1rem 0;
-  border-radius: 0.25rem;
-  margin-bottom: 2rem;
+  margin: 1em 0;
+  border-radius: 0.25em;
+  margin-block: 1.5em;
+}
+
+:is(article, article blockquote) > :first-child {
+  margin-top: 0;
+}
+:is(article, article blockquote) > :last-child {
+  margin-bottom: 0;
+}
+
+article blockquote {
+  @apply border-l-2 border-l-amber-500 bg-amber-100 py-3 pl-4 text-amber-800;
+  margin-block: 1em;
+
+  p {
+    margin-bottom: 0.4em;
+  }
 }

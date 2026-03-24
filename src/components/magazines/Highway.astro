@@ -1,0 +1,151 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Gallery from "./Gallery.astro";
+
+import landing from "@/assets/magazines/highway/landing.png";
+import racecar from "@/assets/magazines/highway/racecar.png";
+
+import Sep from "@/assets/sep.svg";
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
+
+const entry = await getEntry("magazines", "highway");
+if (!entry) {
+  throw new Error("Highway magazine entry not found");
+}
+
+const { logo, pages, pdf } = entry.data;
+---
+
+<div id="mag-highway" class="relative isolate bg-highway text-white">
+  <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-highway" />
+
+  <div class="p-12 sm:p-16">
+    <div class="flex justify-between text-xl text-current/75">
+      <p class="header-left opacity-0">#3</p>
+      <p class="header-right opacity-0">&mdash; highway</p>
+    </div>
+    <p class="strapline mt-4 text-3xl leading-snug text-pretty opacity-0">
+      A hardware grant program where any teen could make any hardware project.
+      They made the coolest keyboards, cyberdecks, 3D printers, devboards, game
+      consoles, and more!
+    </p>
+    <div class="cta mt-6 flex items-center gap-3 opacity-0">
+      <a
+        href={pdf}
+        target="_blank"
+        class="flex h-12 w-fit items-center rounded-3xl bg-white px-5 font-jua text-xl text-highway outline-offset-2 outline-white transition corner-squircle hover:scale-105 hover:bg-neutral-200 focus:scale-105 focus:bg-neutral-200 focus:outline-2 active:scale-100"
+      >
+        view highway magazine
+        <span
+          class="ml-2 grid size-5 place-items-center rounded-full bg-highway text-sm text-white uppercase"
+        >
+          <ArrowRight class="size-3" stroke-width={4} />
+        </span>
+      </a>
+      <p class="text-current/60">(43MB)</p>
+    </div>
+  </div>
+  <div class="gallery relative overflow-x-clip opacity-0">
+    <Gallery pages={pages} />
+    <Image
+      src={logo}
+      alt=""
+      role="presentation"
+      class="pointer-events-none absolute top-1/2 left-1/2 h-54 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2"
+      widths={[logo.width / 4, logo.width / 2, logo.width]}
+      sizes="(max-width: 1024px) 514.08px, 50.203vw"
+    />
+  </div>
+
+  <Image
+    src={racecar}
+    alt=""
+    role="presentation"
+    class="racecar pointer-events-none relative z-10 mx-auto -mt-[4vw] -mb-[16vw] h-[16vw] w-auto opacity-0"
+    widths={[racecar.width / 4, racecar.width / 2, racecar.width]}
+    sizes="40vw"
+  />
+  <Image
+    src={landing}
+    alt=""
+    role="presentation"
+    class="landing relative -z-10 -mt-[4vw] h-[20vw] w-full object-cover object-top opacity-0"
+    widths={[landing.width / 4, landing.width / 2, landing.width]}
+    sizes="100vw"
+  />
+</div>
+
+<script>
+  import { createTimeline, onScroll } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#mag-highway",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#mag-highway .header-left", {
+      opacity: [0, 1],
+      ease: "linear",
+      duration: 400,
+    })
+    .add(
+      "#mag-highway .header-right",
+      {
+        opacity: [0, 1],
+        ease: "linear",
+        duration: 400,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-highway .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-highway .cta",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-highway .gallery",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#mag-highway .landing",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-highway .racecar",
+      {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    );
+</script>

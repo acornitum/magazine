@@ -1,0 +1,231 @@
+---
+import { Image } from "astro:assets";
+
+// import magazineSolo from "@/assets/magazine-solo.png";
+import physical from "@/assets/pictures/physical.jpg";
+import michaelReeves from "@/assets/pictures/michael-reeves.png";
+import techjoyce from "@/assets/pictures/techjoyce.png";
+
+import signatures from "@/assets/pictures/signatures.png";
+import back from "@/assets/stickers/magazine/back.png";
+
+import YouTube from "@/assets/icons/si-youtube.svg";
+
+import yay from "@/assets/emoji/yay.gif";
+
+import Sep from "@/assets/sep.svg";
+
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("magazines", "magazine");
+if (!entry) {
+  throw new Error("Hack Club magazine entry not found");
+}
+const { pdf } = entry.data;
+---
+
+<div id="pictures" class="relative p-12 pb-8! text-text sm:p-16">
+  <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-white" />
+
+  <p class="strapline text-3xl leading-snug opacity-0">
+    We gave out 100 copies of the magazine at Campfire Flagship, to all the
+    attendees, Open Sauce staff, and YouTubers there! <Image
+      src={yay}
+      alt=""
+      role="presentation"
+      class="-mt-1 inline h-8 w-auto"
+    />
+  </p>
+  <div class="cta mt-6 flex gap-4">
+    <div class="flex-none opacity-0">
+      <a
+        href="/get"
+        class="bg-stripes-from-blue-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-blue-fg transition bg-stripes-to-blue-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
+      >
+        <span
+          class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-blue-bg uppercase"
+          >a</span
+        >
+        get a copy
+      </a>
+    </div>
+    <div class="flex-none opacity-0">
+      <a
+        href={pdf}
+        target="_blank"
+        class="bg-stripes-from-green-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-green-fg transition bg-stripes-to-green-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
+      >
+        <span
+          class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-green-bg uppercase"
+          >x</span
+        >
+        see the pdf
+      </a>
+    </div>
+  </div>
+
+  <div
+    class="pictures mt-12 grid grid-cols-1 grid-rows-4 gap-6 md:grid-cols-2 md:grid-rows-2"
+  >
+    <div
+      class="group relative row-span-2 overflow-clip rounded-4xl opacity-0 contain-size corner-squircle"
+    >
+      <Image
+        src={physical}
+        alt=""
+        role="presentation"
+        class="size-full object-cover transition duration-750 ease-in-out-expo group-hover:scale-110"
+        widths={[360, 540, 720, 1440, 2160]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+      <div
+        class="absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5 corner-squircle"
+      >
+        <p class="font-jua text-lg text-text">physical magazine wowow</p>
+      </div>
+    </div>
+    <div
+      class="group relative h-88 overflow-clip rounded-4xl opacity-0 contain-size corner-squircle"
+    >
+      <Image
+        src={michaelReeves}
+        alt=""
+        role="presentation"
+        class="size-full object-cover object-[50%_25%] transition duration-750 ease-in-out-expo group-hover:scale-110"
+        widths={[360, 540, 720, 1440, 2160]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+      <a
+        href="https://youtube.com/@MichaelReeves"
+        class="group/link absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5 font-jua outline-[#ff0000] corner-squircle focus:outline-2"
+      >
+        <p
+          class="text-lg text-text underline-offset-2 group-hover/link:underline"
+        >
+          michael reeves
+        </p>
+        <YouTube class="ml-2 h-4 text-[#ff0000]" />
+        <span class="-mb-0.5 ml-1 text-xs text-[#ff0000]">7.7m</span>
+      </a>
+    </div>
+    <div
+      class="group relative h-88 overflow-clip rounded-4xl opacity-0 contain-size corner-squircle"
+    >
+      <Image
+        src={techjoyce}
+        alt=""
+        role="presentation"
+        class="size-full object-cover object-[50%_40%] transition duration-750 ease-in-out-expo group-hover:scale-110"
+        widths={[360, 540, 720, 1440, 2160]}
+        sizes="(max-width: 768px) 100vw, 50vw"
+      />
+      <a
+        href="https://youtube.com/@TechJoyce"
+        class="group/link absolute right-2 bottom-2 flex h-8 items-center rounded-2xl bg-white px-2.5 font-jua outline-[#ff0000] corner-squircle focus:outline-2"
+      >
+        <p
+          class="text-lg text-text underline-offset-2 group-hover/link:underline"
+        >
+          techjoyce
+        </p>
+        <YouTube class="ml-2 h-4 text-[#ff0000]" />
+        <span class="-mb-0.5 ml-1 text-xs text-[#ff0000]">2.7m</span>
+      </a>
+    </div>
+  </div>
+
+  <!-- <div class="font-jua relative mt-12 space-y-4 text-8xl text-black/5">
+    <p class="flex justify-between">
+      <span>michael reeves</span>
+      <span>polymars</span>
+    </p>
+    <p class="flex justify-between">
+      <span>open sauce</span>
+      <span>william osman</span>
+    </p>
+    <p class="flex justify-between">
+      <span>codebullet</span>
+      <span>techjoyce</span>
+    </p>
+    <p class="flex justify-between">
+      <span>the backyard</span>
+      <span>scientist</span>
+    </p>
+    <p class="flex justify-between">
+      <span>allen pan</span>
+      <span>sonderingemily</span>
+    </p>
+
+    <Image
+      src={magazineSolo}
+      alt=""
+      role="presentation"
+      class="absolute top-1/2 left-1/2 h-130 w-auto -translate-x-1/2 -translate-y-1/2"
+    />
+  </div> -->
+</div>
+
+<div class="grid grid-cols-1 grid-rows-1 items-end">
+  <Image
+    src={signatures}
+    alt=""
+    role="presentation"
+    class="col-start-1 row-start-1 w-full opacity-20"
+    widths={[signatures.width / 4, signatures.width / 2, signatures.width]}
+    sizes="100vw"
+  />
+  <div class="relative col-start-1 row-start-1 h-35.5 overflow-clip">
+    <img
+      src={back.src}
+      alt=""
+      width={back.width}
+      height={back.height}
+      role="presentation"
+      class="mx-auto h-48 w-auto pixelated"
+    />
+  </div>
+</div>
+
+<script>
+  import { createTimeline, onScroll, stagger } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#pictures",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add(
+      "#pictures .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#pictures .cta > div",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#pictures .pictures > div",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    );
+</script>

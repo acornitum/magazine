@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Gallery from "./Gallery.astro";
+
+import stickers from "@/assets/magazines/magazine/stickers.png";
+
+import Sep from "@/assets/sep.svg";
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
+
+const entry = await getEntry("magazines", "magazine");
+if (!entry) {
+  throw new Error("Hack Club magazine entry not found");
+}
+
+const { logo, pages, pdf } = entry.data;
+---
+
+<div id="mag-magazine" class="relative bg-magazine text-white">
+  <Sep
+    class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-magazine"
+  />
+
+  <div class="p-12 sm:p-16">
+    <div class="flex justify-between text-xl text-current/75">
+      <p class="header-left opacity-0">#1</p>
+      <p class="header-right opacity-0">&mdash; magazine</p>
+    </div>
+    <p class="strapline mt-4 text-3xl leading-snug text-pretty opacity-0">
+      The Hack Club showcase. 158 awesome projects made by 100 Hack Clubbers in
+      2025, all in one magazine. Each teenager designed their own page to show
+      off their project to you.
+    </p>
+    <div class="cta mt-6 flex items-center gap-3 opacity-0">
+      <a
+        href={pdf}
+        target="_blank"
+        class="flex h-12 w-fit items-center rounded-3xl bg-white px-5 font-jua text-xl text-magazine outline-offset-2 outline-white transition corner-squircle hover:scale-105 hover:bg-neutral-200 focus:scale-105 focus:bg-neutral-200 focus:outline-2 active:scale-100"
+      >
+        view hack club magazine
+        <span
+          class="ml-2 grid size-5 place-items-center rounded-full bg-magazine text-sm text-white uppercase"
+        >
+          <ArrowRight class="size-3" stroke-width={4} />
+        </span>
+      </a>
+      <p class="text-current/60">(109MB)</p>
+    </div>
+  </div>
+  <div class="gallery relative overflow-x-clip opacity-0">
+    <Gallery pages={pages} />
+    <Image
+      src={logo}
+      alt=""
+      role="presentation"
+      class="pointer-events-none absolute top-1/2 left-1/2 h-45 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2 shadow-xl"
+      widths={[logo.width / 4, logo.width / 2, logo.width]}
+      sizes="(max-width: 1024px) 496px, 48.4375vw"
+    />
+  </div>
+  <div class="mt-4 overflow-clip">
+    <Image
+      src={stickers}
+      alt=""
+      role="presentation"
+      class="stickers h-auto w-full opacity-0 drop-shadow-lg"
+      widths={[stickers.width / 4, stickers.width / 2, stickers.width]}
+      sizes="100vw"
+    />
+  </div>
+</div>
+
+<script>
+  import { createTimeline, onScroll } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#mag-magazine",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#mag-magazine .header-left", {
+      opacity: [0, 1],
+      ease: "linear",
+      duration: 400,
+    })
+    .add(
+      "#mag-magazine .header-right",
+      {
+        opacity: [0, 1],
+        ease: "linear",
+        duration: 400,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-magazine .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-magazine .cta",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-magazine .gallery",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#mag-magazine .stickers",
+      {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    );
+</script>

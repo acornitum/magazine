@@ -1,0 +1,314 @@
+---
+import { Image } from "astro:assets";
+import { format } from "date-fns";
+
+import rightArrow from "@/assets/right-arrow.svg";
+
+import LogoFill from "@/assets/footer/logo-fill.svg";
+import LogoOutline from "@/assets/footer/logo-outline.svg";
+
+import hcLogo from "@/assets/hc-logo.svg";
+import Acon from "@/assets/footer/name-acon.svg";
+import Gideon from "@/assets/footer/name-gideon.svg";
+import Valen from "@/assets/footer/name-valen.svg";
+import Lilia from "@/assets/footer/name-lilia.svg";
+
+import front from "@/assets/stickers/magazine/front.png";
+
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
+
+import Sep from "@/assets/sep.svg";
+
+const commitSha = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || "(unknown)";
+const commitMessage =
+  process.env.VERCEL_GIT_COMMIT_MESSAGE || "(no commit message)";
+const deployDate = new Date();
+
+type Link = {
+  text: string;
+  href: string;
+};
+const links: Link[] = [
+  { text: "hack club", href: "https://hackclub.com" },
+  { text: "slack", href: "https://hackclub.com/slack" },
+  { text: "clubs", href: "https://hackclub.com/clubs" },
+  { text: "hackathons", href: "https://hackclub.com/hackathons" },
+];
+
+interface Props {
+  showSticker?: boolean;
+}
+const { showSticker = false } = Astro.props;
+---
+
+<footer id="footer" class="@container relative bg-neutral-900 text-white">
+  <Sep
+    class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-neutral-900"
+  />
+
+  {
+    showSticker && (
+      <div class="absolute inset-x-0 -top-2 flex h-14.5 items-end overflow-clip">
+        <img
+          src={front.src}
+          alt=""
+          width={front.width}
+          height={front.height}
+          role="presentation"
+          class="mx-auto h-48 w-auto pixelated"
+        />
+      </div>
+    )
+  }
+
+  <div class="p-12 sm:p-16">
+    <div class="flex items-center gap-1">
+      <Image
+        src={hcLogo}
+        alt=""
+        role="presentation"
+        class="hc-logo h-12 w-auto opacity-0"
+      />
+      <div class="min-w-0 flex-1"></div>
+      <a
+        href="https://aconlin.com"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-indigo-soft corner-squircle not-hover:not-focus:transition-colors hover:text-indigo-soft focus:text-indigo-soft focus:outline-2"
+      >
+        <Acon role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Acon</span>
+      </a>
+      <a
+        href="https://gideon.sh"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-amber-soft corner-squircle not-hover:not-focus:transition-colors hover:text-amber-soft focus:text-amber-soft focus:outline-2"
+      >
+        <Gideon role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Gideon</span>
+      </a>
+      <a
+        href="https://valen.zip"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-blue-soft corner-squircle not-hover:not-focus:transition-colors hover:text-blue-soft focus:text-blue-soft focus:outline-2"
+      >
+        <Valen role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Valen</span>
+      </a>
+      <a
+        href="https://lilia.rocks"
+        class="name rounded-xl px-1.5 text-white/10 opacity-0 outline-pink-soft corner-squircle not-hover:not-focus:transition-colors hover:text-pink-soft focus:text-pink-soft focus:outline-2"
+      >
+        <Lilia role="presentation" class="h-9 w-auto" />
+        <span class="sr-only">Lilia</span>
+      </a>
+    </div>
+    <div class="mt-8 @5xl:hidden">
+      <div class="flex gap-2 text-lg text-neutral-400 italic">
+        {
+          links.map((link, idx) => (
+            <>
+              {idx > 0 && (
+                <span aria-hidden="true" class="link-mobile opacity-0">
+                  //
+                </span>
+              )}
+              <a
+                href={link.href}
+                class="link-mobile rounded-xl underline underline-offset-2 opacity-0 outline-offset-2 outline-white corner-squircle hover:text-white focus:text-white focus:no-underline focus:outline-2"
+              >
+                {link.text}
+              </a>
+            </>
+          ))
+        }
+      </div>
+    </div>
+    <div class="mt-6 flex gap-x-12">
+      <div
+        class="group -mt-0.5 w-40 flex-none text-xl leading-relaxed @max-5xl:hidden"
+      >
+        {
+          links.map((link) => (
+            <div class="link-desktop opacity-0">
+              <a
+                href={link.href}
+                class="group/link relative block py-0.5 italic transition-all outline-none group-has-hover:not-hover:opacity-50 group-has-focus:not-focus:opacity-50 hover:font-bold focus:font-bold"
+              >
+                <ArrowRight
+                  class="pointer-events-none absolute top-1/2 -left-3.5 size-4 -translate-x-3 -translate-y-1/2 text-white opacity-0 transition group-hover/link:translate-x-0 group-hover/link:opacity-100 group-focus/link:translate-x-0 group-focus/link:opacity-100"
+                  stroke-width={3}
+                />
+                <span class="block max-w-fit rounded-xl outline-offset-2 outline-white transition-transform corner-squircle group-hover/link:translate-x-2 group-focus/link:translate-x-2 group-focus/link:outline-2">
+                  {link.text}
+                </span>
+              </a>
+            </div>
+          ))
+        }
+      </div>
+      <div class="min-w-0 flex-1 text-xl leading-relaxed">
+        <p class="about opacity-0">
+          Hack Club is a 501(c)(3) nonprofit and network of 60k+ technical high
+          schoolers. We believe you learn best by building, so we're creating
+          community and providing grants so you can make awesome projects. In
+          the past few years, we've partnered with GitHub to run Summer of
+          Making, hosted the world's longest hackathon on land, and ran Canada's
+          largest high school hackathon.
+        </p>
+        <div class="strapline mt-4 flex items-center gap-3 opacity-0">
+          <Image
+            src={rightArrow}
+            alt=""
+            role="presentation"
+            class="h-6 w-fit flex-none @max-3xl:hidden"
+          />
+          <p class="min-w-0 flex-1 font-bold text-amber-soft">
+            At Hack Club, students aren't just learning, they're shipping.
+          </p>
+        </div>
+        <p class="copyright mt-4 text-base text-current/60 opacity-0">
+          © 2026 Hack Club, a 501(c)(3) nonprofit (EIN: 81-2908499)
+        </p>
+        <p class="copyright mt-1 text-sm text-current/20 opacity-0">
+          <a
+            href="https://github.com/acornitum/magazine"
+            class="underline underline-offset-2 transition hover:text-white"
+            >acornitum/magazine</a
+          > // commit <span
+            title={commitMessage}
+            class="underline decoration-dotted underline-offset-2"
+            >{commitSha}</span
+          > on
+          {format(deployDate, "do MMMM yyyy, HH:mm")} UTC.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="footer-logo" class="overflow-clip">
+    <div class="big-logo relative opacity-0">
+      <LogoFill class="h-auto w-full text-white/1" />
+      <div class="bg-clip-logo absolute inset-0 bg-white/10">
+        <div
+          id="footer-logo-grad"
+          class="absolute -top-[8cqw] -left-[8cqw] size-[16cqw] rounded-full bg-white/20 opacity-0 blur-[3.33cqw] transition-opacity"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style
+  define:vars={{
+    logoOutline: `url(${LogoOutline.src})`,
+  }}
+>
+  .bg-clip-logo {
+    mask-image: var(--logoOutline);
+    mask-size: 100% 100%;
+  }
+</style>
+
+<script>
+  const logo = document.getElementById("footer-logo") as HTMLDivElement;
+  const grad = document.getElementById("footer-logo-grad") as HTMLDivElement;
+
+  function onMouseMove(event: MouseEvent) {
+    const { left, top } = grad.parentElement!.getBoundingClientRect();
+    const x = event.clientX - left;
+    const y = event.clientY - top;
+    grad.style.transform = `translate(${x}px, ${y}px)`;
+    grad.style.opacity = "1";
+  }
+  function onMouseLeave() {
+    grad.style.opacity = "0";
+  }
+
+  logo.addEventListener("mousemove", onMouseMove);
+  logo.addEventListener("mouseleave", onMouseLeave);
+</script>
+
+<script>
+  import { createTimeline, onScroll, stagger } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#footer",
+      enter: "bottom-=240",
+      leave: "bottom-=240",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#footer .hc-logo", {
+      scale: [0.8, 1],
+      opacity: [0, 1],
+      duration: 500,
+      ease: "outBack(3)",
+    })
+    .add(
+      "#footer .name",
+      {
+        opacity: [0, 1],
+        duration: 400,
+        ease: "linear",
+        delay: stagger(100, { reversed: true }),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .link-desktop",
+      {
+        opacity: [0, 1],
+        translateY: (_target, i, _length) => [(i + 1) * 5 + 15, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .link-mobile",
+      {
+        opacity: [0, 1],
+        translateX: [10, 0],
+        duration: 800,
+        delay: stagger(40),
+      },
+      "<<",
+    )
+    .add(
+      "#footer .about",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "-=600",
+    )
+    .add(
+      "#footer .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .copyright",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+        delay: stagger(100),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#footer .big-logo",
+      {
+        opacity: [1, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=200",
+    );
+</script>

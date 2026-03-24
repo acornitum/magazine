@@ -1,0 +1,136 @@
+---
+import { Image } from "astro:assets";
+import { getEntry } from "astro:content";
+import Gallery from "./Gallery.astro";
+
+import stickers from "@/assets/magazines/juice/stickers.png";
+
+import Sep from "@/assets/sep.svg";
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
+
+const entry = await getEntry("magazines", "juice");
+if (!entry) {
+  throw new Error("Juice magazine entry not found");
+}
+
+const { logo, pages, pdf } = entry.data;
+---
+
+<div id="mag-juice" class="relative bg-juice-bg text-black">
+  <Sep
+    class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-juice-bg"
+  />
+
+  <div class="p-12 pb-12 sm:p-16">
+    <div class="flex justify-between text-xl text-current/75">
+      <p class="header-left opacity-0">#2</p>
+      <p class="header-right opacity-0">&mdash; juice</p>
+    </div>
+    <p class="strapline mt-4 text-3xl leading-snug text-pretty opacity-0">
+      Over 2 months, high schoolers from around the world spent one hundred
+      hours making their own game - and over 100 of them flew to Shanghai to
+      open a pop-up juice bar & game exhibition.
+    </p>
+    <div class="cta mt-6 flex items-center gap-3 opacity-0">
+      <a
+        href={pdf}
+        target="_blank"
+        class="flex h-12 w-fit items-center rounded-3xl bg-juice-fg px-5 font-jua text-xl text-white outline-offset-2 outline-juice-fg transition corner-squircle hover:scale-105 hover:bg-green-900 focus:scale-105 focus:bg-green-900 focus:outline-2 active:scale-100"
+      >
+        view juice magazine
+        <span
+          class="ml-2 grid size-5 place-items-center rounded-full bg-white text-sm text-juice-fg uppercase"
+        >
+          <ArrowRight class="size-3" stroke-width={4} />
+        </span>
+      </a>
+      <p class="text-current/60">(59MB)</p>
+    </div>
+  </div>
+  <div class="gallery relative overflow-x-clip opacity-0">
+    <Gallery pages={pages} />
+    <Image
+      src={logo}
+      alt=""
+      role="presentation"
+      class="pointer-events-none absolute top-1/2 left-1/2 h-50 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2"
+      widths={[logo.width / 4, logo.width / 2, logo.width]}
+      sizes="(max-width: 1024px) 448px, 43.75vw"
+    />
+  </div>
+  <div class="mt-4 overflow-clip">
+    <Image
+      src={stickers}
+      alt=""
+      role="presentation"
+      class="stickers h-auto w-full opacity-0 drop-shadow-lg"
+      widths={[stickers.width / 4, stickers.width / 2, stickers.width]}
+      sizes="100vw"
+    />
+  </div>
+</div>
+
+<script>
+  import { createTimeline, onScroll } from "animejs";
+
+  createTimeline({
+    autoplay: onScroll({
+      target: "#mag-juice",
+      enter: "center",
+      leave: "center",
+    }),
+    defaults: {
+      ease: "outExpo",
+    },
+  })
+    .add("#mag-juice .header-left", {
+      opacity: [0, 1],
+      ease: "linear",
+      duration: 400,
+    })
+    .add(
+      "#mag-juice .header-right",
+      {
+        opacity: [0, 1],
+        ease: "linear",
+        duration: 400,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-juice .strapline",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-juice .cta",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    )
+    .add(
+      "#mag-juice .gallery",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        duration: 800,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#mag-juice .stickers",
+      {
+        opacity: [0, 1],
+        translateY: [40, 0],
+        duration: 800,
+      },
+      "<<+=100",
+    );
+</script>

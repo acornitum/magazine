@@ -1,20 +1,30 @@
 ---
-import Footer from '../components/footer.astro';
-import Layout from './Layout.astro';
+import Footer from "@/components/Footer.astro";
+import Layout from "./Layout.astro";
+
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter?.title}>
-  <div class="w-full max-w-6xl mx-auto p-8">
-    <a href="/v1" class="group w-fit h-10 px-4 bg-[#F6F8E3] text-[#897A68] hover:text-[#665F4A] shadow-sm font-jua rounded-3xl corner-squircle flex items-center transition hover:scale-105 hover:bg-[#D6E69F] active:scale-100">
-      <span class="size-5 mr-1.5 grid place-items-center bg-[#897A68] text-[#F6F8E3] rounded-full text-sm transition group-hover:bg-[#665F4A] group-hover:text-[#D6E69F]">B</span>
-      back to home
-    </a>
-    <article>
-			<slot />
-		</article>
-	</div>
+  <div class="bg-grid p-8 sm:p-12">
+    <div class="bg-white p-8 text-[max(1rem,16px)] leading-relaxed shadow-lg">
+      <a
+        href="/"
+        class="group mb-6 inline-flex w-fit items-center rounded-xl text-[max(1rem,16px)] leading-none font-bold text-blue-fg underline-offset-2 outline-offset-4 outline-blue-fg transition corner-squircle hover:text-blue-800 hover:underline focus:text-blue-800 focus:outline-2"
+      >
+        <ArrowRight
+          class="mr-1 size-4 rotate-180 transition-transform group-hover:-translate-x-0.5 group-focus:-translate-x-0.5"
+          stroke-width={3}
+        />
+        <span>back to home</span>
+      </a>
+      <article>
+        <slot />
+      </article>
+    </div>
+  </div>
 
   <Footer />
 </Layout>

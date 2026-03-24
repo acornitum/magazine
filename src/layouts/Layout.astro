@@ -1,34 +1,48 @@
 ---
-import { Font } from 'astro:assets';
+import { Font } from "astro:assets";
 
 import "../styles/global.css";
 
 interface Props {
   title?: string;
+  hideScrollbarOnLoad?: boolean;
 }
-const { title } = Astro.props;
+const { title, hideScrollbarOnLoad } = Astro.props;
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}</title>
+<html
+  lang="en"
+  style={{ overflowY: hideScrollbarOnLoad ? "hidden" : undefined }}
+>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>
+      {title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}
+    </title>
+    <meta
+      name="description"
+      content="The 2025 Hack Club showcase. Over 150 of the most unique and awesome projects. Designed and built by teenagers, for you to explore."
+    />
 
+    <meta
+      property="og:title"
+      content={title ? `${title} - Hack Club Magazine` : "Hack Club Magazine"}
+    />
+    <meta property="og:image" content={new URL("/og.png", Astro.url)} />
+    <meta
+      property="og:description"
+      content="The 2025 Hack Club showcase. Over 150 of the most unique and awesome projects. Designed and built by teenagers, for you to explore."
+    />
+
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <Font cssVariable="--font-archivo" />
     <Font cssVariable="--font-jua" />
-	</head>
-	<body>
+  </head>
+  <body>
     <slot />
-		<script>
-			document.addEventListener('keydown', (e) => {
-				if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
-				const key = e.key.toLowerCase();
-				if (key === 'a' && window.location.pathname === '/') window.location.href = '/start';
-				if (key === 'b' && window.location.pathname === '/start') window.location.href = '/';
-				if ((key === '#' || (e.shiftKey && e.key === '3')) && window.location.pathname === '/') window.location.href = 'https://hackclub.enterprise.slack.com/archives/C0A8CMWM0CR';
-			});
-		</script>
   </body>
 </html>

@@ -1,0 +1,383 @@
+---
+import { Image } from "astro:assets";
+
+import backTitle from "@/assets/logo/back-title.png";
+import backSub from "@/assets/logo/back-sub.png";
+import title from "@/assets/logo/title-magazine.png";
+import subTop from "@/assets/logo/sub-top.png";
+import subBottom from "@/assets/logo/sub-bottom.png";
+
+import front from "@/assets/textures/front.png";
+import back from "@/assets/textures/back.png";
+import spine from "@/assets/textures/spine.png";
+import spineHorizontal from "@/assets/textures/spine-horizontal.png";
+import spineVertical from "@/assets/textures/spine-vertical.png";
+
+import doodleBl from "@/assets/textures/doodle-bl.svg";
+import doodleTr from "@/assets/textures/doodle-tr.svg";
+
+import topBar from "@/assets/topbar.png";
+import hcFlag from "@/assets/hc-flag.svg";
+import Carousel from "./Carousel.astro";
+
+import Star from "@/assets/magazinestar.svg";
+
+import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
+
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("magazines", "magazine");
+if (!entry) {
+  throw new Error("Hack Club magazine entry not found");
+}
+const { pages, pdf } = entry.data;
+---
+
+<div
+  id="loading-overlay"
+  class="fixed inset-0 isolate z-30 flex items-center justify-center overflow-clip text-white"
+>
+  <div
+    class="circle absolute top-1/2 left-1/2 -z-10 size-[141.5vmax] -translate-x-1/2 -translate-y-1/2 rounded-full bg-magazine"
+  >
+  </div>
+  <div
+    class="circle absolute top-1/2 left-1/2 -z-10 size-[110vmin] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/25"
+  >
+  </div>
+  <div class="star">
+    <Star class="h-16 animate-pulse text-white" />
+  </div>
+</div>
+
+<Image
+  src={topBar}
+  alt=""
+  role="presentation"
+  class="h-auto w-full"
+  widths={[topBar.width / 4, topBar.width / 2, topBar.width]}
+  sizes="100vw"
+  priority
+/>
+<div class="bg-grid relative">
+  <div class="flex pr-12 sm:pr-16">
+    <Image
+      src={hcFlag}
+      alt=""
+      role="presentation"
+      class="h-20 w-auto flex-none"
+      priority
+    />
+    <div class="flex min-w-0 flex-1 items-center justify-end">
+      <p class="text-base text-text">
+        see how it started: <a
+          href="/v1"
+          class="group inline-flex items-center rounded-xl leading-none font-bold text-blue-fg underline-offset-2 outline-offset-4 outline-blue-fg transition corner-squircle hover:text-blue-800 hover:underline focus:text-blue-800 focus:outline-2"
+        >
+          <span>go to v1</span>
+          <ArrowRight
+            class="ml-1 size-4 transition-transform group-hover:translate-x-0.5 group-focus:translate-x-0.5"
+            stroke-width={3}
+          />
+        </a>
+      </p>
+    </div>
+  </div>
+  <div
+    class="flex w-full justify-center gap-x-8 gap-y-12 p-12 max-lg:flex-col max-lg:items-center sm:p-16"
+  >
+    <div class="group relative isolate flex-none px-16 perspective-distant">
+      <div
+        id="magazine-3d"
+        class="relative aspect-magazine h-104 rotate-6 rotate-x-3 -rotate-y-3 opacity-0 shadow-lg transform-3d"
+      >
+        <!-- Front and back sides -->
+        <Image
+          src={front}
+          alt=""
+          role="presentation"
+          class="absolute inset-0 size-full translate-z-1.5 object-cover backface-hidden"
+          widths={[front.width / 4, front.width / 2, front.width]}
+          sizes="(max-width: 1024px) 234.91px, 22.94w"
+          priority
+        />
+        <Image
+          src={back}
+          alt=""
+          role="presentation"
+          class="absolute inset-0 size-full -translate-z-1.5 rotate-y-180 object-cover backface-hidden"
+          widths={[front.width / 4, front.width / 2, front.width]}
+          sizes="(max-width: 1024px) 234.91px, 22.94w"
+          priority
+        />
+
+        <!-- Spine -->
+        <Image
+          src={spine}
+          alt=""
+          role="presentation"
+          class="absolute top-0 right-full h-full w-3 origin-right translate-z-1.5 -rotate-y-90 object-cover backface-hidden"
+          widths={[spine.width / 4, spine.width / 2, spine.width]}
+          sizes="(max-width: 1024px) 9.6px, 0.9375w"
+          priority
+        />
+        <Image
+          src={spineVertical}
+          alt=""
+          role="presentation"
+          class="absolute top-0 left-full h-full w-3 origin-left translate-z-1.5 rotate-y-90 object-cover backface-hidden"
+          widths={[spine.width / 4, spine.width / 2, spine.width]}
+          sizes="(max-width: 1024px) 9.6px, 0.9375w"
+          priority
+        />
+
+        <!-- White boxes to cover top and bottom sides -->
+        <div
+          class="absolute bottom-full left-0 h-3 w-full origin-bottom translate-z-1.5 rotate-x-90 bg-white backface-hidden"
+        >
+        </div>
+        <div
+          class="absolute top-full left-0 h-3 w-full origin-top translate-z-1.5 -rotate-x-90 bg-white backface-hidden"
+        >
+        </div>
+      </div>
+
+      <Image
+        id="hero-doodle-bl"
+        src={doodleBl}
+        alt=""
+        role="presentation"
+        class="absolute -bottom-8 -left-4 -z-10 h-16 w-auto opacity-0"
+        priority
+      />
+      <Image
+        id="hero-doodle-tr"
+        src={doodleTr}
+        alt=""
+        role="presentation"
+        class="absolute -top-14 -right-2 -z-10 h-24 w-auto opacity-0"
+        priority
+      />
+    </div>
+
+    <div class="flex min-w-0 flex-1 flex-col justify-center max-lg:text-center">
+      <div id="hero-logo" class="relative w-fit opacity-0 max-lg:mx-auto">
+        <Image
+          src={backTitle}
+          alt=""
+          role="presentation"
+          class="h-24 w-auto"
+          widths={[backTitle.width / 4, backTitle.width / 2, backTitle.width]}
+          sizes="(max-width: 1024px) 271.83px, 0.2655vw"
+          priority
+        />
+        <Image
+          src={title}
+          alt="magazine"
+          class="absolute top-1/2 left-1/2 h-14 w-auto -translate-x-1/2 -translate-y-1/2"
+          widths={[title.width / 4, title.width / 2, title.width]}
+          sizes="(max-width: 1024px) 202.65px, 0.1979vw"
+          priority
+        />
+      </div>
+      <p
+        id="hero-strapline"
+        class="mt-8 font-jua text-3xl text-pretty text-text opacity-0 max-lg:max-w-2xl"
+      >
+        The 2025 Hack Club showcase. Over 150 of the most unique and awesome
+        projects. Designed and built by teenagers, for you to explore.
+      </p>
+      <div id="hero-btns" class="mt-8 flex gap-4 max-lg:justify-center">
+        <div class="flex-none opacity-0">
+          <a
+            href="/get"
+            class="bg-stripes-from-blue-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-blue-fg transition bg-stripes-to-blue-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
+          >
+            <span
+              class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-blue-bg uppercase"
+              >a</span
+            >
+            get a copy
+          </a>
+        </div>
+        <div class="flex-none opacity-0">
+          <a
+            href={pdf}
+            target="_blank"
+            class="bg-stripes-from-green-bg flex h-12 items-center px-5 font-jua text-xl text-white outline-offset-2 outline-green-fg transition bg-stripes-to-green-fg hover:scale-105 focus:scale-105 focus:outline-2 active:scale-100"
+          >
+            <span
+              class="mr-2 grid size-6 place-items-center rounded-full bg-white text-sm text-green-bg uppercase"
+              >x</span
+            >
+            see the pdf
+          </a>
+        </div>
+      </div>
+      <p id="hero-discover" class="mt-4 text-base text-neutral-500 opacity-0">
+        or scroll down to discover more!
+      </p>
+    </div>
+  </div>
+
+  <div
+    id="hero-carousel"
+    class="overflow-x-clip bg-linear-to-t from-white py-8 opacity-0"
+  >
+    <Carousel pages={pages} />
+  </div>
+</div>
+
+<script>
+  import { animate, createTimeline, splitText, stagger } from "animejs";
+  import { $ } from "animejs/utils";
+
+  // animate("#magazine-3d", {
+  //   rotateY: ["-3deg", "-183deg", "-363deg"],
+  //   ease: "linear",
+  //   duration: 10_000,
+  //   loop: true,
+  // }).play();
+
+  const strapline = splitText("#hero-strapline", { words: true });
+  strapline.words.forEach((word) => {
+    word.style.opacity = "0";
+  });
+  strapline.$target.style.opacity = "1";
+
+  const timelineLeft = createTimeline({ autoplay: false })
+    .add("#magazine-3d", {
+      opacity: [0, 1],
+      scale: [0.8, 1],
+      rotateY: ["-3deg", "-3deg"],
+      rotateX: ["3deg", "3deg"],
+      ease: "outBack",
+      duration: 400,
+    })
+    .add(
+      "#hero-doodle-tr",
+      {
+        opacity: [0, 1],
+        translateX: [-20, 0],
+        translateY: [20, 0],
+        ease: "outBack(4)",
+        duration: 400,
+      },
+      "<<+=200",
+    )
+    .add(
+      "#hero-doodle-bl",
+      {
+        opacity: [0, 1],
+        translateX: [20, 0],
+        translateY: [-20, 0],
+        ease: "outBack(4)",
+        duration: 400,
+      },
+      "<<",
+    );
+
+  const timelineRight = createTimeline({ autoplay: false })
+    .add("#hero-logo", {
+      opacity: [0, 1],
+      translateY: [20, 0],
+      ease: "outExpo",
+      duration: 1000,
+    })
+    .add(
+      strapline.words,
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        ease: "outExpo",
+        duration: 1000,
+        delay: stagger(20),
+      },
+      "<<+=100",
+    )
+    .add(
+      "#hero-btns > div",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        ease: "outExpo",
+        duration: 1000,
+        delay: stagger(100),
+      },
+      "-=1000",
+    )
+    .add(
+      "#hero-discover",
+      {
+        opacity: [0, 1],
+        ease: "linear",
+        duration: 200,
+      },
+      "<<+=500",
+    )
+    .add(
+      "#hero-carousel",
+      {
+        opacity: [0, 1],
+        translateY: [20, 0],
+        ease: "outExpo",
+        duration: 1000,
+      },
+      "<<+=100",
+    );
+
+  const timelineMain = createTimeline({ autoplay: false })
+    .sync(timelineLeft)
+    .sync(timelineRight, "<<+=500");
+
+  const timelineWithLoading = createTimeline({
+    onBegin: () => {
+      $("html")[0].style.overflowY = "";
+      $("#loading-overlay")[0].style.pointerEvents = "none";
+    },
+    autoplay: false,
+  })
+    .add("#loading-overlay .star", {
+      opacity: [1, 0],
+      scale: [1, 0.8],
+      rotate: [0, 12],
+      filter: ["blur(0px)", "blur(4px)"],
+      ease: "inExpo",
+      duration: 1000,
+    })
+    .add(
+      "#loading-overlay .circle",
+      {
+        scale: [1, 0],
+        ease: "inExpo",
+        duration: 1000,
+        delay: stagger(100, { reversed: true }),
+      },
+      "<<+=200",
+    )
+    .sync(timelineMain, "-=100");
+
+  window.addEventListener("load", () => {
+    timelineWithLoading.play().then(() => {
+      animate("#magazine-3d", {
+        rotateY: ["-3deg", "-183deg", "-363deg"],
+        rotateX: ["3deg", "-3deg", "3deg"],
+        ease: "inOutExpo",
+        duration: 7500,
+        loop: true,
+      }).play();
+    });
+  });
+</script>
+
+<script is:inline define:vars={{ pdf }}>
+  window.addEventListener("keydown", (ev) => {
+    if (ev.key.toLowerCase() === "a") {
+      ev.preventDefault();
+      window.location.href = "/get";
+    } else if (ev.key.toLowerCase() === "x") {
+      ev.preventDefault();
+      window.open(pdf, "_blank");
+    }
+  });
+</script>
