@@ -12,6 +12,7 @@
     "@tailwindcss/vite": "^4.2.2",
     "animejs": "^4.3.6",
     "astro": "^6.0.8",
+    "date-fns": "^4.1.0",
     "tailwindcss": "^4.2.2"
   },
   "devDependencies": {

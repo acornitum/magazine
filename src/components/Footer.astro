@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { format } from "date-fns";
 
 import rightArrow from "@/assets/right-arrow.svg";
 
@@ -17,6 +18,11 @@ import front from "@/assets/stickers/magazine/front.png";
 import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
 
 import Sep from "@/assets/sep.svg";
+
+const commitSha = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7) || "(unknown)";
+const commitMessage =
+  process.env.VERCEL_GIT_COMMIT_MESSAGE || "(no commit message)";
+const deployDate = new Date();
 
 type Link = {
   text: string;
@@ -158,7 +164,19 @@ const { showSticker = false } = Astro.props;
           </p>
         </div>
         <p class="copyright mt-4 text-base text-current/60 opacity-0">
-          © 2026 Hack Club. 501(c)(3) nonprofit (EIN: 81-2908499)
+          © 2026 Hack Club, a 501(c)(3) nonprofit (EIN: 81-2908499)
+        </p>
+        <p class="copyright mt-1 text-sm text-current/20 opacity-0">
+          <a
+            href="https://github.com/acornitum/magazine"
+            class="underline underline-offset-2 transition hover:text-white"
+            >acornitum/magazine</a
+          > // commit <span
+            title={commitMessage}
+            class="underline decoration-dotted underline-offset-2"
+            >{commitSha}</span
+          > on
+          {format(deployDate, "do MMMM yyyy, HH:mm")} UTC.
         </p>
       </div>
     </div>
@@ -280,6 +298,7 @@ const { showSticker = false } = Astro.props;
         opacity: [0, 1],
         translateY: [20, 0],
         duration: 800,
+        delay: stagger(100),
       },
       "<<+=100",
     )
