@@ -19,6 +19,8 @@ it costs 🍪 **100 cookies** - that's around 10 hours of coding. once you've fi
 
 [flavortown.hackclub.com/shop/order?shop_item_id=189](https://flavortown.hackclub.com/shop/order?shop_item_id=189)
 
+it's also available from other events too, like milkyway!
+
 ### for adults
 
 you can buy a physical copy and we'll mail it straight to you! it costs **$20 USD** per copy, plus **$10 shipping** if you're outside the USA.
