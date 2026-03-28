@@ -17,7 +17,10 @@ if (!entry) {
 const { logo, pages, pdf } = entry.data;
 ---
 
-<div id="mag-highway" class="relative overflow-x-clip isolate bg-highway text-white">
+<div
+  id="mag-highway"
+  class="relative isolate overflow-x-clip bg-highway text-white"
+>
   <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-highway" />
 
   <div class="p-12 sm:p-16">
@@ -52,7 +55,7 @@ const { logo, pages, pdf } = entry.data;
       src={logo}
       alt=""
       role="presentation"
-      class="pointer-events-none absolute top-1/2 left-1/2 h-54 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2"
+      class="pointer-events-none absolute top-1/2 left-1/2 h-54 w-auto max-w-[90%] -translate-x-1/2 -translate-y-1/2 rotate-2 object-scale-down"
       widths={[logo.width / 4, logo.width / 2, logo.width]}
       sizes="(max-width: 1024px) 514.08px, 50.203vw"
     />

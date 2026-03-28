@@ -16,7 +16,10 @@ if (!entry) {
 const { logo, pages, pdf } = entry.data;
 ---
 
-<div id="mag-magazine" class="relative isolate overflow-x-clip bg-magazine text-white">
+<div
+  id="mag-magazine"
+  class="relative isolate overflow-x-clip bg-magazine text-white"
+>
   <Sep
     class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-magazine"
   />
@@ -53,12 +56,12 @@ const { logo, pages, pdf } = entry.data;
       src={logo}
       alt=""
       role="presentation"
-      class="pointer-events-none absolute top-1/2 left-1/2 h-45 w-auto -translate-x-1/2 -translate-y-1/2 rotate-2 shadow-xl"
+      class="pointer-events-none absolute top-1/2 left-1/2 h-45 w-auto max-w-[90%] -translate-x-1/2 -translate-y-1/2 rotate-2 object-scale-down shadow-xl"
       widths={[logo.width / 4, logo.width / 2, logo.width]}
       sizes="(max-width: 1024px) 496px, 48.4375vw"
     />
   </div>
-  <div class="mt-4 overflow-clip -z-10 relative">
+  <div class="relative -z-10 mt-4 overflow-clip">
     <Image
       src={stickers}
       alt=""
