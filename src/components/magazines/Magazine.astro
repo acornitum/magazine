@@ -16,7 +16,7 @@ if (!entry) {
 const { logo, pages, pdf } = entry.data;
 ---
 
-<div id="mag-magazine" class="relative bg-magazine text-white">
+<div id="mag-magazine" class="relative isolate overflow-x-clip bg-magazine text-white">
   <Sep
     class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-magazine"
   />
@@ -31,7 +31,7 @@ const { logo, pages, pdf } = entry.data;
       2025, all in one magazine. Each teenager designed their own page to show
       off their project to you.
     </p>
-    <div class="cta mt-6 flex items-center gap-3 opacity-0">
+    <div class="cta mt-6 flex flex-wrap items-center gap-3 opacity-0">
       <a
         href={pdf}
         target="_blank"
@@ -47,7 +47,7 @@ const { logo, pages, pdf } = entry.data;
       <p class="text-current/60">(109MB)</p>
     </div>
   </div>
-  <div class="gallery relative overflow-x-clip opacity-0">
+  <div class="gallery relative opacity-0">
     <Gallery pages={pages} />
     <Image
       src={logo}
@@ -58,7 +58,7 @@ const { logo, pages, pdf } = entry.data;
       sizes="(max-width: 1024px) 496px, 48.4375vw"
     />
   </div>
-  <div class="mt-4 overflow-clip">
+  <div class="mt-4 overflow-clip -z-10 relative">
     <Image
       src={stickers}
       alt=""

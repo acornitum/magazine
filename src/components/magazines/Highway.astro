@@ -17,7 +17,7 @@ if (!entry) {
 const { logo, pages, pdf } = entry.data;
 ---
 
-<div id="mag-highway" class="relative isolate bg-highway text-white">
+<div id="mag-highway" class="relative overflow-x-clip isolate bg-highway text-white">
   <Sep class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-highway" />
 
   <div class="p-12 sm:p-16">
@@ -30,7 +30,7 @@ const { logo, pages, pdf } = entry.data;
       They made the coolest keyboards, cyberdecks, 3D printers, devboards, game
       consoles, and more!
     </p>
-    <div class="cta mt-6 flex items-center gap-3 opacity-0">
+    <div class="cta mt-6 flex flex-wrap items-center gap-3 opacity-0">
       <a
         href={pdf}
         target="_blank"
@@ -46,7 +46,7 @@ const { logo, pages, pdf } = entry.data;
       <p class="text-current/60">(43MB)</p>
     </div>
   </div>
-  <div class="gallery relative overflow-x-clip opacity-0">
+  <div class="gallery relative opacity-0">
     <Gallery pages={pages} />
     <Image
       src={logo}
