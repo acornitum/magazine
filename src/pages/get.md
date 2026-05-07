@@ -23,7 +23,7 @@ it's also available from other events too, like milkyway!
 
 ### for adults
 
-you can buy a physical copy and we'll mail it straight to you! it costs **$12.80 USD** per copy in the USA, or **$20.18 USD including shipping** if you're outside the USA.
+you can buy a physical copy and we'll mail it straight to you! it costs **$12.81 USD** per copy in the USA, or **$20.18 USD including shipping** if you're outside the USA. 
 
 you're buying a copy for yourself and a copy for another teenager in Hack Club. best of all, you're supporting a nonprofit that directly rewards teens for learning to code and making projects that they're proud of. so it's a win-win-win 🎉
 
