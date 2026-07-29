@@ -4,10 +4,11 @@ import { Image } from "astro:assets";
 
 interface Props {
   pages: ImageMetadata[];
+  square?: boolean;
   reverse?: boolean;
 }
 
-const { pages, reverse } = Astro.props;
+const { pages, square, reverse } = Astro.props;
 
 const LOOPS = 2;
 const DURATION = pages.length * 5;
@@ -25,8 +26,8 @@ const DURATION = pages.length * 5;
             src={image}
             alt=""
             role="presentation"
-            class="pointer-events-auto aspect-magazine h-80 w-auto object-cover shadow-lg transition group-has-hover:not-hover:opacity-75 hover:scale-105"
-            class:list={[reverse ? "ml-4" : "mr-4"]}
+            class="pointer-events-auto h-80 w-auto object-cover shadow-lg transition group-has-hover:not-hover:opacity-75 hover:scale-105"
+            class:list={[reverse ? "ml-4" : "mr-4", square ? "aspect-square" : "aspect-magazine"]}
             widths={[image.width / 4, image.width / 2, image.width]}
             sizes="(max-width: 1024px) 180.7px, 17.647vw"
           />
