@@ -1,64 +1,74 @@
 ---
 import { Image } from "astro:assets";
 import { getEntry } from "astro:content";
-import Gallery from "./Gallery.astro";
+import Minigallery from "./Minigallery.astro";
 
-import stickers from "@/assets/magazines/juice/stickers.png";
+import stickers from "@/assets/magazines/mini/stickers3.png";
 
 import Sep from "@/assets/sep.svg";
 import ArrowRight from "@/assets/icons/lu-arrow-right.svg";
 
-const entry = await getEntry("magazines", "juice");
+const entry = await getEntry("magazines", "mini");
 if (!entry) {
-  throw new Error("Juice magazine entry not found");
+  throw new Error("mini magazine entry not found");
 }
 
 const { logo, pages, pdf } = entry.data;
 ---
 
 <div
-  id="mag-juice"
-  class="relative isolate overflow-x-clip bg-juice-bg text-black"
+  id="mag-mini"
+  class="relative isolate overflow-x-clip bg-mini text-black"
 >
   <Sep
-    class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-juice-bg"
+    class="absolute inset-x-0 -top-[0.78125vw] h-auto w-full text-mini"
   />
 
-  <div class="p-12 pb-12 sm:p-16">
+  <div class="p-12 sm:p-16">
     <div class="flex justify-between text-xl text-current/75">
-      <p class="header-left opacity-0">#3</p>
-      <p class="header-right opacity-0">&mdash; juice</p>
+      <p class="header-left opacity-0">#2</p>
+      <p class="header-right opacity-0">&mdash; mini</p>
     </div>
     <p class="strapline mt-4 text-3xl leading-snug text-pretty opacity-0">
-      Over 2 months, high schoolers from around the world spent one hundred
-      hours making their own game - and over 100 of them flew to Shanghai to
-      open a pop-up juice bar & game exhibition.
+      A mini 12-page magazine, to serve as an introduction to Hack Club!
     </p>
     <div class="cta mt-6 flex flex-wrap items-center gap-3 opacity-0">
       <a
-        href={pdf}
+        href="/mini"
         target="_blank"
-        class="flex h-12 w-fit items-center rounded-3xl bg-juice-fg px-5 font-jua text-xl text-white outline-offset-2 outline-juice-fg transition corner-squircle hover:scale-105 hover:bg-green-900 focus:scale-105 focus:bg-green-900 focus:outline-2 active:scale-100"
+        class="flex h-12 w-fit items-center rounded-3xl bg-[#23AEF8] px-5 font-jua text-xl text-white outline-offset-2 outline-white transition corner-squircle hover:scale-105 hover:bg-[#0578CA] focus:scale-105 focus:bg-[#0578CA] focus:outline-2 active:scale-100"
       >
-        view juice magazine
+        learn more
         <span
-          class="ml-2 grid size-5 place-items-center rounded-full bg-white text-sm text-juice-fg uppercase"
+          class="ml-2 grid size-5 place-items-center rounded-full bg-white text-sm text-[#23AEF8] uppercase"
         >
           <ArrowRight class="size-3" stroke-width={4} />
         </span>
       </a>
-      <p class="text-current/60">(59MB)</p>
+      <a
+        href={pdf}
+        target="_blank"
+        class="flex h-12 w-fit items-center rounded-3xl bg-[#23AEF8] px-5 font-jua text-xl text-white outline-offset-2 outline-white transition corner-squircle hover:scale-105 hover:bg-[#0578CA] focus:scale-105 focus:bg-[#0578CA] focus:outline-2 active:scale-100"
+      >
+        view mini magazine
+        <span
+          class="ml-2 grid size-5 place-items-center rounded-full bg-white text-sm text-[#23AEF8] uppercase"
+        >
+          <ArrowRight class="size-3" stroke-width={4} />
+        </span>
+      </a>
+      <p class="text-current/60">(5MB)</p>
     </div>
   </div>
   <div class="gallery relative opacity-0">
-    <Gallery pages={pages} />
+    <Minigallery pages={pages} />
     <Image
       src={logo}
       alt=""
       role="presentation"
-      class="pointer-events-none absolute top-1/2 left-1/2 h-50 w-auto max-w-[90%] -translate-x-1/2 -translate-y-1/2 rotate-2 object-scale-down"
+      class="pointer-events-none absolute top-1/2 left-1/2 h-45 w-auto max-w-[90%] -translate-x-1/2 -translate-y-1/2 rotate-2 object-scale-down"
       widths={[logo.width / 4, logo.width / 2, logo.width]}
-      sizes="(max-width: 1024px) 448px, 43.75vw"
+      sizes="(max-width: 1024px) 496px, 48.4375vw"
     />
   </div>
   <div class="relative -z-10 mt-4 overflow-clip">
@@ -78,7 +88,7 @@ const { logo, pages, pdf } = entry.data;
 
   createTimeline({
     autoplay: onScroll({
-      target: "#mag-juice",
+      target: "#mag-mini",
       enter: "center",
       leave: "center",
     }),
@@ -86,13 +96,13 @@ const { logo, pages, pdf } = entry.data;
       ease: "outExpo",
     },
   })
-    .add("#mag-juice .header-left", {
+    .add("#mag-mini .header-left", {
       opacity: [0, 1],
       ease: "linear",
       duration: 400,
     })
     .add(
-      "#mag-juice .header-right",
+      "#mag-mini .header-right",
       {
         opacity: [0, 1],
         ease: "linear",
@@ -101,7 +111,7 @@ const { logo, pages, pdf } = entry.data;
       "<<+=100",
     )
     .add(
-      "#mag-juice .strapline",
+      "#mag-mini .strapline",
       {
         opacity: [0, 1],
         translateY: [20, 0],
@@ -110,7 +120,7 @@ const { logo, pages, pdf } = entry.data;
       "<<+=100",
     )
     .add(
-      "#mag-juice .cta",
+      "#mag-mini .cta",
       {
         opacity: [0, 1],
         translateY: [20, 0],
@@ -119,7 +129,7 @@ const { logo, pages, pdf } = entry.data;
       "<<+=100",
     )
     .add(
-      "#mag-juice .gallery",
+      "#mag-mini .gallery",
       {
         opacity: [0, 1],
         translateY: [20, 0],
@@ -128,7 +138,7 @@ const { logo, pages, pdf } = entry.data;
       "<<+=500",
     )
     .add(
-      "#mag-juice .stickers",
+      "#mag-mini .stickers",
       {
         opacity: [0, 1],
         translateY: [40, 0],
