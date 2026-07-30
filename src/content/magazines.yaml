@@ -48,3 +48,21 @@
     - ~/assets/magazines/highway/pages/3.png
     - ~/assets/magazines/highway/pages/18.png
     - ~/assets/magazines/highway/pages/4.png
+
+- id: mini
+  logo: ~/assets/magazines/mini/logo.png
+  pdf: https://user-cdn.hackclub-assets.com/019faa95-110c-7acd-a45f-2a190597fe88/mini%20magazine.pdf
+  pages:
+    - ~/assets/magazines/mini/pages/back.png
+    - ~/assets/magazines/mini/pages/front.png
+    - ~/assets/magazines/mini/pages/1.png
+    - ~/assets/magazines/mini/pages/2.png
+    - ~/assets/magazines/mini/pages/3.png
+    - ~/assets/magazines/mini/pages/4.png
+    - ~/assets/magazines/mini/pages/5.png
+    - ~/assets/magazines/mini/pages/6.png
+    - ~/assets/magazines/mini/pages/7.png
+    - ~/assets/magazines/mini/pages/8.png
+    - ~/assets/magazines/mini/pages/9.png
+    - ~/assets/magazines/mini/pages/10.png
+
