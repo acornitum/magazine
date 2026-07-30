@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
+    "@vercel/analytics": "^2.0.1",
     "animejs": "^4.3.6",
     "astro": "^6.0.8",
     "date-fns": "^4.4.0",

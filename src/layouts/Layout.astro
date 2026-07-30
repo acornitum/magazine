@@ -1,7 +1,10 @@
 ---
 import { Font } from "astro:assets";
+import { inject } from "@vercel/analytics";
 
 import "../styles/global.css";
+
+inject();
 
 interface Props {
   title?: string;
