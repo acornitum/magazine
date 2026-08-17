@@ -45,12 +45,25 @@ here are the links to the github repos of all projects in this magazine! all pro
 
 - [wafer](https://github.com/oleksandrmaslov/wafer-zmk-config)
 - [cyberpad-01](https://github.com/KaiPereira/CYBERPAD-01)
-
-coming soon!
+- [splitwave](https://github.com/aroyx/SplitWave)
+- [macroboard](https://github.com/NoxAevi/MacroBoard)
+- [deskmate](https://github.com/Valder077/deskmate)
+- [mito](https://github.com/KOEGlike/mito)
+- [nibunkatsu one](https://github.com/GabiBrawl/Nibunkatsu)
+- [biblically accurate keyboard](https://github.com/geg-tech/biblicallyaccuratekeyboard), [engipad](https://github.com/geg-tech/engipad)
+- [sten0](https://github.com/pizzalover125/sten0/)
+- [relic](https://github.com/mannireis/RELIC)
+- [glyph](https://github.com/Hex-4/glyph)
 
 #### devboards
 
-coming soon!
+- [esp32 devboard](https://github.com/toby-alpha/transparent-devboard)
+- [rpboard2](https://github.com/euvalennn/rpboard-squared)
+- [cyberboard](https://github.com/notaroomba/cyberboard)
+- [iox-77](https://github.com/Dieu-de-l-elec/IOX-77-Devboard)
+- [breadboard](https://github.com/NoxAevi/The-Breadboard-Plus)
+- [picoducky](https://github.com/Outdatedcandy92/PicoDucky)
+- [picat](https://github.com/sbunger/PICAT)
 
 #### games + software projects
 
