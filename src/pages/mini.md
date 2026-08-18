@@ -5,7 +5,10 @@ layout: ~/layouts/Article.astro
 
 # mini magazine
 
-hi! if you're here, you probably have a mini magazine from open sauce!
+these mini magazines were originally made for handing at at open sauce, but serve as a general introduction to hack club!
+
+![](https://cdn.hackclub.com/01a0102f-9a96-7ac9-a0d6-ca9620d24f76/minimagazine%20(1).gif)
+
 
 this page will get updated shortly, but for now, i'd recommend checking out: 
 
@@ -13,7 +16,7 @@ this page will get updated shortly, but for now, i'd recommend checking out:
 - [magazine.hackclub.com](https://magazine.hackclub.com) - view our 2025 magazine recap of hack club projects!
 - [hackpad.hackclub.com](https://hackpad.hackclub.com) - learn how to make your first macropad!
 
-online pdf version will also come soon :D
+online pdf of the mini magazine [here](https://user-cdn.hackclub-assets.com/019faa95-110c-7acd-a45f-2a190597fe88/mini%20magazine.pdf) :D
 
 ## projects featured
 
@@ -42,12 +45,25 @@ here are the links to the github repos of all projects in this magazine! all pro
 
 - [wafer](https://github.com/oleksandrmaslov/wafer-zmk-config)
 - [cyberpad-01](https://github.com/KaiPereira/CYBERPAD-01)
-
-coming soon!
+- [splitwave](https://github.com/aroyx/SplitWave)
+- [macroboard](https://github.com/NoxAevi/MacroBoard)
+- [deskmate](https://github.com/Valder077/deskmate)
+- [mito](https://github.com/KOEGlike/mito)
+- [nibunkatsu one](https://github.com/GabiBrawl/Nibunkatsu)
+- [biblically accurate keyboard](https://github.com/geg-tech/biblicallyaccuratekeyboard), [engipad](https://github.com/geg-tech/engipad)
+- [sten0](https://github.com/pizzalover125/sten0/)
+- [relic](https://github.com/mannireis/RELIC)
+- [glyph](https://github.com/Hex-4/glyph)
 
 #### devboards
 
-coming soon!
+- [esp32 devboard](https://github.com/toby-alpha/transparent-devboard)
+- [rpboard2](https://github.com/euvalennn/rpboard-squared)
+- [cyberboard](https://github.com/notaroomba/cyberboard)
+- [iox-77](https://github.com/Dieu-de-l-elec/IOX-77-Devboard)
+- [breadboard](https://github.com/NoxAevi/The-Breadboard-Plus)
+- [picoducky](https://github.com/Outdatedcandy92/PicoDucky)
+- [picat](https://github.com/sbunger/PICAT)
 
 #### games + software projects
 
