@@ -2,12 +2,16 @@
 import { defineConfig, fontProviders } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`,
+
   vite: {
     plugins: [tailwindcss()],
   },
+
   fonts: [
     {
       provider: fontProviders.google(),
@@ -25,4 +29,6 @@ export default defineConfig({
       subsets: ["latin"],
     },
   ],
+
+  integrations: [mdx()],
 });
