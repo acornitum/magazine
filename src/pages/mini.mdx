@@ -3,11 +3,17 @@ title: Mini Magazine
 layout: ~/layouts/Article.astro
 ---
 
+import GalleryItem from "~/components/mini/GalleryItem.astro";
+
 # mini magazine
 
 these mini magazines were originally made for handing at at open sauce, but serve as a general introduction to hack club!
 
-<img src="https://cdn.hackclub.com/01a0102f-9a96-7ac9-a0d6-ca9620d24f76/minimagazine%20(1).gif" width="1386" height="1180" />
+<img
+  src="https://cdn.hackclub.com/01a0102f-9a96-7ac9-a0d6-ca9620d24f76/minimagazine%20(1).gif"
+  width="1386"
+  height="1180"
+/>
 
 this page will get updated shortly, but for now, i'd recommend checking out:
 
@@ -22,6 +28,36 @@ online pdf of the mini magazine [here](https://user-cdn.hackclub-assets.com/019f
 here are the links to the github repos of all projects in this magazine! all projects are open source :D
 
 #### general hardware projects
+
+<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+  <GalleryItem
+    title="icepi sbc"
+    repoUrl="https://github.com/cheyao/icepi-sbc"
+    image="https://github.com/cheyao/icepi-sbc/blob/main/assets/top.jpg?raw=true"
+  />
+  <GalleryItem
+    title="icepi zero"
+    repoUrl="https://github.com/cheyao/icepi-zero"
+    image="https://github.com/cheyao/icepi-zero/blob/main/gallery/icepi-in-hand.png?raw=true"
+  />
+  <GalleryItem
+    title="logic analyzer"
+    repoUrl="https://github.com/cheyao/ch32-logic-analyzer"
+    image="https://github.com/cheyao/ch32-logic-analyzer/blob/main/assets/3d.png?raw=true"
+  />
+  <GalleryItem
+    title="becca rocket"
+    repoUrl="https://github.com/ProgrammerTurtle/BECCA"
+  />
+  <GalleryItem
+    title="rubix cube"
+    repoUrl="https://github.com/nayaramadan/RubiX-Cube"
+  />
+  <GalleryItem
+    title="vectoracnc"
+    repoUrl="https://github.com/Pegoku/VectoraCNC"
+  />
+</div>
 
 - [icepi sbc](https://github.com/cheyao/icepi-sbc), [icepi zero](https://github.com/cheyao/icepi-zero), [logic analyzer](https://github.com/cheyao/ch32-logic-analyzer)
 - [becca rocket](https://github.com/ProgrammerTurtle/BECCA)

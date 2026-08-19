@@ -1,0 +1,46 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+import SiGithub from "@/assets/icons/si-github.svg";
+
+interface Props {
+  title: string;
+  repoUrl: string;
+  image?: string | ImageMetadata;
+}
+const { title, repoUrl, image } = Astro.props;
+
+// https://github.com/user.../repo...
+const [, user, repo] = repoUrl.replace(/^https?:\/\//, "").split("/");
+---
+
+<div
+  class="flex flex-col rounded-3xl border border-neutral-300 bg-neutral-100 corner-squircle"
+>
+  <div class="-m-px">
+    {
+      image &&
+        (typeof image === "string" ? (
+          <img
+            src={image}
+            alt={title}
+            class="m-0! aspect-video w-full rounded-3xl! object-cover"
+          />
+        ) : (
+          <Image
+            src={image}
+            alt={title}
+            class="m-0! aspect-video w-full rounded-3xl! object-cover"
+          />
+        ))
+    }
+  </div>
+  <div class="flex flex-1 flex-col justify-center p-3 px-4 text-center">
+    <p class="m-0! truncate font-jua text-lg">{title}</p>
+    <a href={repoUrl} target="_blank" class="flex items-center justify-center">
+      <SiGithub class="mr-1.5 size-4 flex-none" />
+      <p class="m-0! truncate text-sm">{user}/{repo}</p>
+    </a>
+  </div>
+</div>
