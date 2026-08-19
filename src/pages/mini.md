@@ -7,10 +7,9 @@ layout: ~/layouts/Article.astro
 
 these mini magazines were originally made for handing at at open sauce, but serve as a general introduction to hack club!
 
-![](https://cdn.hackclub.com/01a0102f-9a96-7ac9-a0d6-ca9620d24f76/minimagazine%20(1).gif)
+<img src="https://cdn.hackclub.com/01a0102f-9a96-7ac9-a0d6-ca9620d24f76/minimagazine%20(1).gif" width="1386" height="1180" />
 
-
-this page will get updated shortly, but for now, i'd recommend checking out: 
+this page will get updated shortly, but for now, i'd recommend checking out:
 
 - [hackclub.com](https://hackclub.com) - our main page!
 - [magazine.hackclub.com](https://magazine.hackclub.com) - view our 2025 magazine recap of hack club projects!
@@ -20,7 +19,7 @@ online pdf of the mini magazine [here](https://user-cdn.hackclub-assets.com/019f
 
 ## projects featured
 
-here are the links to the github repos of all projects in this magazine! all projects are open source :D 
+here are the links to the github repos of all projects in this magazine! all projects are open source :D
 
 #### general hardware projects
 
@@ -39,7 +38,6 @@ here are the links to the github repos of all projects in this magazine! all pro
 - [hexbotv2](https://github.com/charlesbraun2012-lab/Forge-HexBot)
 - [capacitor alarm clock](https://github.com/ArcaEge/capacitor-alarm-clock)
 - [custom segmented display](https://github.com/Dieu-de-l-elec/Custom-Segmented-Display), [angstromio](https://github.com/Dieu-de-l-elec/AngstromIO-devboard)
-
 
 #### keyboards
 
